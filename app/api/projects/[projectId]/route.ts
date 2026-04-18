@@ -53,6 +53,16 @@ export async function PUT(request: Request, { params }: Params) {
         userCreated?: boolean;
       }>;
     }>;
+    roadmap?: Array<{
+      id?: string;
+      title?: string;
+      startWeek?: number;
+      endWeek?: number;
+      objective?: string;
+      why?: string;
+      outcome?: string;
+      deliverables?: string[];
+    }>;
   };
   if (!body.action) {
     return NextResponse.json({ error: "unsupported action" }, { status: 400 });
@@ -86,6 +96,7 @@ export async function PUT(request: Request, { params }: Params) {
         : Math.max(1, current.plan.length || 52);
 
       const defaultPlan = createDefaultPlan(totalWeeks);
+      const defaultRoadmap = createDefaultRoadmap(totalWeeks);
       const requestedPlan = Array.isArray(body.plan) ? body.plan : current.plan;
       const existingWeeks = requestedPlan.length;
       const nextPlan =
@@ -115,6 +126,33 @@ export async function PUT(request: Request, { params }: Params) {
         };
       });
 
+      const requestedRoadmap = Array.isArray(body.roadmap) ? body.roadmap : current.roadmap;
+      const baseRoadmap = requestedRoadmap.length ? requestedRoadmap : defaultRoadmap;
+      const sanitizedRoadmap = baseRoadmap
+        .map((phase, index) => {
+          const fallback = defaultRoadmap[Math.min(index, defaultRoadmap.length - 1)] || defaultRoadmap[0];
+          const rawStart = Number(phase.startWeek);
+          const rawEnd = Number(phase.endWeek);
+          const startWeek = Number.isFinite(rawStart)
+            ? Math.max(1, Math.min(totalWeeks, Math.floor(rawStart)))
+            : fallback.startWeek;
+          const endWeek = Number.isFinite(rawEnd)
+            ? Math.max(startWeek, Math.min(totalWeeks, Math.floor(rawEnd)))
+            : Math.max(startWeek, Math.min(totalWeeks, fallback.endWeek));
+          return {
+            id: phase.id || fallback.id || `phase-${index + 1}`,
+            title: phase.title?.trim() || fallback.title || `Phase ${index + 1}`,
+            startWeek,
+            endWeek,
+            objective: phase.objective?.trim() || fallback.objective || "",
+            why: phase.why?.trim() || fallback.why || "",
+            outcome: phase.outcome?.trim() || fallback.outcome || "",
+            deliverables: Array.isArray(phase.deliverables) ? phase.deliverables : []
+          };
+        })
+        .filter((phase) => phase.startWeek <= totalWeeks)
+        .sort((a, b) => a.startWeek - b.startWeek);
+
       const nextNotes = Object.fromEntries(
         Object.entries(current.notes || {}).filter(([week]) => Number(week) <= totalWeeks)
       );
@@ -137,7 +175,7 @@ export async function PUT(request: Request, { params }: Params) {
         targetOutcome: body.targetOutcome?.trim() || current.targetOutcome,
         plan: sanitizedPlan,
         notes: nextNotes,
-        roadmap: createDefaultRoadmap(totalWeeks),
+        roadmap: sanitizedRoadmap.length ? sanitizedRoadmap : defaultRoadmap,
         context: nextContext
       };
     }

@@ -1,5 +1,6 @@
 import { randomUUID } from "crypto";
-import { promises as fs } from "fs";
+import Database from "better-sqlite3";
+import { existsSync, mkdirSync, readFileSync } from "fs";
 import path from "path";
 
 import {
@@ -38,10 +39,18 @@ type StoreData = {
 };
 
 const DATA_DIR = path.join(process.cwd(), "data");
-const DATA_FILE = path.join(DATA_DIR, "projects.json");
+const LEGACY_DATA_FILE = path.join(DATA_DIR, "projects.json");
+const DB_FILE = path.join(DATA_DIR, "projects.db");
 const DEFAULT_PROJECT_NAME = "Career Quest: Dave AI Governance";
+let dbInstance: Database.Database | null = null;
 
 function createDefaultTargetOutcome(name: string, totalWeeks: number): string {
+  if (name === "Career Quest: Dave AI Governance") {
+    return "Within 12 months, I operate a reliable AI governance workbench that improves chatbot safety and eval quality, produces committee-ready decisions and controls, and provides portfolio-grade evidence for resilient AI governance roles.";
+  }
+  if (name === "Agentic Engineering Implementation") {
+    return "In 4 weeks, I reliably run a disciplined agentic engineering workflow (plan -> implement -> verify -> review), complete high-quality personal project deliverables, and show measurable improvement in execution quality and consistency.";
+  }
   return `By week ${totalWeeks}, ${name} has delivered durable outcomes with clear evidence of progress, reusable workflows, and measurable impact.`;
 }
 
@@ -49,39 +58,75 @@ function createDefaultContext(name: string): ProjectContext {
   if (name === "Career Quest: Dave AI Governance") {
     return {
       whyThisExists:
-        "This project is a personal AI governance operating system that turns learning into visible career proof and resume-ready evidence. It exists to make weekly work repeatable, measurable, and portfolio-generating instead of scattered across chats and temporary notes.",
+        "This project exists to define and execute a practical AI governance development path rooted in real chatbot, eval, and safety work so that both humans and LLMs can clearly understand scope, decisions, and intent.",
       primaryGoal:
-        "Build a 12-month governance workbench that leverages current work strengths, produces resume artifacts, supports a lower-stress trajectory, and transitions into resilient AI governance roles.",
+        "Use live engineering work to build governance competence, committee-ready artifacts, and portable evidence for long-term AI governance career transitions.",
       operatingSystem: [
-        "Production lane: directly leverage current strengths in evals, user-facing chat apps, and governance committee participation.",
-        "Learning lane: train continuously on prompting, orchestration, model evaluation, and automation.",
-        "Career-proof lane: ship one governance artifact each month for interview and resume-quality evidence.",
-        "Store reusable prompts, templates, checklists, and outputs in the AI-Lab file system."
+        "Current role: Staff AI engineer working on chatbots, evaluations, and safety behaviors.",
+        "Current opportunity: participate in Sondermind's AI governance committee.",
+        "Primary domain: AI systems used in sensitive mental-health-adjacent workflows.",
+        "Development frame: production lane, learning lane, and career-proof lane run in parallel."
       ],
       toolStrategy: [
-        "Use personal Claude for personal learning, planning, and governance writing.",
-        "Use Claude Code for repo-aware implementation and terminal-heavy execution.",
-        "Use Gemini as second-pass review and adversarial comparison.",
-        "Use one lightweight workflow stack first; avoid over-buying tooling."
+        "Primary coding workflow: Claude Code + VS Code + Bedrock stack.",
+        "Secondary review workflow: Gemini as adversarial or second-pass check.",
+        "Knowledge storage: AI-Lab workspace with reusable templates, checklists, and artifact history.",
+        "Execution rule: every major output should leave a traceable file artifact."
       ],
       weeklyRhythm: [
-        "Monday: refine one real workflow used at work.",
-        "Tuesday: learn one orchestration/tooling concept.",
-        "Wednesday: compare outputs across 2-3 models on one task.",
-        "Thursday: build or revise one governance artifact.",
-        "Friday: write portfolio note with lessons, automation wins, and risks learned."
+        "Primary stakeholder: self (project owner and accountable reviewer).",
+        "Core collaborators: engineering peers and governance committee participants.",
+        "Secondary audience: future hiring managers evaluating governance readiness.",
+        "LLM audience: assistants that need unambiguous project context and constraints."
       ],
       guardrails: [
-        "Agentic engineering over vibe coding: plan -> spec -> implement -> verify -> review.",
-        "Never trust one polished answer; cross-check against another model or source.",
-        "Keep personal practice separate from work spend and work repos.",
-        "AI is a tool, not authority; accountability and human oversight are mandatory."
+        "Never treat one model output as truth; cross-check important decisions.",
+        "Avoid generic project language; tie weekly work to real production scenarios.",
+        "Keep personal practice data and work-repo data clearly separated.",
+        "Human accountability and oversight are mandatory for governance decisions."
       ],
       nearTermOutcomes: [
-        "Become AI-native with disciplined prompt/system instruction habits while leveraging real job projects.",
-        "Build reusable workflow templates and automation helpers.",
-        "Ship governance artifacts: risk register, eval rubric, incident workflow, policy memo, and resume-ready outcome summaries.",
-        "Grow role-ready evidence for governance/evals/oversight opportunities with a sustainable workload profile."
+        "Relevant standards and references should be attached to artifacts where possible.",
+        "Each month should produce one portfolio-grade governance output with evidence.",
+        "Project context should remain readable to both humans and LLM copilots.",
+        "Update context when role scope, systems, or stakeholder landscape changes."
+      ]
+    };
+  }
+
+  if (name === "Agentic Engineering Implementation") {
+    return {
+      whyThisExists:
+        "This project converts Sondermind agentic engineering training into a practical personal operating system that can be used across real projects with repeatable quality.",
+      primaryGoal:
+        "Internalize and implement a production-grade human-in-the-loop workflow for AI-assisted engineering while creating durable templates, checklists, and implementation evidence.",
+      operatingSystem: [
+        "Execution loop: spec -> implement -> verify -> review -> capture reusable learning.",
+        "Quality loop: tests, linting, code review, and explicit acceptance criteria on every meaningful change.",
+        "Control loop: risk framing, verification evidence, and documented human decisions for high-impact work."
+      ],
+      toolStrategy: [
+        "Primary implementation lane: Cursor/Codex for repo-aware execution and edits.",
+        "Second-pass lane: cross-model review for assumptions, missing edge cases, and risk checks.",
+        "Evidence lane: maintain markdown artifacts for specs, reviews, postmortems, and reusable playbooks."
+      ],
+      weeklyRhythm: [
+        "Plan work with explicit acceptance criteria before implementation.",
+        "Ship one high-quality, verified artifact each week with evidence attached.",
+        "Run a weekly review to identify failures, bottlenecks, and required process upgrades.",
+        "Update templates/checklists so each week compounds prior learning."
+      ],
+      guardrails: [
+        "Never trust fluent output without verification.",
+        "Use least-privilege behavior and treat untrusted content as potentially adversarial.",
+        "For sensitive or high-impact actions, require human approval and recorded rationale.",
+        "Prefer small, reversible changes with measurable outcomes."
+      ],
+      nearTermOutcomes: [
+        "One hardened weekly execution pattern you can run without drift.",
+        "A validated set of templates and checklists for future work.",
+        "At least one high-quality decision artifact and one implementation-quality artifact.",
+        "Clear proof of improvement in delivery reliability and review quality."
       ]
     };
   }
@@ -126,38 +171,33 @@ function createDefaultContext(name: string): ProjectContext {
 
   return {
     whyThisExists:
-      "This project is Akira's four-pillar AI curriculum with an animal mission and strong human values. It exists to build real tool fluency, technical intuition, skepticism, and healthy human-centered use of AI.",
+      `${name} exists to deliver measurable outcomes through a disciplined weekly execution system with clear context for both humans and LLM copilots.`,
     primaryGoal:
-      "Develop Akira's Wild AI Ranger Academy: Use AI. Help Animals. Stay Human.",
+      `Build a reliable, evidence-backed project operating rhythm for ${name}.`,
     operatingSystem: [
-      "Pillar 1 - AI Explorer: questioning, prompting, research, and creative AI usage.",
-      "Pillar 2 - Builder Brain: coding logic, data basics, and how systems work.",
-      "Pillar 3 - Truth Detective: verification, anti-gullibility, and source checking.",
-      "Pillar 4 - Human Heart: real people/animals first, AI as a tool not companion."
+      "Define a weekly objective, why, and concrete outcome before starting work.",
+      "Execute with small, verifiable deliverables rather than broad vague goals.",
+      "Capture decisions, learnings, and reusable assets at the end of each week."
     ],
     toolStrategy: [
-      "Use multiple AI tools to compare answers and teach critical thinking.",
-      "Build age-appropriate mini projects around animals and habitat support.",
-      "Introduce simple automation and project-based learning over time.",
-      "Use AI to enhance creativity without replacing real-world connection."
+      "Use AI tools to accelerate drafting, analysis, and implementation.",
+      "Verify critical outputs using tests, references, and second-pass review.",
+      "Prefer reusable templates and checklists over ad-hoc prompting."
     ],
     weeklyRhythm: [
-      "One exploration session: ask and refine better questions.",
-      "One building session: create or code something simple.",
-      "One truth session: compare answers and verify what is real.",
-      "One human session: apply learning to animals, nature, or community."
+      "Start the week with scope and definition of done.",
+      "Ship one main deliverable with verification evidence.",
+      "End the week with reflection and next-week transition notes."
     ],
     guardrails: [
-      "Smooth confidence is not the same as truth.",
-      "AI is a tool, not a best friend.",
-      "Verify high-impact claims with trusted sources.",
-      "Protect attention, curiosity, compassion, and real-world relationships."
+      "Do not ship unverified AI output.",
+      "Use least privilege for tools and sensitive operations.",
+      "Maintain clear ownership and human accountability."
     ],
     nearTermOutcomes: [
-      "Establish clear four-pillar curriculum checkpoints.",
-      "Create first set of animal-centered AI projects.",
-      "Build strong verification habits early.",
-      "Keep learning exciting, ethical, and grounded in human values."
+      "A repeatable weekly workflow with measurable progress.",
+      "A small library of reusable project templates.",
+      "Clear evidence of delivery and quality improvements."
     ]
   };
 }
@@ -207,51 +247,101 @@ function normalizeProject(project: ProjectData): ProjectData {
   };
 }
 
-async function ensureStoreFile(): Promise<void> {
-  await fs.mkdir(DATA_DIR, { recursive: true });
+function getDb(): Database.Database {
+  if (dbInstance) return dbInstance;
+
+  mkdirSync(DATA_DIR, { recursive: true });
+  const db = new Database(DB_FILE);
+  db.pragma("journal_mode = WAL");
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS projects (
+      id TEXT PRIMARY KEY,
+      name TEXT NOT NULL,
+      created_at TEXT NOT NULL,
+      updated_at TEXT NOT NULL,
+      data TEXT NOT NULL
+    );
+  `);
+
+  bootstrapDatabase(db);
+  dbInstance = db;
+  return db;
+}
+
+function bootstrapDatabase(db: Database.Database): void {
+  const row = db.prepare("SELECT COUNT(*) AS count FROM projects").get() as { count: number };
+  if (row.count > 0) return;
+
+  if (migrateLegacyJsonStore(db)) return;
+
+  const initialProject = createProject(DEFAULT_PROJECT_NAME);
+  persistProject(db, initialProject);
+}
+
+function migrateLegacyJsonStore(db: Database.Database): boolean {
+  if (!existsSync(LEGACY_DATA_FILE)) return false;
+
   try {
-    await fs.access(DATA_FILE);
+    const raw = readFileSync(LEGACY_DATA_FILE, "utf8");
+    const parsed = JSON.parse(raw) as StoreData;
+    const projects = (parsed.projects || []).map(normalizeProject);
+    if (!projects.length) return false;
+
+    const tx = db.transaction((items: ProjectData[]) => {
+      for (const project of items) {
+        persistProject(db, project);
+      }
+    });
+    tx(projects);
+    return true;
   } catch {
-    const initialStore: StoreData = {
-      projects: [createProject(DEFAULT_PROJECT_NAME)]
-    };
-    await fs.writeFile(DATA_FILE, JSON.stringify(initialStore, null, 2), "utf8");
+    return false;
   }
 }
 
-async function readStore(): Promise<StoreData> {
-  await ensureStoreFile();
-  const raw = await fs.readFile(DATA_FILE, "utf8");
-  const parsed = JSON.parse(raw) as StoreData;
-  return {
-    projects: (parsed.projects || []).map(normalizeProject)
-  };
+function persistProject(db: Database.Database, project: ProjectData): void {
+  const normalized = normalizeProject(project);
+  db.prepare(`
+    INSERT INTO projects (id, name, created_at, updated_at, data)
+    VALUES (?, ?, ?, ?, ?)
+    ON CONFLICT(id) DO UPDATE SET
+      name = excluded.name,
+      created_at = excluded.created_at,
+      updated_at = excluded.updated_at,
+      data = excluded.data
+  `).run(
+    normalized.id,
+    normalized.name,
+    normalized.createdAt,
+    normalized.updatedAt,
+    JSON.stringify(normalized)
+  );
 }
 
-async function writeStore(data: StoreData): Promise<void> {
-  await fs.writeFile(DATA_FILE, JSON.stringify(data, null, 2), "utf8");
+function hydrateProjectFromRow(row: { data: string } | undefined): ProjectData | null {
+  if (!row) return null;
+  const parsed = JSON.parse(row.data) as ProjectData;
+  return normalizeProject(parsed);
 }
 
 export async function listProjects(): Promise<Array<Pick<ProjectData, "id" | "name" | "createdAt" | "updatedAt">>> {
-  const store = await readStore();
-  return store.projects.map((project) => ({
-    id: project.id,
-    name: project.name,
-    createdAt: project.createdAt,
-    updatedAt: project.updatedAt
-  }));
+  const db = getDb();
+  const rows = db
+    .prepare("SELECT id, name, created_at AS createdAt, updated_at AS updatedAt FROM projects ORDER BY created_at ASC")
+    .all() as Array<{ id: string; name: string; createdAt: string; updatedAt: string }>;
+  return rows;
 }
 
 export async function getProject(projectId: string): Promise<ProjectData | null> {
-  const store = await readStore();
-  return store.projects.find((project) => project.id === projectId) ?? null;
+  const db = getDb();
+  const row = db.prepare("SELECT data FROM projects WHERE id = ?").get(projectId) as { data: string } | undefined;
+  return hydrateProjectFromRow(row);
 }
 
 export async function createNewProject(name: string, weeks: number = 52): Promise<ProjectData> {
-  const store = await readStore();
+  const db = getDb();
   const project = createProjectWithWeeks(name, weeks);
-  store.projects.push(project);
-  await writeStore(store);
+  persistProject(db, project);
   return project;
 }
 
@@ -259,25 +349,30 @@ export async function updateProject(
   projectId: string,
   updater: (project: ProjectData) => ProjectData
 ): Promise<ProjectData | null> {
-  const store = await readStore();
-  const index = store.projects.findIndex((project) => project.id === projectId);
-  if (index === -1) return null;
+  const db = getDb();
+  const existing = await getProject(projectId);
+  if (!existing) return null;
 
-  const updatedProject = updater(store.projects[index]);
+  const updatedProject = normalizeProject(updater(existing));
+  updatedProject.id = existing.id;
+  updatedProject.createdAt = existing.createdAt;
   updatedProject.updatedAt = new Date().toISOString();
-  store.projects[index] = updatedProject;
-  await writeStore(store);
+  persistProject(db, updatedProject);
   return updatedProject;
 }
 
 export async function deleteProject(projectId: string): Promise<boolean> {
-  const store = await readStore();
-  const existingLength = store.projects.length;
-  store.projects = store.projects.filter((project) => project.id !== projectId);
-  if (store.projects.length === existingLength) return false;
-  if (!store.projects.length) {
-    store.projects = [createProject(DEFAULT_PROJECT_NAME)];
-  }
-  await writeStore(store);
-  return true;
+  const db = getDb();
+  const tx = db.transaction((id: string) => {
+    const deletion = db.prepare("DELETE FROM projects WHERE id = ?").run(id);
+    if (deletion.changes === 0) return false;
+
+    const remaining = db.prepare("SELECT COUNT(*) AS count FROM projects").get() as { count: number };
+    if (remaining.count === 0) {
+      const fallback = createProject(DEFAULT_PROJECT_NAME);
+      persistProject(db, fallback);
+    }
+    return true;
+  });
+  return tx(projectId);
 }

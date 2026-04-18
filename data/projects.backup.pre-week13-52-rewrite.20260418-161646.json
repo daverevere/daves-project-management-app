@@ -3,7 +3,7 @@
     {
       "id": "72a772ef-4e58-4103-b7a4-4cd73ab66a8d",
       "name": "Career Quest: Dave AI Governance",
-      "targetOutcome": "Within 12 months, I operate a reliable AI governance workbench that improves chatbot safety and eval quality, produces committee-ready decisions and controls, and provides portfolio-grade evidence for resilient AI governance roles.",
+      "targetOutcome": "By week 52, Career Quest: Dave AI Governance has delivered durable outcomes with clear evidence of progress, reusable workflows, and measurable impact.",
       "plan": [
         {
           "week": 1,
@@ -22,32 +22,28 @@
               "title": "Unlink Cursor from your work account and sign in with your personal account",
               "why": "Your learning and governance portfolio need to live in a personal environment you control.",
               "outcome": "Clear separation between company work and personal career system.",
-              "done": true,
-              "userCreated": false
+              "done": true
             },
             {
               "id": "w1t2",
               "title": "Create the AI-Lab folder tree on your machine",
               "why": "A file-based system gives you stable storage for workflows, notes, templates, and artifacts.",
               "outcome": "You know where every future note, template, and artifact belongs.",
-              "done": true,
-              "userCreated": false
+              "done": true
             },
             {
               "id": "w1t3",
               "title": "Create a top-level README that explains the purpose of each folder",
               "why": "A good system is understandable at a glance and maintainable by Cursor later.",
               "outcome": "A documented structure that can be extended without guesswork.",
-              "done": true,
-              "userCreated": false
+              "done": true
             },
             {
               "id": "w1t4",
               "title": "Write your 12-month target outcome in one paragraph",
               "why": "Tasks make more sense when tied to an explicit target state.",
               "outcome": "A clear north star for the whole system.",
-              "done": true,
-              "userCreated": false
+              "done": true
             }
           ]
         },
@@ -69,32 +65,28 @@
               "title": "Create spec_template.md",
               "why": "You need to define goals, constraints, risks, and done criteria before using AI seriously.",
               "outcome": "You can start any serious task with structure.",
-              "done": false,
-              "userCreated": false
+              "done": false
             },
             {
               "id": "w2t2",
               "title": "Create review_template.md",
               "why": "You need a repeatable way to verify output instead of trusting fluency.",
               "outcome": "You have a checklist for validation and second-pass review.",
-              "done": false,
-              "userCreated": false
+              "done": false
             },
             {
               "id": "w2t3",
               "title": "Create governance_memo_template.md",
               "why": "Your future pivot depends on artifacts that demonstrate governance thinking, not just code generation.",
               "outcome": "A reusable starting point for portfolio memos.",
-              "done": false,
-              "userCreated": false
+              "done": false
             },
             {
               "id": "w2t4",
               "title": "Run one full workflow using Cursor/Claude and Gemini on the same task",
               "why": "Comparing models teaches judgment and exposes blind spots early.",
               "outcome": "One saved example of spec -> implementation -> review.",
-              "done": false,
-              "userCreated": false
+              "done": false
             }
           ]
         },
@@ -115,24 +107,21 @@
               "title": "Move your training notes into 01_learning",
               "why": "Important learning should live in your system, not a temporary folder.",
               "outcome": "Training material becomes part of your long-term knowledge base.",
-              "done": false,
-              "userCreated": false
+              "done": false
             },
             {
               "id": "w3t2",
               "title": "Extract 5 principles from the agentic engineering training",
               "why": "Principles guide future judgment better than raw transcripts.",
               "outcome": "A short principles file you can review weekly.",
-              "done": false,
-              "userCreated": false
+              "done": false
             },
             {
               "id": "w3t3",
               "title": "Create one reusable checklist from the training",
               "why": "Checklists reduce cognitive load and make good habits repeatable.",
               "outcome": "A practical tool you can use immediately.",
-              "done": false,
-              "userCreated": false
+              "done": false
             }
           ]
         },
@@ -152,16 +141,14 @@
               "title": "Create a prompt_comparison_template.md",
               "why": "You need a standard way to compare outputs rather than relying on vague impressions.",
               "outcome": "A reproducible comparison process.",
-              "done": false,
-              "userCreated": false
+              "done": false
             },
             {
               "id": "w4t2",
               "title": "Compare Claude and Gemini on one governance question",
               "why": "This creates direct experience with strengths, weaknesses, and review habits.",
               "outcome": "A saved comparison with your conclusions.",
-              "done": false,
-              "userCreated": false
+              "done": false
             }
           ]
         },
@@ -180,8 +167,7 @@
               "title": "Write a memo on human-in-the-loop requirements for sensitive AI systems",
               "why": "This shows judgment, risk awareness, and product reasoning.",
               "outcome": "A publishable portfolio artifact.",
-              "done": false,
-              "userCreated": false
+              "done": false
             }
           ]
         },
@@ -200,16 +186,14 @@
               "title": "Pick one tiny workflow to automate",
               "why": "Small wins build confidence without creating tool chaos.",
               "outcome": "A repeatable automation target.",
-              "done": false,
-              "userCreated": false
+              "done": false
             },
             {
               "id": "w6t2",
               "title": "Implement and document the automation",
               "why": "The value is not only the script. It is the repeatable pattern.",
               "outcome": "One working tool plus documentation.",
-              "done": false,
-              "userCreated": false
+              "done": false
             }
           ]
         },
@@ -228,8 +212,7 @@
               "title": "Create a risk register for an AI product you understand well",
               "why": "This builds directly from your domain experience.",
               "outcome": "A strong domain-relevant governance artifact.",
-              "done": false,
-              "userCreated": false
+              "done": false
             }
           ]
         },
@@ -249,16 +232,14 @@
               "title": "Identify 10 target AI governance / eval / oversight roles",
               "why": "A pivot needs targets, not just self-improvement.",
               "outcome": "A role map grounded in actual job types.",
-              "done": false,
-              "userCreated": false
+              "done": false
             },
             {
               "id": "w8t2",
               "title": "Map each role to missing skills or missing evidence",
               "why": "This turns vague ambition into measurable preparation.",
               "outcome": "A gap analysis you can act on.",
-              "done": false,
-              "userCreated": false
+              "done": false
             }
           ]
         },
@@ -277,8 +258,7 @@
               "title": "Create an AI oversight rubric for a system with meaningful human impact",
               "why": "Rubrics show your ability to operationalize judgment.",
               "outcome": "A concrete governance artifact.",
-              "done": false,
-              "userCreated": false
+              "done": false
             }
           ]
         },
@@ -298,16 +278,14 @@
               "title": "Write a pivot narrative: engineer -> governance/evals/oversight",
               "why": "Hiring managers need to understand the bridge.",
               "outcome": "A concise story you can reuse in applications and conversations.",
-              "done": false,
-              "userCreated": false
+              "done": false
             },
             {
               "id": "w10t2",
               "title": "Draft 6 governance-oriented resume bullets from your existing work",
               "why": "You need evidence phrased in the language of the new target.",
               "outcome": "A starting point for resume revision.",
-              "done": false,
-              "userCreated": false
+              "done": false
             }
           ]
         },
@@ -326,8 +304,7 @@
               "title": "Design an escalation workflow for unsafe AI behavior",
               "why": "This demonstrates practical thinking about real-world oversight.",
               "outcome": "A process artifact useful in interviews or portfolio review.",
-              "done": false,
-              "userCreated": false
+              "done": false
             }
           ]
         },
@@ -347,1896 +324,1134 @@
               "title": "Review all completed work and note what created real leverage",
               "why": "You need evidence about what is actually helping your pivot.",
               "outcome": "A practical review, not just a feeling.",
-              "done": false,
-              "userCreated": false
+              "done": false
             },
             {
               "id": "w12t2",
               "title": "Set the next 12 weeks based on role gaps and strongest progress",
               "why": "The system should evolve from evidence, not random inspiration.",
               "outcome": "A focused next-quarter roadmap.",
-              "done": false,
-              "userCreated": false
+              "done": false
             }
           ]
         },
         {
           "week": 13,
-          "title": "Prompt and system-instruction governance / Week A / Scope and map",
-          "objective": "Scope one high-leverage use case and define measurable controls, metrics, and evidence requirements across production, learning, and career-proof lanes. Focus: codify prompt/system templates used in chatbot and eval workflows, advanced instruction hierarchy, constraint design, and failure-mode prompting, and publish governance standard plus evidence memo.",
-          "whyThisWeek": "A scoped governance target prevents busywork and keeps all three lanes tied to one concrete outcome. This month centers on prompt and system-instruction governance.",
-          "developmentOutcome": "You have a bounded monthly mission, a clear definition of done, and an evidence plan. Monthly artifact target: Prompt and System Instruction Governance Standard.",
+          "title": "Deepen automation and tooling discipline / Scope and plan",
+          "objective": "Scope this month precisely and choose the first concrete deliverable inside \"Deepen automation and tooling discipline\".",
+          "whyThisWeek": "The first quarter proves you can work with structure. Month 4 turns those isolated wins into a real operating environment.",
+          "developmentOutcome": "You have 2 to 3 documented workflows and a stable AI-Lab habit. You have a concrete scoped plan and clear definition of done for the month.",
           "deliverables": [
-            "Production lane output for prompt and system-instruction governance",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Prompt and System Instruction Governance Standard",
-            "Verification log with cross-model or adversarial findings"
+            "2 new documented workflows",
+            "1 automation improvement",
+            "Updated tool discipline notes"
           ],
           "tasks": [
             {
               "id": "w13t1",
-              "title": "Map one live chatbot/eval workflow and identify risk surfaces, owners, and control points.",
-              "why": "Production lane: codify prompt/system templates used in chatbot and eval workflows.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Select one live SonderMind initiative to use as a governance case study for workflow automation and governance controls",
+              "why": "Grounding work in real initiatives increases transferability and market credibility.",
+              "outcome": "A scoped case study linked to real production context and decision points.",
+              "done": false
             },
             {
               "id": "w13t2",
-              "title": "Study one focused governance concept and convert it into a checklist you can execute this week.",
-              "why": "Learning lane: advanced instruction hierarchy, constraint design, and failure-mode prompting.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w13t3",
-              "title": "Draft the artifact outline, success criteria, and acceptance rubric for committee/hiring use.",
-              "why": "Career-proof lane: publish governance standard plus evidence memo.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w13t4",
-              "title": "Run a cross-model challenge (Claude + Gemini) on the proposed controls and log disagreements.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Define monthly deliverable, measurable success criteria, and resume bullet target",
+              "why": "Explicit criteria prevent activity drift and force outcome-driven execution.",
+              "outcome": "A measurable definition of done plus draft hiring-facing language.",
+              "done": false
             }
           ]
         },
         {
           "week": 14,
-          "title": "Prompt and system-instruction governance / Week B / Build and implement",
-          "objective": "Execute the core implementation work for this month's governance theme while preserving evidence quality. Focus: codify prompt/system templates used in chatbot and eval workflows, advanced instruction hierarchy, constraint design, and failure-mode prompting, and publish governance standard plus evidence memo.",
-          "whyThisWeek": "Governance credibility comes from production-grade implementation, not policy text alone. This month centers on prompt and system-instruction governance.",
-          "developmentOutcome": "You have a working control implementation and measurable before/after signals. Monthly artifact target: Prompt and System Instruction Governance Standard.",
+          "title": "Deepen automation and tooling discipline / Build",
+          "objective": "Do the main build work for \"Deepen automation and tooling discipline\".",
+          "whyThisWeek": "The first quarter proves you can work with structure. Month 4 turns those isolated wins into a real operating environment.",
+          "developmentOutcome": "You have 2 to 3 documented workflows and a stable AI-Lab habit. You have real, visible work in progress instead of only planning.",
           "deliverables": [
-            "Production lane output for prompt and system-instruction governance",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Prompt and System Instruction Governance Standard",
-            "Verification log with cross-model or adversarial findings"
+            "2 new documented workflows",
+            "1 automation improvement",
+            "Updated tool discipline notes"
           ],
           "tasks": [
             {
               "id": "w14t1",
-              "title": "Implement the primary control set in your real workflow and capture baseline vs. current metrics.",
-              "why": "Production lane: codify prompt/system templates used in chatbot and eval workflows.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Build the core artifact for workflow automation and governance controls using real eval/chat/governance data",
+              "why": "Real data and real constraints produce artifacts that stand up in interviews.",
+              "outcome": "A substantive artifact draft with evidence and design rationale.",
+              "done": false
             },
             {
               "id": "w14t2",
-              "title": "Deepen one technical skill required by this implementation and document what changed in your approach.",
-              "why": "Learning lane: advanced instruction hierarchy, constraint design, and failure-mode prompting.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w14t3",
-              "title": "Create the first publishable draft of this month's governance artifact with concrete examples.",
-              "why": "Career-proof lane: publish governance standard plus evidence memo.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w14t4",
-              "title": "Execute adversarial tests against the implementation and document failures plus fixes.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Capture before/after metrics and implementation notes from the workflow",
+              "why": "Quantified impact is required for resume strength and hiring conversion.",
+              "outcome": "A metrics-backed evidence pack for portfolio and resume use.",
+              "done": false
             }
           ]
         },
         {
           "week": 15,
-          "title": "Prompt and system-instruction governance / Week C / Evaluate and harden",
-          "objective": "Stress-test controls, tighten weak points, and validate that outcomes hold under realistic failure pressure. Focus: codify prompt/system templates used in chatbot and eval workflows, advanced instruction hierarchy, constraint design, and failure-mode prompting, and publish governance standard plus evidence memo.",
-          "whyThisWeek": "Without hardening, apparent progress collapses under edge cases and adversarial behavior. This month centers on prompt and system-instruction governance.",
-          "developmentOutcome": "You have improved control reliability, known residual risks, and clear escalation conditions. Monthly artifact target: Prompt and System Instruction Governance Standard.",
+          "title": "Deepen automation and tooling discipline / Refine",
+          "objective": "Review, refine, and improve the quality of work produced this month.",
+          "whyThisWeek": "The first quarter proves you can work with structure. Month 4 turns those isolated wins into a real operating environment.",
+          "developmentOutcome": "You have 2 to 3 documented workflows and a stable AI-Lab habit. You have stronger, more polished output with fewer weak spots.",
           "deliverables": [
-            "Production lane output for prompt and system-instruction governance",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Prompt and System Instruction Governance Standard",
-            "Verification log with cross-model or adversarial findings"
+            "2 new documented workflows",
+            "1 automation improvement",
+            "Updated tool discipline notes"
           ],
           "tasks": [
             {
               "id": "w15t1",
-              "title": "Run structured evals/red-team scenarios and prioritize remediations by impact and likelihood.",
-              "why": "Production lane: codify prompt/system templates used in chatbot and eval workflows.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Run adversarial review (Gemini + checklist + stakeholder lens) on the artifact",
+              "why": "Cross-model and stakeholder challenge reduces blind spots and weak assumptions.",
+              "outcome": "A reviewed artifact with explicit risk findings and remediation actions.",
+              "done": false
             },
             {
               "id": "w15t2",
-              "title": "Compare at least two governance frameworks/standards and map relevant controls to your implementation.",
-              "why": "Learning lane: advanced instruction hierarchy, constraint design, and failure-mode prompting.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w15t3",
-              "title": "Revise the artifact with evidence, tradeoffs, residual risks, and decision rationale.",
-              "why": "Career-proof lane: publish governance standard plus evidence memo.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w15t4",
-              "title": "Facilitate one external review pass (peer/checklist/second model) and reconcile conflicts.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Revise artifact and log governance decisions, tradeoffs, and remaining risks",
+              "why": "Decision logs demonstrate governance maturity beyond surface-level output.",
+              "outcome": "A stronger artifact plus decision trail suitable for interviews.",
+              "done": false
             }
           ]
         },
         {
           "week": 16,
-          "title": "Prompt and system-instruction governance / Week D / Package and committee brief",
-          "objective": "Package the month's work into reusable assets and a committee-ready briefing with next-cycle priorities. Focus: codify prompt/system templates used in chatbot and eval workflows, advanced instruction hierarchy, constraint design, and failure-mode prompting, and publish governance standard plus evidence memo.",
-          "whyThisWeek": "Career proof and committee influence require concise, reusable, decision-grade outputs. This month centers on prompt and system-instruction governance.",
-          "developmentOutcome": "You finish with a portfolio-grade package, a clear decision log, and a handoff into next month. Monthly artifact target: Prompt and System Instruction Governance Standard.",
+          "title": "Deepen automation and tooling discipline / Package and review",
+          "objective": "Package the month's work, summarize lessons learned, and prepare the next cycle.",
+          "whyThisWeek": "The first quarter proves you can work with structure. Month 4 turns those isolated wins into a real operating environment.",
+          "developmentOutcome": "You have 2 to 3 documented workflows and a stable AI-Lab habit. You have a finished monthly package and a clean transition into the next cycle.",
           "deliverables": [
-            "Production lane output for prompt and system-instruction governance",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Prompt and System Instruction Governance Standard",
-            "Verification log with cross-model or adversarial findings"
+            "2 new documented workflows",
+            "1 automation improvement",
+            "Updated tool discipline notes"
           ],
           "tasks": [
             {
               "id": "w16t1",
-              "title": "Finalize production-ready SOP/checklist/runbook updates and publish them in AI-Lab.",
-              "why": "Production lane: codify prompt/system templates used in chatbot and eval workflows.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Publish portfolio-ready package in AI-Lab (artifact, checklist, evidence, notes)",
+              "why": "Packaging creates reusable leverage and prevents knowledge loss.",
+              "outcome": "A complete, reusable portfolio package ready for sharing or adaptation.",
+              "done": false
             },
             {
               "id": "w16t2",
-              "title": "Write a short lessons-learned note with what to repeat, stop, and improve next cycle.",
-              "why": "Learning lane: advanced instruction hierarchy, constraint design, and failure-mode prompting.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w16t3",
-              "title": "Publish the final artifact and extract resume bullets plus one interview case narrative.",
-              "why": "Career-proof lane: publish governance standard plus evidence memo.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w16t4",
-              "title": "Create a one-page governance committee brief with decisions needed, risks, and proposed actions.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Write resume bullets, interview story, and next-month execution hypothesis",
+              "why": "Career transitions require translation of work into market language and forward planning.",
+              "outcome": "Hiring-ready narrative assets plus a focused transition brief.",
+              "done": false
             }
           ]
         },
         {
           "week": 17,
-          "title": "Evaluation governance baseline / Week A / Scope and map",
-          "objective": "Scope one high-leverage use case and define measurable controls, metrics, and evidence requirements across production, learning, and career-proof lanes. Focus: define release-gate eval suite for quality, safety, and refusal behavior, metric design, threshold setting, and evaluator reliability checks, and publish eval governance pack with pass/fail policy.",
-          "whyThisWeek": "A scoped governance target prevents busywork and keeps all three lanes tied to one concrete outcome. This month centers on evaluation governance baseline.",
-          "developmentOutcome": "You have a bounded monthly mission, a clear definition of done, and an evidence plan. Monthly artifact target: Eval Governance Baseline Pack.",
+          "title": "Build governance artifact set #2 / Scope and plan",
+          "objective": "Scope this month precisely and choose the first concrete deliverable inside \"Build governance artifact set #2\".",
+          "whyThisWeek": "A pivot becomes credible when there is more than one good artifact. You need consistency, not a one-off memo.",
+          "developmentOutcome": "You have a growing body of work that demonstrates oversight, risk, and operational thinking. You have a concrete scoped plan and clear definition of done for the month.",
           "deliverables": [
-            "Production lane output for evaluation governance baseline",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Eval Governance Baseline Pack",
-            "Verification log with cross-model or adversarial findings"
+            "2 additional governance artifacts",
+            "1 cross-model review log",
+            "Portfolio index file"
           ],
           "tasks": [
             {
               "id": "w17t1",
-              "title": "Map one live chatbot/eval workflow and identify risk surfaces, owners, and control points.",
-              "why": "Production lane: define release-gate eval suite for quality, safety, and refusal behavior.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Select one live SonderMind initiative to use as a governance case study for governance artifact set #2",
+              "why": "Grounding work in real initiatives increases transferability and market credibility.",
+              "outcome": "A scoped case study linked to real production context and decision points.",
+              "done": false
             },
             {
               "id": "w17t2",
-              "title": "Study one focused governance concept and convert it into a checklist you can execute this week.",
-              "why": "Learning lane: metric design, threshold setting, and evaluator reliability checks.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w17t3",
-              "title": "Draft the artifact outline, success criteria, and acceptance rubric for committee/hiring use.",
-              "why": "Career-proof lane: publish eval governance pack with pass/fail policy.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w17t4",
-              "title": "Run a cross-model challenge (Claude + Gemini) on the proposed controls and log disagreements.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Define monthly deliverable, measurable success criteria, and resume bullet target",
+              "why": "Explicit criteria prevent activity drift and force outcome-driven execution.",
+              "outcome": "A measurable definition of done plus draft hiring-facing language.",
+              "done": false
             }
           ]
         },
         {
           "week": 18,
-          "title": "Evaluation governance baseline / Week B / Build and implement",
-          "objective": "Execute the core implementation work for this month's governance theme while preserving evidence quality. Focus: define release-gate eval suite for quality, safety, and refusal behavior, metric design, threshold setting, and evaluator reliability checks, and publish eval governance pack with pass/fail policy.",
-          "whyThisWeek": "Governance credibility comes from production-grade implementation, not policy text alone. This month centers on evaluation governance baseline.",
-          "developmentOutcome": "You have a working control implementation and measurable before/after signals. Monthly artifact target: Eval Governance Baseline Pack.",
+          "title": "Build governance artifact set #2 / Build",
+          "objective": "Do the main build work for \"Build governance artifact set #2\".",
+          "whyThisWeek": "A pivot becomes credible when there is more than one good artifact. You need consistency, not a one-off memo.",
+          "developmentOutcome": "You have a growing body of work that demonstrates oversight, risk, and operational thinking. You have real, visible work in progress instead of only planning.",
           "deliverables": [
-            "Production lane output for evaluation governance baseline",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Eval Governance Baseline Pack",
-            "Verification log with cross-model or adversarial findings"
+            "2 additional governance artifacts",
+            "1 cross-model review log",
+            "Portfolio index file"
           ],
           "tasks": [
             {
               "id": "w18t1",
-              "title": "Implement the primary control set in your real workflow and capture baseline vs. current metrics.",
-              "why": "Production lane: define release-gate eval suite for quality, safety, and refusal behavior.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Build the core artifact for governance artifact set #2 using real eval/chat/governance data",
+              "why": "Real data and real constraints produce artifacts that stand up in interviews.",
+              "outcome": "A substantive artifact draft with evidence and design rationale.",
+              "done": false
             },
             {
               "id": "w18t2",
-              "title": "Deepen one technical skill required by this implementation and document what changed in your approach.",
-              "why": "Learning lane: metric design, threshold setting, and evaluator reliability checks.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w18t3",
-              "title": "Create the first publishable draft of this month's governance artifact with concrete examples.",
-              "why": "Career-proof lane: publish eval governance pack with pass/fail policy.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w18t4",
-              "title": "Execute adversarial tests against the implementation and document failures plus fixes.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Capture before/after metrics and implementation notes from the workflow",
+              "why": "Quantified impact is required for resume strength and hiring conversion.",
+              "outcome": "A metrics-backed evidence pack for portfolio and resume use.",
+              "done": false
             }
           ]
         },
         {
           "week": 19,
-          "title": "Evaluation governance baseline / Week C / Evaluate and harden",
-          "objective": "Stress-test controls, tighten weak points, and validate that outcomes hold under realistic failure pressure. Focus: define release-gate eval suite for quality, safety, and refusal behavior, metric design, threshold setting, and evaluator reliability checks, and publish eval governance pack with pass/fail policy.",
-          "whyThisWeek": "Without hardening, apparent progress collapses under edge cases and adversarial behavior. This month centers on evaluation governance baseline.",
-          "developmentOutcome": "You have improved control reliability, known residual risks, and clear escalation conditions. Monthly artifact target: Eval Governance Baseline Pack.",
+          "title": "Build governance artifact set #2 / Refine",
+          "objective": "Review, refine, and improve the quality of work produced this month.",
+          "whyThisWeek": "A pivot becomes credible when there is more than one good artifact. You need consistency, not a one-off memo.",
+          "developmentOutcome": "You have a growing body of work that demonstrates oversight, risk, and operational thinking. You have stronger, more polished output with fewer weak spots.",
           "deliverables": [
-            "Production lane output for evaluation governance baseline",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Eval Governance Baseline Pack",
-            "Verification log with cross-model or adversarial findings"
+            "2 additional governance artifacts",
+            "1 cross-model review log",
+            "Portfolio index file"
           ],
           "tasks": [
             {
               "id": "w19t1",
-              "title": "Run structured evals/red-team scenarios and prioritize remediations by impact and likelihood.",
-              "why": "Production lane: define release-gate eval suite for quality, safety, and refusal behavior.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Run adversarial review (Gemini + checklist + stakeholder lens) on the artifact",
+              "why": "Cross-model and stakeholder challenge reduces blind spots and weak assumptions.",
+              "outcome": "A reviewed artifact with explicit risk findings and remediation actions.",
+              "done": false
             },
             {
               "id": "w19t2",
-              "title": "Compare at least two governance frameworks/standards and map relevant controls to your implementation.",
-              "why": "Learning lane: metric design, threshold setting, and evaluator reliability checks.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w19t3",
-              "title": "Revise the artifact with evidence, tradeoffs, residual risks, and decision rationale.",
-              "why": "Career-proof lane: publish eval governance pack with pass/fail policy.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w19t4",
-              "title": "Facilitate one external review pass (peer/checklist/second model) and reconcile conflicts.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Revise artifact and log governance decisions, tradeoffs, and remaining risks",
+              "why": "Decision logs demonstrate governance maturity beyond surface-level output.",
+              "outcome": "A stronger artifact plus decision trail suitable for interviews.",
+              "done": false
             }
           ]
         },
         {
           "week": 20,
-          "title": "Evaluation governance baseline / Week D / Package and committee brief",
-          "objective": "Package the month's work into reusable assets and a committee-ready briefing with next-cycle priorities. Focus: define release-gate eval suite for quality, safety, and refusal behavior, metric design, threshold setting, and evaluator reliability checks, and publish eval governance pack with pass/fail policy.",
-          "whyThisWeek": "Career proof and committee influence require concise, reusable, decision-grade outputs. This month centers on evaluation governance baseline.",
-          "developmentOutcome": "You finish with a portfolio-grade package, a clear decision log, and a handoff into next month. Monthly artifact target: Eval Governance Baseline Pack.",
+          "title": "Build governance artifact set #2 / Package and review",
+          "objective": "Package the month's work, summarize lessons learned, and prepare the next cycle.",
+          "whyThisWeek": "A pivot becomes credible when there is more than one good artifact. You need consistency, not a one-off memo.",
+          "developmentOutcome": "You have a growing body of work that demonstrates oversight, risk, and operational thinking. You have a finished monthly package and a clean transition into the next cycle.",
           "deliverables": [
-            "Production lane output for evaluation governance baseline",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Eval Governance Baseline Pack",
-            "Verification log with cross-model or adversarial findings"
+            "2 additional governance artifacts",
+            "1 cross-model review log",
+            "Portfolio index file"
           ],
           "tasks": [
             {
               "id": "w20t1",
-              "title": "Finalize production-ready SOP/checklist/runbook updates and publish them in AI-Lab.",
-              "why": "Production lane: define release-gate eval suite for quality, safety, and refusal behavior.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Publish portfolio-ready package in AI-Lab (artifact, checklist, evidence, notes)",
+              "why": "Packaging creates reusable leverage and prevents knowledge loss.",
+              "outcome": "A complete, reusable portfolio package ready for sharing or adaptation.",
+              "done": false
             },
             {
               "id": "w20t2",
-              "title": "Write a short lessons-learned note with what to repeat, stop, and improve next cycle.",
-              "why": "Learning lane: metric design, threshold setting, and evaluator reliability checks.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w20t3",
-              "title": "Publish the final artifact and extract resume bullets plus one interview case narrative.",
-              "why": "Career-proof lane: publish eval governance pack with pass/fail policy.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w20t4",
-              "title": "Create a one-page governance committee brief with decisions needed, risks, and proposed actions.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Write resume bullets, interview story, and next-month execution hypothesis",
+              "why": "Career transitions require translation of work into market language and forward planning.",
+              "outcome": "Hiring-ready narrative assets plus a focused transition brief.",
+              "done": false
             }
           ]
         },
         {
           "week": 21,
-          "title": "Safety guardrails and prompt-injection resilience / Week A / Scope and map",
-          "objective": "Scope one high-leverage use case and define measurable controls, metrics, and evidence requirements across production, learning, and career-proof lanes. Focus: implement and test guardrails for unsafe advice, jailbreaks, and tool misuse, OWASP LLM risks, adversarial testing patterns, and defense layering, and publish guardrail playbook with red-team evidence.",
-          "whyThisWeek": "A scoped governance target prevents busywork and keeps all three lanes tied to one concrete outcome. This month centers on safety guardrails and prompt-injection resilience.",
-          "developmentOutcome": "You have a bounded monthly mission, a clear definition of done, and an evidence plan. Monthly artifact target: LLM Safety Guardrail and Injection Defense Playbook.",
+          "title": "Complete first polished portfolio set / Scope and plan",
+          "objective": "Scope this month precisely and choose the first concrete deliverable inside \"Complete first polished portfolio set\".",
+          "whyThisWeek": "Halfway through the year, you need proof that can be shown to humans, not just private notes.",
+          "developmentOutcome": "You have a presentable AI governance portfolio starter pack. You have a concrete scoped plan and clear definition of done for the month.",
           "deliverables": [
-            "Production lane output for safety guardrails and prompt-injection resilience",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: LLM Safety Guardrail and Injection Defense Playbook",
-            "Verification log with cross-model or adversarial findings"
+            "3 to 5 polished artifacts",
+            "Portfolio README",
+            "Short personal positioning statement"
           ],
           "tasks": [
             {
               "id": "w21t1",
-              "title": "Map one live chatbot/eval workflow and identify risk surfaces, owners, and control points.",
-              "why": "Production lane: implement and test guardrails for unsafe advice, jailbreaks, and tool misuse.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Select one live SonderMind initiative to use as a governance case study for polished portfolio package",
+              "why": "Grounding work in real initiatives increases transferability and market credibility.",
+              "outcome": "A scoped case study linked to real production context and decision points.",
+              "done": false
             },
             {
               "id": "w21t2",
-              "title": "Study one focused governance concept and convert it into a checklist you can execute this week.",
-              "why": "Learning lane: OWASP LLM risks, adversarial testing patterns, and defense layering.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w21t3",
-              "title": "Draft the artifact outline, success criteria, and acceptance rubric for committee/hiring use.",
-              "why": "Career-proof lane: publish guardrail playbook with red-team evidence.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w21t4",
-              "title": "Run a cross-model challenge (Claude + Gemini) on the proposed controls and log disagreements.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Define monthly deliverable, measurable success criteria, and resume bullet target",
+              "why": "Explicit criteria prevent activity drift and force outcome-driven execution.",
+              "outcome": "A measurable definition of done plus draft hiring-facing language.",
+              "done": false
             }
           ]
         },
         {
           "week": 22,
-          "title": "Safety guardrails and prompt-injection resilience / Week B / Build and implement",
-          "objective": "Execute the core implementation work for this month's governance theme while preserving evidence quality. Focus: implement and test guardrails for unsafe advice, jailbreaks, and tool misuse, OWASP LLM risks, adversarial testing patterns, and defense layering, and publish guardrail playbook with red-team evidence.",
-          "whyThisWeek": "Governance credibility comes from production-grade implementation, not policy text alone. This month centers on safety guardrails and prompt-injection resilience.",
-          "developmentOutcome": "You have a working control implementation and measurable before/after signals. Monthly artifact target: LLM Safety Guardrail and Injection Defense Playbook.",
+          "title": "Complete first polished portfolio set / Build",
+          "objective": "Do the main build work for \"Complete first polished portfolio set\".",
+          "whyThisWeek": "Halfway through the year, you need proof that can be shown to humans, not just private notes.",
+          "developmentOutcome": "You have a presentable AI governance portfolio starter pack. You have real, visible work in progress instead of only planning.",
           "deliverables": [
-            "Production lane output for safety guardrails and prompt-injection resilience",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: LLM Safety Guardrail and Injection Defense Playbook",
-            "Verification log with cross-model or adversarial findings"
+            "3 to 5 polished artifacts",
+            "Portfolio README",
+            "Short personal positioning statement"
           ],
           "tasks": [
             {
               "id": "w22t1",
-              "title": "Implement the primary control set in your real workflow and capture baseline vs. current metrics.",
-              "why": "Production lane: implement and test guardrails for unsafe advice, jailbreaks, and tool misuse.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Build the core artifact for polished portfolio package using real eval/chat/governance data",
+              "why": "Real data and real constraints produce artifacts that stand up in interviews.",
+              "outcome": "A substantive artifact draft with evidence and design rationale.",
+              "done": false
             },
             {
               "id": "w22t2",
-              "title": "Deepen one technical skill required by this implementation and document what changed in your approach.",
-              "why": "Learning lane: OWASP LLM risks, adversarial testing patterns, and defense layering.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w22t3",
-              "title": "Create the first publishable draft of this month's governance artifact with concrete examples.",
-              "why": "Career-proof lane: publish guardrail playbook with red-team evidence.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w22t4",
-              "title": "Execute adversarial tests against the implementation and document failures plus fixes.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Capture before/after metrics and implementation notes from the workflow",
+              "why": "Quantified impact is required for resume strength and hiring conversion.",
+              "outcome": "A metrics-backed evidence pack for portfolio and resume use.",
+              "done": false
             }
           ]
         },
         {
           "week": 23,
-          "title": "Safety guardrails and prompt-injection resilience / Week C / Evaluate and harden",
-          "objective": "Stress-test controls, tighten weak points, and validate that outcomes hold under realistic failure pressure. Focus: implement and test guardrails for unsafe advice, jailbreaks, and tool misuse, OWASP LLM risks, adversarial testing patterns, and defense layering, and publish guardrail playbook with red-team evidence.",
-          "whyThisWeek": "Without hardening, apparent progress collapses under edge cases and adversarial behavior. This month centers on safety guardrails and prompt-injection resilience.",
-          "developmentOutcome": "You have improved control reliability, known residual risks, and clear escalation conditions. Monthly artifact target: LLM Safety Guardrail and Injection Defense Playbook.",
+          "title": "Complete first polished portfolio set / Refine",
+          "objective": "Review, refine, and improve the quality of work produced this month.",
+          "whyThisWeek": "Halfway through the year, you need proof that can be shown to humans, not just private notes.",
+          "developmentOutcome": "You have a presentable AI governance portfolio starter pack. You have stronger, more polished output with fewer weak spots.",
           "deliverables": [
-            "Production lane output for safety guardrails and prompt-injection resilience",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: LLM Safety Guardrail and Injection Defense Playbook",
-            "Verification log with cross-model or adversarial findings"
+            "3 to 5 polished artifacts",
+            "Portfolio README",
+            "Short personal positioning statement"
           ],
           "tasks": [
             {
               "id": "w23t1",
-              "title": "Run structured evals/red-team scenarios and prioritize remediations by impact and likelihood.",
-              "why": "Production lane: implement and test guardrails for unsafe advice, jailbreaks, and tool misuse.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Run adversarial review (Gemini + checklist + stakeholder lens) on the artifact",
+              "why": "Cross-model and stakeholder challenge reduces blind spots and weak assumptions.",
+              "outcome": "A reviewed artifact with explicit risk findings and remediation actions.",
+              "done": false
             },
             {
               "id": "w23t2",
-              "title": "Compare at least two governance frameworks/standards and map relevant controls to your implementation.",
-              "why": "Learning lane: OWASP LLM risks, adversarial testing patterns, and defense layering.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w23t3",
-              "title": "Revise the artifact with evidence, tradeoffs, residual risks, and decision rationale.",
-              "why": "Career-proof lane: publish guardrail playbook with red-team evidence.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w23t4",
-              "title": "Facilitate one external review pass (peer/checklist/second model) and reconcile conflicts.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Revise artifact and log governance decisions, tradeoffs, and remaining risks",
+              "why": "Decision logs demonstrate governance maturity beyond surface-level output.",
+              "outcome": "A stronger artifact plus decision trail suitable for interviews.",
+              "done": false
             }
           ]
         },
         {
           "week": 24,
-          "title": "Safety guardrails and prompt-injection resilience / Week D / Package and committee brief",
-          "objective": "Package the month's work into reusable assets and a committee-ready briefing with next-cycle priorities. Focus: implement and test guardrails for unsafe advice, jailbreaks, and tool misuse, OWASP LLM risks, adversarial testing patterns, and defense layering, and publish guardrail playbook with red-team evidence.",
-          "whyThisWeek": "Career proof and committee influence require concise, reusable, decision-grade outputs. This month centers on safety guardrails and prompt-injection resilience.",
-          "developmentOutcome": "You finish with a portfolio-grade package, a clear decision log, and a handoff into next month. Monthly artifact target: LLM Safety Guardrail and Injection Defense Playbook.",
+          "title": "Complete first polished portfolio set / Package and review",
+          "objective": "Package the month's work, summarize lessons learned, and prepare the next cycle.",
+          "whyThisWeek": "Halfway through the year, you need proof that can be shown to humans, not just private notes.",
+          "developmentOutcome": "You have a presentable AI governance portfolio starter pack. You have a finished monthly package and a clean transition into the next cycle.",
           "deliverables": [
-            "Production lane output for safety guardrails and prompt-injection resilience",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: LLM Safety Guardrail and Injection Defense Playbook",
-            "Verification log with cross-model or adversarial findings"
+            "3 to 5 polished artifacts",
+            "Portfolio README",
+            "Short personal positioning statement"
           ],
           "tasks": [
             {
               "id": "w24t1",
-              "title": "Finalize production-ready SOP/checklist/runbook updates and publish them in AI-Lab.",
-              "why": "Production lane: implement and test guardrails for unsafe advice, jailbreaks, and tool misuse.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Publish portfolio-ready package in AI-Lab (artifact, checklist, evidence, notes)",
+              "why": "Packaging creates reusable leverage and prevents knowledge loss.",
+              "outcome": "A complete, reusable portfolio package ready for sharing or adaptation.",
+              "done": false
             },
             {
               "id": "w24t2",
-              "title": "Write a short lessons-learned note with what to repeat, stop, and improve next cycle.",
-              "why": "Learning lane: OWASP LLM risks, adversarial testing patterns, and defense layering.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w24t3",
-              "title": "Publish the final artifact and extract resume bullets plus one interview case narrative.",
-              "why": "Career-proof lane: publish guardrail playbook with red-team evidence.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w24t4",
-              "title": "Create a one-page governance committee brief with decisions needed, risks, and proposed actions.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Write resume bullets, interview story, and next-month execution hypothesis",
+              "why": "Career transitions require translation of work into market language and forward planning.",
+              "outcome": "Hiring-ready narrative assets plus a focused transition brief.",
+              "done": false
             }
           ]
         },
         {
           "week": 25,
-          "title": "Human-in-the-loop and escalation governance / Week A / Scope and map",
-          "objective": "Scope one high-leverage use case and define measurable controls, metrics, and evidence requirements across production, learning, and career-proof lanes. Focus: instrument escalation paths for uncertain or high-risk chatbot outputs, HITL control design, decision-rights modeling, and accountability mapping, and publish oversight standard and escalation matrix.",
-          "whyThisWeek": "A scoped governance target prevents busywork and keeps all three lanes tied to one concrete outcome. This month centers on human-in-the-loop and escalation governance.",
-          "developmentOutcome": "You have a bounded monthly mission, a clear definition of done, and an evidence plan. Monthly artifact target: Human Oversight and Escalation Standard.",
+          "title": "Start outreach and informational conversations / Scope and plan",
+          "objective": "Scope this month precisely and choose the first concrete deliverable inside \"Start outreach and informational conversations\".",
+          "whyThisWeek": "A pivot should not stay theoretical. This month moves you from solo prep to market contact.",
+          "developmentOutcome": "You understand how your story lands and which roles feel most realistic. You have a concrete scoped plan and clear definition of done for the month.",
           "deliverables": [
-            "Production lane output for human-in-the-loop and escalation governance",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Human Oversight and Escalation Standard",
-            "Verification log with cross-model or adversarial findings"
+            "List of 10 people or roles to learn from",
+            "3 informational conversations or equivalent outreach",
+            "Updated target-role notes"
           ],
           "tasks": [
             {
               "id": "w25t1",
-              "title": "Map one live chatbot/eval workflow and identify risk surfaces, owners, and control points.",
-              "why": "Production lane: instrument escalation paths for uncertain or high-risk chatbot outputs.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Select one live SonderMind initiative to use as a governance case study for market outreach and informational interviews",
+              "why": "Grounding work in real initiatives increases transferability and market credibility.",
+              "outcome": "A scoped case study linked to real production context and decision points.",
+              "done": false
             },
             {
               "id": "w25t2",
-              "title": "Study one focused governance concept and convert it into a checklist you can execute this week.",
-              "why": "Learning lane: HITL control design, decision-rights modeling, and accountability mapping.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w25t3",
-              "title": "Draft the artifact outline, success criteria, and acceptance rubric for committee/hiring use.",
-              "why": "Career-proof lane: publish oversight standard and escalation matrix.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w25t4",
-              "title": "Run a cross-model challenge (Claude + Gemini) on the proposed controls and log disagreements.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Define monthly deliverable, measurable success criteria, and resume bullet target",
+              "why": "Explicit criteria prevent activity drift and force outcome-driven execution.",
+              "outcome": "A measurable definition of done plus draft hiring-facing language.",
+              "done": false
             }
           ]
         },
         {
           "week": 26,
-          "title": "Human-in-the-loop and escalation governance / Week B / Build and implement",
-          "objective": "Execute the core implementation work for this month's governance theme while preserving evidence quality. Focus: instrument escalation paths for uncertain or high-risk chatbot outputs, HITL control design, decision-rights modeling, and accountability mapping, and publish oversight standard and escalation matrix.",
-          "whyThisWeek": "Governance credibility comes from production-grade implementation, not policy text alone. This month centers on human-in-the-loop and escalation governance.",
-          "developmentOutcome": "You have a working control implementation and measurable before/after signals. Monthly artifact target: Human Oversight and Escalation Standard.",
+          "title": "Start outreach and informational conversations / Build",
+          "objective": "Do the main build work for \"Start outreach and informational conversations\".",
+          "whyThisWeek": "A pivot should not stay theoretical. This month moves you from solo prep to market contact.",
+          "developmentOutcome": "You understand how your story lands and which roles feel most realistic. You have real, visible work in progress instead of only planning.",
           "deliverables": [
-            "Production lane output for human-in-the-loop and escalation governance",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Human Oversight and Escalation Standard",
-            "Verification log with cross-model or adversarial findings"
+            "List of 10 people or roles to learn from",
+            "3 informational conversations or equivalent outreach",
+            "Updated target-role notes"
           ],
           "tasks": [
             {
               "id": "w26t1",
-              "title": "Implement the primary control set in your real workflow and capture baseline vs. current metrics.",
-              "why": "Production lane: instrument escalation paths for uncertain or high-risk chatbot outputs.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Build the core artifact for market outreach and informational interviews using real eval/chat/governance data",
+              "why": "Real data and real constraints produce artifacts that stand up in interviews.",
+              "outcome": "A substantive artifact draft with evidence and design rationale.",
+              "done": false
             },
             {
               "id": "w26t2",
-              "title": "Deepen one technical skill required by this implementation and document what changed in your approach.",
-              "why": "Learning lane: HITL control design, decision-rights modeling, and accountability mapping.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w26t3",
-              "title": "Create the first publishable draft of this month's governance artifact with concrete examples.",
-              "why": "Career-proof lane: publish oversight standard and escalation matrix.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w26t4",
-              "title": "Execute adversarial tests against the implementation and document failures plus fixes.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Capture before/after metrics and implementation notes from the workflow",
+              "why": "Quantified impact is required for resume strength and hiring conversion.",
+              "outcome": "A metrics-backed evidence pack for portfolio and resume use.",
+              "done": false
             }
           ]
         },
         {
           "week": 27,
-          "title": "Human-in-the-loop and escalation governance / Week C / Evaluate and harden",
-          "objective": "Stress-test controls, tighten weak points, and validate that outcomes hold under realistic failure pressure. Focus: instrument escalation paths for uncertain or high-risk chatbot outputs, HITL control design, decision-rights modeling, and accountability mapping, and publish oversight standard and escalation matrix.",
-          "whyThisWeek": "Without hardening, apparent progress collapses under edge cases and adversarial behavior. This month centers on human-in-the-loop and escalation governance.",
-          "developmentOutcome": "You have improved control reliability, known residual risks, and clear escalation conditions. Monthly artifact target: Human Oversight and Escalation Standard.",
+          "title": "Start outreach and informational conversations / Refine",
+          "objective": "Review, refine, and improve the quality of work produced this month.",
+          "whyThisWeek": "A pivot should not stay theoretical. This month moves you from solo prep to market contact.",
+          "developmentOutcome": "You understand how your story lands and which roles feel most realistic. You have stronger, more polished output with fewer weak spots.",
           "deliverables": [
-            "Production lane output for human-in-the-loop and escalation governance",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Human Oversight and Escalation Standard",
-            "Verification log with cross-model or adversarial findings"
+            "List of 10 people or roles to learn from",
+            "3 informational conversations or equivalent outreach",
+            "Updated target-role notes"
           ],
           "tasks": [
             {
               "id": "w27t1",
-              "title": "Run structured evals/red-team scenarios and prioritize remediations by impact and likelihood.",
-              "why": "Production lane: instrument escalation paths for uncertain or high-risk chatbot outputs.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Run adversarial review (Gemini + checklist + stakeholder lens) on the artifact",
+              "why": "Cross-model and stakeholder challenge reduces blind spots and weak assumptions.",
+              "outcome": "A reviewed artifact with explicit risk findings and remediation actions.",
+              "done": false
             },
             {
               "id": "w27t2",
-              "title": "Compare at least two governance frameworks/standards and map relevant controls to your implementation.",
-              "why": "Learning lane: HITL control design, decision-rights modeling, and accountability mapping.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w27t3",
-              "title": "Revise the artifact with evidence, tradeoffs, residual risks, and decision rationale.",
-              "why": "Career-proof lane: publish oversight standard and escalation matrix.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w27t4",
-              "title": "Facilitate one external review pass (peer/checklist/second model) and reconcile conflicts.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Revise artifact and log governance decisions, tradeoffs, and remaining risks",
+              "why": "Decision logs demonstrate governance maturity beyond surface-level output.",
+              "outcome": "A stronger artifact plus decision trail suitable for interviews.",
+              "done": false
             }
           ]
         },
         {
           "week": 28,
-          "title": "Human-in-the-loop and escalation governance / Week D / Package and committee brief",
-          "objective": "Package the month's work into reusable assets and a committee-ready briefing with next-cycle priorities. Focus: instrument escalation paths for uncertain or high-risk chatbot outputs, HITL control design, decision-rights modeling, and accountability mapping, and publish oversight standard and escalation matrix.",
-          "whyThisWeek": "Career proof and committee influence require concise, reusable, decision-grade outputs. This month centers on human-in-the-loop and escalation governance.",
-          "developmentOutcome": "You finish with a portfolio-grade package, a clear decision log, and a handoff into next month. Monthly artifact target: Human Oversight and Escalation Standard.",
+          "title": "Start outreach and informational conversations / Package and review",
+          "objective": "Package the month's work, summarize lessons learned, and prepare the next cycle.",
+          "whyThisWeek": "A pivot should not stay theoretical. This month moves you from solo prep to market contact.",
+          "developmentOutcome": "You understand how your story lands and which roles feel most realistic. You have a finished monthly package and a clean transition into the next cycle.",
           "deliverables": [
-            "Production lane output for human-in-the-loop and escalation governance",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Human Oversight and Escalation Standard",
-            "Verification log with cross-model or adversarial findings"
+            "List of 10 people or roles to learn from",
+            "3 informational conversations or equivalent outreach",
+            "Updated target-role notes"
           ],
           "tasks": [
             {
               "id": "w28t1",
-              "title": "Finalize production-ready SOP/checklist/runbook updates and publish them in AI-Lab.",
-              "why": "Production lane: instrument escalation paths for uncertain or high-risk chatbot outputs.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Publish portfolio-ready package in AI-Lab (artifact, checklist, evidence, notes)",
+              "why": "Packaging creates reusable leverage and prevents knowledge loss.",
+              "outcome": "A complete, reusable portfolio package ready for sharing or adaptation.",
+              "done": false
             },
             {
               "id": "w28t2",
-              "title": "Write a short lessons-learned note with what to repeat, stop, and improve next cycle.",
-              "why": "Learning lane: HITL control design, decision-rights modeling, and accountability mapping.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w28t3",
-              "title": "Publish the final artifact and extract resume bullets plus one interview case narrative.",
-              "why": "Career-proof lane: publish oversight standard and escalation matrix.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w28t4",
-              "title": "Create a one-page governance committee brief with decisions needed, risks, and proposed actions.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Write resume bullets, interview story, and next-month execution hypothesis",
+              "why": "Career transitions require translation of work into market language and forward planning.",
+              "outcome": "Hiring-ready narrative assets plus a focused transition brief.",
+              "done": false
             }
           ]
         },
         {
           "week": 29,
-          "title": "Incident response and governance postmortems / Week A / Scope and map",
-          "objective": "Scope one high-leverage use case and define measurable controls, metrics, and evidence requirements across production, learning, and career-proof lanes. Focus: define response workflow for harmful output, policy violations, and regressions, incident taxonomy, root-cause analysis, and remediation verification, and publish incident kit and exemplar postmortem.",
-          "whyThisWeek": "A scoped governance target prevents busywork and keeps all three lanes tied to one concrete outcome. This month centers on incident response and governance postmortems.",
-          "developmentOutcome": "You have a bounded monthly mission, a clear definition of done, and an evidence plan. Monthly artifact target: AI Incident Response and Postmortem Kit.",
+          "title": "Refine resume and LinkedIn around governance roles / Scope and plan",
+          "objective": "Scope this month precisely and choose the first concrete deliverable inside \"Refine resume and LinkedIn around governance roles\".",
+          "whyThisWeek": "Your work only helps if others can understand it quickly.",
+          "developmentOutcome": "You have externally legible career materials aligned with governance/evals/oversight roles. You have a concrete scoped plan and clear definition of done for the month.",
           "deliverables": [
-            "Production lane output for incident response and governance postmortems",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: AI Incident Response and Postmortem Kit",
-            "Verification log with cross-model or adversarial findings"
+            "Updated resume",
+            "Updated LinkedIn summary",
+            "Governance-aligned bullet bank"
           ],
           "tasks": [
             {
               "id": "w29t1",
-              "title": "Map one live chatbot/eval workflow and identify risk surfaces, owners, and control points.",
-              "why": "Production lane: define response workflow for harmful output, policy violations, and regressions.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Select one live SonderMind initiative to use as a governance case study for resume and LinkedIn repositioning",
+              "why": "Grounding work in real initiatives increases transferability and market credibility.",
+              "outcome": "A scoped case study linked to real production context and decision points.",
+              "done": false
             },
             {
               "id": "w29t2",
-              "title": "Study one focused governance concept and convert it into a checklist you can execute this week.",
-              "why": "Learning lane: incident taxonomy, root-cause analysis, and remediation verification.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w29t3",
-              "title": "Draft the artifact outline, success criteria, and acceptance rubric for committee/hiring use.",
-              "why": "Career-proof lane: publish incident kit and exemplar postmortem.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w29t4",
-              "title": "Run a cross-model challenge (Claude + Gemini) on the proposed controls and log disagreements.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Define monthly deliverable, measurable success criteria, and resume bullet target",
+              "why": "Explicit criteria prevent activity drift and force outcome-driven execution.",
+              "outcome": "A measurable definition of done plus draft hiring-facing language.",
+              "done": false
             }
           ]
         },
         {
           "week": 30,
-          "title": "Incident response and governance postmortems / Week B / Build and implement",
-          "objective": "Execute the core implementation work for this month's governance theme while preserving evidence quality. Focus: define response workflow for harmful output, policy violations, and regressions, incident taxonomy, root-cause analysis, and remediation verification, and publish incident kit and exemplar postmortem.",
-          "whyThisWeek": "Governance credibility comes from production-grade implementation, not policy text alone. This month centers on incident response and governance postmortems.",
-          "developmentOutcome": "You have a working control implementation and measurable before/after signals. Monthly artifact target: AI Incident Response and Postmortem Kit.",
+          "title": "Refine resume and LinkedIn around governance roles / Build",
+          "objective": "Do the main build work for \"Refine resume and LinkedIn around governance roles\".",
+          "whyThisWeek": "Your work only helps if others can understand it quickly.",
+          "developmentOutcome": "You have externally legible career materials aligned with governance/evals/oversight roles. You have real, visible work in progress instead of only planning.",
           "deliverables": [
-            "Production lane output for incident response and governance postmortems",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: AI Incident Response and Postmortem Kit",
-            "Verification log with cross-model or adversarial findings"
+            "Updated resume",
+            "Updated LinkedIn summary",
+            "Governance-aligned bullet bank"
           ],
           "tasks": [
             {
               "id": "w30t1",
-              "title": "Implement the primary control set in your real workflow and capture baseline vs. current metrics.",
-              "why": "Production lane: define response workflow for harmful output, policy violations, and regressions.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Build the core artifact for resume and LinkedIn repositioning using real eval/chat/governance data",
+              "why": "Real data and real constraints produce artifacts that stand up in interviews.",
+              "outcome": "A substantive artifact draft with evidence and design rationale.",
+              "done": false
             },
             {
               "id": "w30t2",
-              "title": "Deepen one technical skill required by this implementation and document what changed in your approach.",
-              "why": "Learning lane: incident taxonomy, root-cause analysis, and remediation verification.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w30t3",
-              "title": "Create the first publishable draft of this month's governance artifact with concrete examples.",
-              "why": "Career-proof lane: publish incident kit and exemplar postmortem.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w30t4",
-              "title": "Execute adversarial tests against the implementation and document failures plus fixes.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Capture before/after metrics and implementation notes from the workflow",
+              "why": "Quantified impact is required for resume strength and hiring conversion.",
+              "outcome": "A metrics-backed evidence pack for portfolio and resume use.",
+              "done": false
             }
           ]
         },
         {
           "week": 31,
-          "title": "Incident response and governance postmortems / Week C / Evaluate and harden",
-          "objective": "Stress-test controls, tighten weak points, and validate that outcomes hold under realistic failure pressure. Focus: define response workflow for harmful output, policy violations, and regressions, incident taxonomy, root-cause analysis, and remediation verification, and publish incident kit and exemplar postmortem.",
-          "whyThisWeek": "Without hardening, apparent progress collapses under edge cases and adversarial behavior. This month centers on incident response and governance postmortems.",
-          "developmentOutcome": "You have improved control reliability, known residual risks, and clear escalation conditions. Monthly artifact target: AI Incident Response and Postmortem Kit.",
+          "title": "Refine resume and LinkedIn around governance roles / Refine",
+          "objective": "Review, refine, and improve the quality of work produced this month.",
+          "whyThisWeek": "Your work only helps if others can understand it quickly.",
+          "developmentOutcome": "You have externally legible career materials aligned with governance/evals/oversight roles. You have stronger, more polished output with fewer weak spots.",
           "deliverables": [
-            "Production lane output for incident response and governance postmortems",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: AI Incident Response and Postmortem Kit",
-            "Verification log with cross-model or adversarial findings"
+            "Updated resume",
+            "Updated LinkedIn summary",
+            "Governance-aligned bullet bank"
           ],
           "tasks": [
             {
               "id": "w31t1",
-              "title": "Run structured evals/red-team scenarios and prioritize remediations by impact and likelihood.",
-              "why": "Production lane: define response workflow for harmful output, policy violations, and regressions.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Run adversarial review (Gemini + checklist + stakeholder lens) on the artifact",
+              "why": "Cross-model and stakeholder challenge reduces blind spots and weak assumptions.",
+              "outcome": "A reviewed artifact with explicit risk findings and remediation actions.",
+              "done": false
             },
             {
               "id": "w31t2",
-              "title": "Compare at least two governance frameworks/standards and map relevant controls to your implementation.",
-              "why": "Learning lane: incident taxonomy, root-cause analysis, and remediation verification.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w31t3",
-              "title": "Revise the artifact with evidence, tradeoffs, residual risks, and decision rationale.",
-              "why": "Career-proof lane: publish incident kit and exemplar postmortem.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w31t4",
-              "title": "Facilitate one external review pass (peer/checklist/second model) and reconcile conflicts.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Revise artifact and log governance decisions, tradeoffs, and remaining risks",
+              "why": "Decision logs demonstrate governance maturity beyond surface-level output.",
+              "outcome": "A stronger artifact plus decision trail suitable for interviews.",
+              "done": false
             }
           ]
         },
         {
           "week": 32,
-          "title": "Incident response and governance postmortems / Week D / Package and committee brief",
-          "objective": "Package the month's work into reusable assets and a committee-ready briefing with next-cycle priorities. Focus: define response workflow for harmful output, policy violations, and regressions, incident taxonomy, root-cause analysis, and remediation verification, and publish incident kit and exemplar postmortem.",
-          "whyThisWeek": "Career proof and committee influence require concise, reusable, decision-grade outputs. This month centers on incident response and governance postmortems.",
-          "developmentOutcome": "You finish with a portfolio-grade package, a clear decision log, and a handoff into next month. Monthly artifact target: AI Incident Response and Postmortem Kit.",
+          "title": "Refine resume and LinkedIn around governance roles / Package and review",
+          "objective": "Package the month's work, summarize lessons learned, and prepare the next cycle.",
+          "whyThisWeek": "Your work only helps if others can understand it quickly.",
+          "developmentOutcome": "You have externally legible career materials aligned with governance/evals/oversight roles. You have a finished monthly package and a clean transition into the next cycle.",
           "deliverables": [
-            "Production lane output for incident response and governance postmortems",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: AI Incident Response and Postmortem Kit",
-            "Verification log with cross-model or adversarial findings"
+            "Updated resume",
+            "Updated LinkedIn summary",
+            "Governance-aligned bullet bank"
           ],
           "tasks": [
             {
               "id": "w32t1",
-              "title": "Finalize production-ready SOP/checklist/runbook updates and publish them in AI-Lab.",
-              "why": "Production lane: define response workflow for harmful output, policy violations, and regressions.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Publish portfolio-ready package in AI-Lab (artifact, checklist, evidence, notes)",
+              "why": "Packaging creates reusable leverage and prevents knowledge loss.",
+              "outcome": "A complete, reusable portfolio package ready for sharing or adaptation.",
+              "done": false
             },
             {
               "id": "w32t2",
-              "title": "Write a short lessons-learned note with what to repeat, stop, and improve next cycle.",
-              "why": "Learning lane: incident taxonomy, root-cause analysis, and remediation verification.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w32t3",
-              "title": "Publish the final artifact and extract resume bullets plus one interview case narrative.",
-              "why": "Career-proof lane: publish incident kit and exemplar postmortem.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w32t4",
-              "title": "Create a one-page governance committee brief with decisions needed, risks, and proposed actions.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Write resume bullets, interview story, and next-month execution hypothesis",
+              "why": "Career transitions require translation of work into market language and forward planning.",
+              "outcome": "Hiring-ready narrative assets plus a focused transition brief.",
+              "done": false
             }
           ]
         },
         {
           "week": 33,
-          "title": "Data governance and privacy-safe chatbot operations / Week A / Scope and map",
-          "objective": "Scope one high-leverage use case and define measurable controls, metrics, and evidence requirements across production, learning, and career-proof lanes. Focus: map data flows, retention, and sensitive-data handling in chatbot/eval pipelines, privacy-by-design, minimization, and governance documentation patterns, and publish data governance matrix and control rationale.",
-          "whyThisWeek": "A scoped governance target prevents busywork and keeps all three lanes tied to one concrete outcome. This month centers on data governance and privacy-safe chatbot operations.",
-          "developmentOutcome": "You have a bounded monthly mission, a clear definition of done, and an evidence plan. Monthly artifact target: Data Governance and Privacy Control Matrix.",
+          "title": "Apply selectively to aligned roles / Scope and plan",
+          "objective": "Scope this month precisely and choose the first concrete deliverable inside \"Apply selectively to aligned roles\".",
+          "whyThisWeek": "This month converts preparation into actual movement opportunities.",
+          "developmentOutcome": "You are in motion, with evidence-based applications rather than broad panic applying. You have a concrete scoped plan and clear definition of done for the month.",
           "deliverables": [
-            "Production lane output for data governance and privacy-safe chatbot operations",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Data Governance and Privacy Control Matrix",
-            "Verification log with cross-model or adversarial findings"
+            "5 to 10 targeted applications",
+            "Application tracker",
+            "Tailored notes per role family"
           ],
           "tasks": [
             {
               "id": "w33t1",
-              "title": "Map one live chatbot/eval workflow and identify risk surfaces, owners, and control points.",
-              "why": "Production lane: map data flows, retention, and sensitive-data handling in chatbot/eval pipelines.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Select one live SonderMind initiative to use as a governance case study for targeted applications with role-fit evidence",
+              "why": "Grounding work in real initiatives increases transferability and market credibility.",
+              "outcome": "A scoped case study linked to real production context and decision points.",
+              "done": false
             },
             {
               "id": "w33t2",
-              "title": "Study one focused governance concept and convert it into a checklist you can execute this week.",
-              "why": "Learning lane: privacy-by-design, minimization, and governance documentation patterns.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w33t3",
-              "title": "Draft the artifact outline, success criteria, and acceptance rubric for committee/hiring use.",
-              "why": "Career-proof lane: publish data governance matrix and control rationale.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w33t4",
-              "title": "Run a cross-model challenge (Claude + Gemini) on the proposed controls and log disagreements.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Define monthly deliverable, measurable success criteria, and resume bullet target",
+              "why": "Explicit criteria prevent activity drift and force outcome-driven execution.",
+              "outcome": "A measurable definition of done plus draft hiring-facing language.",
+              "done": false
             }
           ]
         },
         {
           "week": 34,
-          "title": "Data governance and privacy-safe chatbot operations / Week B / Build and implement",
-          "objective": "Execute the core implementation work for this month's governance theme while preserving evidence quality. Focus: map data flows, retention, and sensitive-data handling in chatbot/eval pipelines, privacy-by-design, minimization, and governance documentation patterns, and publish data governance matrix and control rationale.",
-          "whyThisWeek": "Governance credibility comes from production-grade implementation, not policy text alone. This month centers on data governance and privacy-safe chatbot operations.",
-          "developmentOutcome": "You have a working control implementation and measurable before/after signals. Monthly artifact target: Data Governance and Privacy Control Matrix.",
+          "title": "Apply selectively to aligned roles / Build",
+          "objective": "Do the main build work for \"Apply selectively to aligned roles\".",
+          "whyThisWeek": "This month converts preparation into actual movement opportunities.",
+          "developmentOutcome": "You are in motion, with evidence-based applications rather than broad panic applying. You have real, visible work in progress instead of only planning.",
           "deliverables": [
-            "Production lane output for data governance and privacy-safe chatbot operations",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Data Governance and Privacy Control Matrix",
-            "Verification log with cross-model or adversarial findings"
+            "5 to 10 targeted applications",
+            "Application tracker",
+            "Tailored notes per role family"
           ],
           "tasks": [
             {
               "id": "w34t1",
-              "title": "Implement the primary control set in your real workflow and capture baseline vs. current metrics.",
-              "why": "Production lane: map data flows, retention, and sensitive-data handling in chatbot/eval pipelines.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Build the core artifact for targeted applications with role-fit evidence using real eval/chat/governance data",
+              "why": "Real data and real constraints produce artifacts that stand up in interviews.",
+              "outcome": "A substantive artifact draft with evidence and design rationale.",
+              "done": false
             },
             {
               "id": "w34t2",
-              "title": "Deepen one technical skill required by this implementation and document what changed in your approach.",
-              "why": "Learning lane: privacy-by-design, minimization, and governance documentation patterns.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w34t3",
-              "title": "Create the first publishable draft of this month's governance artifact with concrete examples.",
-              "why": "Career-proof lane: publish data governance matrix and control rationale.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w34t4",
-              "title": "Execute adversarial tests against the implementation and document failures plus fixes.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Capture before/after metrics and implementation notes from the workflow",
+              "why": "Quantified impact is required for resume strength and hiring conversion.",
+              "outcome": "A metrics-backed evidence pack for portfolio and resume use.",
+              "done": false
             }
           ]
         },
         {
           "week": 35,
-          "title": "Data governance and privacy-safe chatbot operations / Week C / Evaluate and harden",
-          "objective": "Stress-test controls, tighten weak points, and validate that outcomes hold under realistic failure pressure. Focus: map data flows, retention, and sensitive-data handling in chatbot/eval pipelines, privacy-by-design, minimization, and governance documentation patterns, and publish data governance matrix and control rationale.",
-          "whyThisWeek": "Without hardening, apparent progress collapses under edge cases and adversarial behavior. This month centers on data governance and privacy-safe chatbot operations.",
-          "developmentOutcome": "You have improved control reliability, known residual risks, and clear escalation conditions. Monthly artifact target: Data Governance and Privacy Control Matrix.",
+          "title": "Apply selectively to aligned roles / Refine",
+          "objective": "Review, refine, and improve the quality of work produced this month.",
+          "whyThisWeek": "This month converts preparation into actual movement opportunities.",
+          "developmentOutcome": "You are in motion, with evidence-based applications rather than broad panic applying. You have stronger, more polished output with fewer weak spots.",
           "deliverables": [
-            "Production lane output for data governance and privacy-safe chatbot operations",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Data Governance and Privacy Control Matrix",
-            "Verification log with cross-model or adversarial findings"
+            "5 to 10 targeted applications",
+            "Application tracker",
+            "Tailored notes per role family"
           ],
           "tasks": [
             {
               "id": "w35t1",
-              "title": "Run structured evals/red-team scenarios and prioritize remediations by impact and likelihood.",
-              "why": "Production lane: map data flows, retention, and sensitive-data handling in chatbot/eval pipelines.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Run adversarial review (Gemini + checklist + stakeholder lens) on the artifact",
+              "why": "Cross-model and stakeholder challenge reduces blind spots and weak assumptions.",
+              "outcome": "A reviewed artifact with explicit risk findings and remediation actions.",
+              "done": false
             },
             {
               "id": "w35t2",
-              "title": "Compare at least two governance frameworks/standards and map relevant controls to your implementation.",
-              "why": "Learning lane: privacy-by-design, minimization, and governance documentation patterns.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w35t3",
-              "title": "Revise the artifact with evidence, tradeoffs, residual risks, and decision rationale.",
-              "why": "Career-proof lane: publish data governance matrix and control rationale.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w35t4",
-              "title": "Facilitate one external review pass (peer/checklist/second model) and reconcile conflicts.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Revise artifact and log governance decisions, tradeoffs, and remaining risks",
+              "why": "Decision logs demonstrate governance maturity beyond surface-level output.",
+              "outcome": "A stronger artifact plus decision trail suitable for interviews.",
+              "done": false
             }
           ]
         },
         {
           "week": 36,
-          "title": "Data governance and privacy-safe chatbot operations / Week D / Package and committee brief",
-          "objective": "Package the month's work into reusable assets and a committee-ready briefing with next-cycle priorities. Focus: map data flows, retention, and sensitive-data handling in chatbot/eval pipelines, privacy-by-design, minimization, and governance documentation patterns, and publish data governance matrix and control rationale.",
-          "whyThisWeek": "Career proof and committee influence require concise, reusable, decision-grade outputs. This month centers on data governance and privacy-safe chatbot operations.",
-          "developmentOutcome": "You finish with a portfolio-grade package, a clear decision log, and a handoff into next month. Monthly artifact target: Data Governance and Privacy Control Matrix.",
+          "title": "Apply selectively to aligned roles / Package and review",
+          "objective": "Package the month's work, summarize lessons learned, and prepare the next cycle.",
+          "whyThisWeek": "This month converts preparation into actual movement opportunities.",
+          "developmentOutcome": "You are in motion, with evidence-based applications rather than broad panic applying. You have a finished monthly package and a clean transition into the next cycle.",
           "deliverables": [
-            "Production lane output for data governance and privacy-safe chatbot operations",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Data Governance and Privacy Control Matrix",
-            "Verification log with cross-model or adversarial findings"
+            "5 to 10 targeted applications",
+            "Application tracker",
+            "Tailored notes per role family"
           ],
           "tasks": [
             {
               "id": "w36t1",
-              "title": "Finalize production-ready SOP/checklist/runbook updates and publish them in AI-Lab.",
-              "why": "Production lane: map data flows, retention, and sensitive-data handling in chatbot/eval pipelines.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Publish portfolio-ready package in AI-Lab (artifact, checklist, evidence, notes)",
+              "why": "Packaging creates reusable leverage and prevents knowledge loss.",
+              "outcome": "A complete, reusable portfolio package ready for sharing or adaptation.",
+              "done": false
             },
             {
               "id": "w36t2",
-              "title": "Write a short lessons-learned note with what to repeat, stop, and improve next cycle.",
-              "why": "Learning lane: privacy-by-design, minimization, and governance documentation patterns.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w36t3",
-              "title": "Publish the final artifact and extract resume bullets plus one interview case narrative.",
-              "why": "Career-proof lane: publish data governance matrix and control rationale.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w36t4",
-              "title": "Create a one-page governance committee brief with decisions needed, risks, and proposed actions.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Write resume bullets, interview story, and next-month execution hypothesis",
+              "why": "Career transitions require translation of work into market language and forward planning.",
+              "outcome": "Hiring-ready narrative assets plus a focused transition brief.",
+              "done": false
             }
           ]
         },
         {
           "week": 37,
-          "title": "Model lifecycle and change-control governance / Week A / Scope and map",
-          "objective": "Scope one high-leverage use case and define measurable controls, metrics, and evidence requirements across production, learning, and career-proof lanes. Focus: standardize model/version changes, rollback criteria, and release approvals, model lifecycle governance, drift triggers, and release risk scoring, and publish lifecycle SOP with change-control checklist.",
-          "whyThisWeek": "A scoped governance target prevents busywork and keeps all three lanes tied to one concrete outcome. This month centers on model lifecycle and change-control governance.",
-          "developmentOutcome": "You have a bounded monthly mission, a clear definition of done, and an evidence plan. Monthly artifact target: Model Change Control and Release Governance SOP.",
+          "title": "Strengthen interview artifacts and examples / Scope and plan",
+          "objective": "Scope this month precisely and choose the first concrete deliverable inside \"Strengthen interview artifacts and examples\".",
+          "whyThisWeek": "Interviews reward narrative and examples, not just private competence.",
+          "developmentOutcome": "You can explain what you built, why it matters, and how it reflects governance readiness. You have a concrete scoped plan and clear definition of done for the month.",
           "deliverables": [
-            "Production lane output for model lifecycle and change-control governance",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Model Change Control and Release Governance SOP",
-            "Verification log with cross-model or adversarial findings"
+            "Interview story bank",
+            "Artifact walkthrough notes",
+            "Practice answers for pivot questions"
           ],
           "tasks": [
             {
               "id": "w37t1",
-              "title": "Map one live chatbot/eval workflow and identify risk surfaces, owners, and control points.",
-              "why": "Production lane: standardize model/version changes, rollback criteria, and release approvals.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Select one live SonderMind initiative to use as a governance case study for interview readiness and artifact walkthroughs",
+              "why": "Grounding work in real initiatives increases transferability and market credibility.",
+              "outcome": "A scoped case study linked to real production context and decision points.",
+              "done": false
             },
             {
               "id": "w37t2",
-              "title": "Study one focused governance concept and convert it into a checklist you can execute this week.",
-              "why": "Learning lane: model lifecycle governance, drift triggers, and release risk scoring.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w37t3",
-              "title": "Draft the artifact outline, success criteria, and acceptance rubric for committee/hiring use.",
-              "why": "Career-proof lane: publish lifecycle SOP with change-control checklist.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w37t4",
-              "title": "Run a cross-model challenge (Claude + Gemini) on the proposed controls and log disagreements.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Define monthly deliverable, measurable success criteria, and resume bullet target",
+              "why": "Explicit criteria prevent activity drift and force outcome-driven execution.",
+              "outcome": "A measurable definition of done plus draft hiring-facing language.",
+              "done": false
             }
           ]
         },
         {
           "week": 38,
-          "title": "Model lifecycle and change-control governance / Week B / Build and implement",
-          "objective": "Execute the core implementation work for this month's governance theme while preserving evidence quality. Focus: standardize model/version changes, rollback criteria, and release approvals, model lifecycle governance, drift triggers, and release risk scoring, and publish lifecycle SOP with change-control checklist.",
-          "whyThisWeek": "Governance credibility comes from production-grade implementation, not policy text alone. This month centers on model lifecycle and change-control governance.",
-          "developmentOutcome": "You have a working control implementation and measurable before/after signals. Monthly artifact target: Model Change Control and Release Governance SOP.",
+          "title": "Strengthen interview artifacts and examples / Build",
+          "objective": "Do the main build work for \"Strengthen interview artifacts and examples\".",
+          "whyThisWeek": "Interviews reward narrative and examples, not just private competence.",
+          "developmentOutcome": "You can explain what you built, why it matters, and how it reflects governance readiness. You have real, visible work in progress instead of only planning.",
           "deliverables": [
-            "Production lane output for model lifecycle and change-control governance",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Model Change Control and Release Governance SOP",
-            "Verification log with cross-model or adversarial findings"
+            "Interview story bank",
+            "Artifact walkthrough notes",
+            "Practice answers for pivot questions"
           ],
           "tasks": [
             {
               "id": "w38t1",
-              "title": "Implement the primary control set in your real workflow and capture baseline vs. current metrics.",
-              "why": "Production lane: standardize model/version changes, rollback criteria, and release approvals.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Build the core artifact for interview readiness and artifact walkthroughs using real eval/chat/governance data",
+              "why": "Real data and real constraints produce artifacts that stand up in interviews.",
+              "outcome": "A substantive artifact draft with evidence and design rationale.",
+              "done": false
             },
             {
               "id": "w38t2",
-              "title": "Deepen one technical skill required by this implementation and document what changed in your approach.",
-              "why": "Learning lane: model lifecycle governance, drift triggers, and release risk scoring.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w38t3",
-              "title": "Create the first publishable draft of this month's governance artifact with concrete examples.",
-              "why": "Career-proof lane: publish lifecycle SOP with change-control checklist.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w38t4",
-              "title": "Execute adversarial tests against the implementation and document failures plus fixes.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Capture before/after metrics and implementation notes from the workflow",
+              "why": "Quantified impact is required for resume strength and hiring conversion.",
+              "outcome": "A metrics-backed evidence pack for portfolio and resume use.",
+              "done": false
             }
           ]
         },
         {
           "week": 39,
-          "title": "Model lifecycle and change-control governance / Week C / Evaluate and harden",
-          "objective": "Stress-test controls, tighten weak points, and validate that outcomes hold under realistic failure pressure. Focus: standardize model/version changes, rollback criteria, and release approvals, model lifecycle governance, drift triggers, and release risk scoring, and publish lifecycle SOP with change-control checklist.",
-          "whyThisWeek": "Without hardening, apparent progress collapses under edge cases and adversarial behavior. This month centers on model lifecycle and change-control governance.",
-          "developmentOutcome": "You have improved control reliability, known residual risks, and clear escalation conditions. Monthly artifact target: Model Change Control and Release Governance SOP.",
+          "title": "Strengthen interview artifacts and examples / Refine",
+          "objective": "Review, refine, and improve the quality of work produced this month.",
+          "whyThisWeek": "Interviews reward narrative and examples, not just private competence.",
+          "developmentOutcome": "You can explain what you built, why it matters, and how it reflects governance readiness. You have stronger, more polished output with fewer weak spots.",
           "deliverables": [
-            "Production lane output for model lifecycle and change-control governance",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Model Change Control and Release Governance SOP",
-            "Verification log with cross-model or adversarial findings"
+            "Interview story bank",
+            "Artifact walkthrough notes",
+            "Practice answers for pivot questions"
           ],
           "tasks": [
             {
               "id": "w39t1",
-              "title": "Run structured evals/red-team scenarios and prioritize remediations by impact and likelihood.",
-              "why": "Production lane: standardize model/version changes, rollback criteria, and release approvals.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Run adversarial review (Gemini + checklist + stakeholder lens) on the artifact",
+              "why": "Cross-model and stakeholder challenge reduces blind spots and weak assumptions.",
+              "outcome": "A reviewed artifact with explicit risk findings and remediation actions.",
+              "done": false
             },
             {
               "id": "w39t2",
-              "title": "Compare at least two governance frameworks/standards and map relevant controls to your implementation.",
-              "why": "Learning lane: model lifecycle governance, drift triggers, and release risk scoring.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w39t3",
-              "title": "Revise the artifact with evidence, tradeoffs, residual risks, and decision rationale.",
-              "why": "Career-proof lane: publish lifecycle SOP with change-control checklist.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w39t4",
-              "title": "Facilitate one external review pass (peer/checklist/second model) and reconcile conflicts.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Revise artifact and log governance decisions, tradeoffs, and remaining risks",
+              "why": "Decision logs demonstrate governance maturity beyond surface-level output.",
+              "outcome": "A stronger artifact plus decision trail suitable for interviews.",
+              "done": false
             }
           ]
         },
         {
           "week": 40,
-          "title": "Model lifecycle and change-control governance / Week D / Package and committee brief",
-          "objective": "Package the month's work into reusable assets and a committee-ready briefing with next-cycle priorities. Focus: standardize model/version changes, rollback criteria, and release approvals, model lifecycle governance, drift triggers, and release risk scoring, and publish lifecycle SOP with change-control checklist.",
-          "whyThisWeek": "Career proof and committee influence require concise, reusable, decision-grade outputs. This month centers on model lifecycle and change-control governance.",
-          "developmentOutcome": "You finish with a portfolio-grade package, a clear decision log, and a handoff into next month. Monthly artifact target: Model Change Control and Release Governance SOP.",
+          "title": "Strengthen interview artifacts and examples / Package and review",
+          "objective": "Package the month's work, summarize lessons learned, and prepare the next cycle.",
+          "whyThisWeek": "Interviews reward narrative and examples, not just private competence.",
+          "developmentOutcome": "You can explain what you built, why it matters, and how it reflects governance readiness. You have a finished monthly package and a clean transition into the next cycle.",
           "deliverables": [
-            "Production lane output for model lifecycle and change-control governance",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Model Change Control and Release Governance SOP",
-            "Verification log with cross-model or adversarial findings"
+            "Interview story bank",
+            "Artifact walkthrough notes",
+            "Practice answers for pivot questions"
           ],
           "tasks": [
             {
               "id": "w40t1",
-              "title": "Finalize production-ready SOP/checklist/runbook updates and publish them in AI-Lab.",
-              "why": "Production lane: standardize model/version changes, rollback criteria, and release approvals.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Publish portfolio-ready package in AI-Lab (artifact, checklist, evidence, notes)",
+              "why": "Packaging creates reusable leverage and prevents knowledge loss.",
+              "outcome": "A complete, reusable portfolio package ready for sharing or adaptation.",
+              "done": false
             },
             {
               "id": "w40t2",
-              "title": "Write a short lessons-learned note with what to repeat, stop, and improve next cycle.",
-              "why": "Learning lane: model lifecycle governance, drift triggers, and release risk scoring.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w40t3",
-              "title": "Publish the final artifact and extract resume bullets plus one interview case narrative.",
-              "why": "Career-proof lane: publish lifecycle SOP with change-control checklist.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w40t4",
-              "title": "Create a one-page governance committee brief with decisions needed, risks, and proposed actions.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Write resume bullets, interview story, and next-month execution hypothesis",
+              "why": "Career transitions require translation of work into market language and forward planning.",
+              "outcome": "Hiring-ready narrative assets plus a focused transition brief.",
+              "done": false
             }
           ]
         },
         {
           "week": 41,
-          "title": "Governance committee operating cadence / Week A / Scope and map",
-          "objective": "Scope one high-leverage use case and define measurable controls, metrics, and evidence requirements across production, learning, and career-proof lanes. Focus: produce recurring governance briefs tied to active chatbot/eval workstreams, committee facilitation, decision logging, and risk-acceptance mechanics, and publish committee-ready briefing template and decision log.",
-          "whyThisWeek": "A scoped governance target prevents busywork and keeps all three lanes tied to one concrete outcome. This month centers on governance committee operating cadence.",
-          "developmentOutcome": "You have a bounded monthly mission, a clear definition of done, and an evidence plan. Monthly artifact target: Governance Committee Briefing and Decision Log System.",
+          "title": "Close remaining skill gaps / Scope and plan",
+          "objective": "Scope this month precisely and choose the first concrete deliverable inside \"Close remaining skill gaps\".",
+          "whyThisWeek": "Late-stage improvement should be targeted, not broad.",
+          "developmentOutcome": "Your remaining gaps are narrower and tied to actual role feedback or application experience. You have a concrete scoped plan and clear definition of done for the month.",
           "deliverables": [
-            "Production lane output for governance committee operating cadence",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Governance Committee Briefing and Decision Log System",
-            "Verification log with cross-model or adversarial findings"
+            "Top 3 gap list",
+            "Focused improvement plan",
+            "1 additional high-value artifact or workflow"
           ],
           "tasks": [
             {
               "id": "w41t1",
-              "title": "Map one live chatbot/eval workflow and identify risk surfaces, owners, and control points.",
-              "why": "Production lane: produce recurring governance briefs tied to active chatbot/eval workstreams.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Select one live SonderMind initiative to use as a governance case study for closing priority skill gaps",
+              "why": "Grounding work in real initiatives increases transferability and market credibility.",
+              "outcome": "A scoped case study linked to real production context and decision points.",
+              "done": false
             },
             {
               "id": "w41t2",
-              "title": "Study one focused governance concept and convert it into a checklist you can execute this week.",
-              "why": "Learning lane: committee facilitation, decision logging, and risk-acceptance mechanics.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w41t3",
-              "title": "Draft the artifact outline, success criteria, and acceptance rubric for committee/hiring use.",
-              "why": "Career-proof lane: publish committee-ready briefing template and decision log.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w41t4",
-              "title": "Run a cross-model challenge (Claude + Gemini) on the proposed controls and log disagreements.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Define monthly deliverable, measurable success criteria, and resume bullet target",
+              "why": "Explicit criteria prevent activity drift and force outcome-driven execution.",
+              "outcome": "A measurable definition of done plus draft hiring-facing language.",
+              "done": false
             }
           ]
         },
         {
           "week": 42,
-          "title": "Governance committee operating cadence / Week B / Build and implement",
-          "objective": "Execute the core implementation work for this month's governance theme while preserving evidence quality. Focus: produce recurring governance briefs tied to active chatbot/eval workstreams, committee facilitation, decision logging, and risk-acceptance mechanics, and publish committee-ready briefing template and decision log.",
-          "whyThisWeek": "Governance credibility comes from production-grade implementation, not policy text alone. This month centers on governance committee operating cadence.",
-          "developmentOutcome": "You have a working control implementation and measurable before/after signals. Monthly artifact target: Governance Committee Briefing and Decision Log System.",
+          "title": "Close remaining skill gaps / Build",
+          "objective": "Do the main build work for \"Close remaining skill gaps\".",
+          "whyThisWeek": "Late-stage improvement should be targeted, not broad.",
+          "developmentOutcome": "Your remaining gaps are narrower and tied to actual role feedback or application experience. You have real, visible work in progress instead of only planning.",
           "deliverables": [
-            "Production lane output for governance committee operating cadence",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Governance Committee Briefing and Decision Log System",
-            "Verification log with cross-model or adversarial findings"
+            "Top 3 gap list",
+            "Focused improvement plan",
+            "1 additional high-value artifact or workflow"
           ],
           "tasks": [
             {
               "id": "w42t1",
-              "title": "Implement the primary control set in your real workflow and capture baseline vs. current metrics.",
-              "why": "Production lane: produce recurring governance briefs tied to active chatbot/eval workstreams.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Build the core artifact for closing priority skill gaps using real eval/chat/governance data",
+              "why": "Real data and real constraints produce artifacts that stand up in interviews.",
+              "outcome": "A substantive artifact draft with evidence and design rationale.",
+              "done": false
             },
             {
               "id": "w42t2",
-              "title": "Deepen one technical skill required by this implementation and document what changed in your approach.",
-              "why": "Learning lane: committee facilitation, decision logging, and risk-acceptance mechanics.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w42t3",
-              "title": "Create the first publishable draft of this month's governance artifact with concrete examples.",
-              "why": "Career-proof lane: publish committee-ready briefing template and decision log.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w42t4",
-              "title": "Execute adversarial tests against the implementation and document failures plus fixes.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Capture before/after metrics and implementation notes from the workflow",
+              "why": "Quantified impact is required for resume strength and hiring conversion.",
+              "outcome": "A metrics-backed evidence pack for portfolio and resume use.",
+              "done": false
             }
           ]
         },
         {
           "week": 43,
-          "title": "Governance committee operating cadence / Week C / Evaluate and harden",
-          "objective": "Stress-test controls, tighten weak points, and validate that outcomes hold under realistic failure pressure. Focus: produce recurring governance briefs tied to active chatbot/eval workstreams, committee facilitation, decision logging, and risk-acceptance mechanics, and publish committee-ready briefing template and decision log.",
-          "whyThisWeek": "Without hardening, apparent progress collapses under edge cases and adversarial behavior. This month centers on governance committee operating cadence.",
-          "developmentOutcome": "You have improved control reliability, known residual risks, and clear escalation conditions. Monthly artifact target: Governance Committee Briefing and Decision Log System.",
+          "title": "Close remaining skill gaps / Refine",
+          "objective": "Review, refine, and improve the quality of work produced this month.",
+          "whyThisWeek": "Late-stage improvement should be targeted, not broad.",
+          "developmentOutcome": "Your remaining gaps are narrower and tied to actual role feedback or application experience. You have stronger, more polished output with fewer weak spots.",
           "deliverables": [
-            "Production lane output for governance committee operating cadence",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Governance Committee Briefing and Decision Log System",
-            "Verification log with cross-model or adversarial findings"
+            "Top 3 gap list",
+            "Focused improvement plan",
+            "1 additional high-value artifact or workflow"
           ],
           "tasks": [
             {
               "id": "w43t1",
-              "title": "Run structured evals/red-team scenarios and prioritize remediations by impact and likelihood.",
-              "why": "Production lane: produce recurring governance briefs tied to active chatbot/eval workstreams.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Run adversarial review (Gemini + checklist + stakeholder lens) on the artifact",
+              "why": "Cross-model and stakeholder challenge reduces blind spots and weak assumptions.",
+              "outcome": "A reviewed artifact with explicit risk findings and remediation actions.",
+              "done": false
             },
             {
               "id": "w43t2",
-              "title": "Compare at least two governance frameworks/standards and map relevant controls to your implementation.",
-              "why": "Learning lane: committee facilitation, decision logging, and risk-acceptance mechanics.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w43t3",
-              "title": "Revise the artifact with evidence, tradeoffs, residual risks, and decision rationale.",
-              "why": "Career-proof lane: publish committee-ready briefing template and decision log.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w43t4",
-              "title": "Facilitate one external review pass (peer/checklist/second model) and reconcile conflicts.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Revise artifact and log governance decisions, tradeoffs, and remaining risks",
+              "why": "Decision logs demonstrate governance maturity beyond surface-level output.",
+              "outcome": "A stronger artifact plus decision trail suitable for interviews.",
+              "done": false
             }
           ]
         },
         {
           "week": 44,
-          "title": "Governance committee operating cadence / Week D / Package and committee brief",
-          "objective": "Package the month's work into reusable assets and a committee-ready briefing with next-cycle priorities. Focus: produce recurring governance briefs tied to active chatbot/eval workstreams, committee facilitation, decision logging, and risk-acceptance mechanics, and publish committee-ready briefing template and decision log.",
-          "whyThisWeek": "Career proof and committee influence require concise, reusable, decision-grade outputs. This month centers on governance committee operating cadence.",
-          "developmentOutcome": "You finish with a portfolio-grade package, a clear decision log, and a handoff into next month. Monthly artifact target: Governance Committee Briefing and Decision Log System.",
+          "title": "Close remaining skill gaps / Package and review",
+          "objective": "Package the month's work, summarize lessons learned, and prepare the next cycle.",
+          "whyThisWeek": "Late-stage improvement should be targeted, not broad.",
+          "developmentOutcome": "Your remaining gaps are narrower and tied to actual role feedback or application experience. You have a finished monthly package and a clean transition into the next cycle.",
           "deliverables": [
-            "Production lane output for governance committee operating cadence",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Governance Committee Briefing and Decision Log System",
-            "Verification log with cross-model or adversarial findings"
+            "Top 3 gap list",
+            "Focused improvement plan",
+            "1 additional high-value artifact or workflow"
           ],
           "tasks": [
             {
               "id": "w44t1",
-              "title": "Finalize production-ready SOP/checklist/runbook updates and publish them in AI-Lab.",
-              "why": "Production lane: produce recurring governance briefs tied to active chatbot/eval workstreams.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Publish portfolio-ready package in AI-Lab (artifact, checklist, evidence, notes)",
+              "why": "Packaging creates reusable leverage and prevents knowledge loss.",
+              "outcome": "A complete, reusable portfolio package ready for sharing or adaptation.",
+              "done": false
             },
             {
               "id": "w44t2",
-              "title": "Write a short lessons-learned note with what to repeat, stop, and improve next cycle.",
-              "why": "Learning lane: committee facilitation, decision logging, and risk-acceptance mechanics.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w44t3",
-              "title": "Publish the final artifact and extract resume bullets plus one interview case narrative.",
-              "why": "Career-proof lane: publish committee-ready briefing template and decision log.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w44t4",
-              "title": "Create a one-page governance committee brief with decisions needed, risks, and proposed actions.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Write resume bullets, interview story, and next-month execution hypothesis",
+              "why": "Career transitions require translation of work into market language and forward planning.",
+              "outcome": "Hiring-ready narrative assets plus a focused transition brief.",
+              "done": false
             }
           ]
         },
         {
           "week": 45,
-          "title": "External signaling and market-ready governance proof / Week A / Scope and map",
-          "objective": "Scope one high-leverage use case and define measurable controls, metrics, and evidence requirements across production, learning, and career-proof lanes. Focus: translate production governance wins into concise business/risk outcomes, storytelling for technical governance impact and interview compression, and publish portfolio index, resume bullets, and interview case stories.",
-          "whyThisWeek": "A scoped governance target prevents busywork and keeps all three lanes tied to one concrete outcome. This month centers on external signaling and market-ready governance proof.",
-          "developmentOutcome": "You have a bounded monthly mission, a clear definition of done, and an evidence plan. Monthly artifact target: Governance Portfolio and Hiring Narrative Pack.",
+          "title": "Review, adjust, and launch Year 2 / Scope and plan",
+          "objective": "Scope this month precisely and choose the first concrete deliverable inside \"Review, adjust, and launch Year 2\".",
+          "whyThisWeek": "A career system should become smarter over time rather than resetting emotionally every January.",
+          "developmentOutcome": "You know what worked, what did not, and what the next 12 months should emphasize. You have a concrete scoped plan and clear definition of done for the month.",
           "deliverables": [
-            "Production lane output for external signaling and market-ready governance proof",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Governance Portfolio and Hiring Narrative Pack",
-            "Verification log with cross-model or adversarial findings"
+            "Year review",
+            "Updated target outcome",
+            "Year 2 roadmap"
           ],
           "tasks": [
             {
               "id": "w45t1",
-              "title": "Map one live chatbot/eval workflow and identify risk surfaces, owners, and control points.",
-              "why": "Production lane: translate production governance wins into concise business/risk outcomes.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Select one live SonderMind initiative to use as a governance case study for year review and Year 2 launch plan",
+              "why": "Grounding work in real initiatives increases transferability and market credibility.",
+              "outcome": "A scoped case study linked to real production context and decision points.",
+              "done": false
             },
             {
               "id": "w45t2",
-              "title": "Study one focused governance concept and convert it into a checklist you can execute this week.",
-              "why": "Learning lane: storytelling for technical governance impact and interview compression.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w45t3",
-              "title": "Draft the artifact outline, success criteria, and acceptance rubric for committee/hiring use.",
-              "why": "Career-proof lane: publish portfolio index, resume bullets, and interview case stories.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w45t4",
-              "title": "Run a cross-model challenge (Claude + Gemini) on the proposed controls and log disagreements.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Define monthly deliverable, measurable success criteria, and resume bullet target",
+              "why": "Explicit criteria prevent activity drift and force outcome-driven execution.",
+              "outcome": "A measurable definition of done plus draft hiring-facing language.",
+              "done": false
             }
           ]
         },
         {
           "week": 46,
-          "title": "External signaling and market-ready governance proof / Week B / Build and implement",
-          "objective": "Execute the core implementation work for this month's governance theme while preserving evidence quality. Focus: translate production governance wins into concise business/risk outcomes, storytelling for technical governance impact and interview compression, and publish portfolio index, resume bullets, and interview case stories.",
-          "whyThisWeek": "Governance credibility comes from production-grade implementation, not policy text alone. This month centers on external signaling and market-ready governance proof.",
-          "developmentOutcome": "You have a working control implementation and measurable before/after signals. Monthly artifact target: Governance Portfolio and Hiring Narrative Pack.",
+          "title": "Review, adjust, and launch Year 2 / Build",
+          "objective": "Do the main build work for \"Review, adjust, and launch Year 2\".",
+          "whyThisWeek": "A career system should become smarter over time rather than resetting emotionally every January.",
+          "developmentOutcome": "You know what worked, what did not, and what the next 12 months should emphasize. You have real, visible work in progress instead of only planning.",
           "deliverables": [
-            "Production lane output for external signaling and market-ready governance proof",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Governance Portfolio and Hiring Narrative Pack",
-            "Verification log with cross-model or adversarial findings"
+            "Year review",
+            "Updated target outcome",
+            "Year 2 roadmap"
           ],
           "tasks": [
             {
               "id": "w46t1",
-              "title": "Implement the primary control set in your real workflow and capture baseline vs. current metrics.",
-              "why": "Production lane: translate production governance wins into concise business/risk outcomes.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Build the core artifact for year review and Year 2 launch plan using real eval/chat/governance data",
+              "why": "Real data and real constraints produce artifacts that stand up in interviews.",
+              "outcome": "A substantive artifact draft with evidence and design rationale.",
+              "done": false
             },
             {
               "id": "w46t2",
-              "title": "Deepen one technical skill required by this implementation and document what changed in your approach.",
-              "why": "Learning lane: storytelling for technical governance impact and interview compression.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w46t3",
-              "title": "Create the first publishable draft of this month's governance artifact with concrete examples.",
-              "why": "Career-proof lane: publish portfolio index, resume bullets, and interview case stories.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w46t4",
-              "title": "Execute adversarial tests against the implementation and document failures plus fixes.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Capture before/after metrics and implementation notes from the workflow",
+              "why": "Quantified impact is required for resume strength and hiring conversion.",
+              "outcome": "A metrics-backed evidence pack for portfolio and resume use.",
+              "done": false
             }
           ]
         },
         {
           "week": 47,
-          "title": "External signaling and market-ready governance proof / Week C / Evaluate and harden",
-          "objective": "Stress-test controls, tighten weak points, and validate that outcomes hold under realistic failure pressure. Focus: translate production governance wins into concise business/risk outcomes, storytelling for technical governance impact and interview compression, and publish portfolio index, resume bullets, and interview case stories.",
-          "whyThisWeek": "Without hardening, apparent progress collapses under edge cases and adversarial behavior. This month centers on external signaling and market-ready governance proof.",
-          "developmentOutcome": "You have improved control reliability, known residual risks, and clear escalation conditions. Monthly artifact target: Governance Portfolio and Hiring Narrative Pack.",
+          "title": "Review, adjust, and launch Year 2 / Refine",
+          "objective": "Review, refine, and improve the quality of work produced this month.",
+          "whyThisWeek": "A career system should become smarter over time rather than resetting emotionally every January.",
+          "developmentOutcome": "You know what worked, what did not, and what the next 12 months should emphasize. You have stronger, more polished output with fewer weak spots.",
           "deliverables": [
-            "Production lane output for external signaling and market-ready governance proof",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Governance Portfolio and Hiring Narrative Pack",
-            "Verification log with cross-model or adversarial findings"
+            "Year review",
+            "Updated target outcome",
+            "Year 2 roadmap"
           ],
           "tasks": [
             {
               "id": "w47t1",
-              "title": "Run structured evals/red-team scenarios and prioritize remediations by impact and likelihood.",
-              "why": "Production lane: translate production governance wins into concise business/risk outcomes.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Run adversarial review (Gemini + checklist + stakeholder lens) on the artifact",
+              "why": "Cross-model and stakeholder challenge reduces blind spots and weak assumptions.",
+              "outcome": "A reviewed artifact with explicit risk findings and remediation actions.",
+              "done": false
             },
             {
               "id": "w47t2",
-              "title": "Compare at least two governance frameworks/standards and map relevant controls to your implementation.",
-              "why": "Learning lane: storytelling for technical governance impact and interview compression.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w47t3",
-              "title": "Revise the artifact with evidence, tradeoffs, residual risks, and decision rationale.",
-              "why": "Career-proof lane: publish portfolio index, resume bullets, and interview case stories.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w47t4",
-              "title": "Facilitate one external review pass (peer/checklist/second model) and reconcile conflicts.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Revise artifact and log governance decisions, tradeoffs, and remaining risks",
+              "why": "Decision logs demonstrate governance maturity beyond surface-level output.",
+              "outcome": "A stronger artifact plus decision trail suitable for interviews.",
+              "done": false
             }
           ]
         },
         {
           "week": 48,
-          "title": "External signaling and market-ready governance proof / Week D / Package and committee brief",
-          "objective": "Package the month's work into reusable assets and a committee-ready briefing with next-cycle priorities. Focus: translate production governance wins into concise business/risk outcomes, storytelling for technical governance impact and interview compression, and publish portfolio index, resume bullets, and interview case stories.",
-          "whyThisWeek": "Career proof and committee influence require concise, reusable, decision-grade outputs. This month centers on external signaling and market-ready governance proof.",
-          "developmentOutcome": "You finish with a portfolio-grade package, a clear decision log, and a handoff into next month. Monthly artifact target: Governance Portfolio and Hiring Narrative Pack.",
+          "title": "Review, adjust, and launch Year 2 / Package and review",
+          "objective": "Package the month's work, summarize lessons learned, and prepare the next cycle.",
+          "whyThisWeek": "A career system should become smarter over time rather than resetting emotionally every January.",
+          "developmentOutcome": "You know what worked, what did not, and what the next 12 months should emphasize. You have a finished monthly package and a clean transition into the next cycle.",
           "deliverables": [
-            "Production lane output for external signaling and market-ready governance proof",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Governance Portfolio and Hiring Narrative Pack",
-            "Verification log with cross-model or adversarial findings"
+            "Year review",
+            "Updated target outcome",
+            "Year 2 roadmap"
           ],
           "tasks": [
             {
               "id": "w48t1",
-              "title": "Finalize production-ready SOP/checklist/runbook updates and publish them in AI-Lab.",
-              "why": "Production lane: translate production governance wins into concise business/risk outcomes.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Publish portfolio-ready package in AI-Lab (artifact, checklist, evidence, notes)",
+              "why": "Packaging creates reusable leverage and prevents knowledge loss.",
+              "outcome": "A complete, reusable portfolio package ready for sharing or adaptation.",
+              "done": false
             },
             {
               "id": "w48t2",
-              "title": "Write a short lessons-learned note with what to repeat, stop, and improve next cycle.",
-              "why": "Learning lane: storytelling for technical governance impact and interview compression.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w48t3",
-              "title": "Publish the final artifact and extract resume bullets plus one interview case narrative.",
-              "why": "Career-proof lane: publish portfolio index, resume bullets, and interview case stories.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w48t4",
-              "title": "Create a one-page governance committee brief with decisions needed, risks, and proposed actions.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Write resume bullets, interview story, and next-month execution hypothesis",
+              "why": "Career transitions require translation of work into market language and forward planning.",
+              "outcome": "Hiring-ready narrative assets plus a focused transition brief.",
+              "done": false
             }
           ]
         },
         {
           "week": 49,
-          "title": "Year-end consolidation and Year-2 governance roadmap / Week A / Scope and map",
-          "objective": "Scope one high-leverage use case and define measurable controls, metrics, and evidence requirements across production, learning, and career-proof lanes. Focus: consolidate proven controls into a stable operating baseline for next year, strategic planning, prioritization under constraints, and sequencing, and publish Year-2 roadmap aligned to governance committee contribution.",
-          "whyThisWeek": "A scoped governance target prevents busywork and keeps all three lanes tied to one concrete outcome. This month centers on year-end consolidation and year-2 governance roadmap.",
-          "developmentOutcome": "You have a bounded monthly mission, a clear definition of done, and an evidence plan. Monthly artifact target: Year-2 AI Governance Strategy and Operating Plan.",
+          "title": "Year-end transition / Week 49",
+          "objective": "Consolidate Year 1 evidence and identify strongest outcomes.",
+          "whyThisWeek": "A complete evidence inventory is required for role transitions and resume strength.",
+          "developmentOutcome": "You can point to concrete outcomes and choose high-value proof for hiring conversations.",
           "deliverables": [
-            "Production lane output for year-end consolidation and year-2 governance roadmap",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Year-2 AI Governance Strategy and Operating Plan",
-            "Verification log with cross-model or adversarial findings"
+            "Year 1 evidence inventory",
+            "Artifact quality labels",
+            "Outcome summary draft"
           ],
           "tasks": [
             {
               "id": "w49t1",
-              "title": "Map one live chatbot/eval workflow and identify risk surfaces, owners, and control points.",
-              "why": "Production lane: consolidate proven controls into a stable operating baseline for next year.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Select one live SonderMind initiative to use as a governance case study for year review and Year 2 launch plan",
+              "why": "Grounding work in real initiatives increases transferability and market credibility.",
+              "outcome": "A scoped case study linked to real production context and decision points.",
+              "done": false
             },
             {
               "id": "w49t2",
-              "title": "Study one focused governance concept and convert it into a checklist you can execute this week.",
-              "why": "Learning lane: strategic planning, prioritization under constraints, and sequencing.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w49t3",
-              "title": "Draft the artifact outline, success criteria, and acceptance rubric for committee/hiring use.",
-              "why": "Career-proof lane: publish Year-2 roadmap aligned to governance committee contribution.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w49t4",
-              "title": "Run a cross-model challenge (Claude + Gemini) on the proposed controls and log disagreements.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Define monthly deliverable, measurable success criteria, and resume bullet target",
+              "why": "Explicit criteria prevent activity drift and force outcome-driven execution.",
+              "outcome": "A measurable definition of done plus draft hiring-facing language.",
+              "done": false
             }
           ]
         },
         {
           "week": 50,
-          "title": "Year-end consolidation and Year-2 governance roadmap / Week B / Build and implement",
-          "objective": "Execute the core implementation work for this month's governance theme while preserving evidence quality. Focus: consolidate proven controls into a stable operating baseline for next year, strategic planning, prioritization under constraints, and sequencing, and publish Year-2 roadmap aligned to governance committee contribution.",
-          "whyThisWeek": "Governance credibility comes from production-grade implementation, not policy text alone. This month centers on year-end consolidation and year-2 governance roadmap.",
-          "developmentOutcome": "You have a working control implementation and measurable before/after signals. Monthly artifact target: Year-2 AI Governance Strategy and Operating Plan.",
+          "title": "Year-end transition / Week 50",
+          "objective": "Convert evidence into external hiring language.",
+          "whyThisWeek": "Evidence becomes useful only when translated into role-relevant outcomes.",
+          "developmentOutcome": "You can communicate impact clearly to governance hiring managers.",
           "deliverables": [
-            "Production lane output for year-end consolidation and year-2 governance roadmap",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Year-2 AI Governance Strategy and Operating Plan",
-            "Verification log with cross-model or adversarial findings"
+            "Impact summary",
+            "Resume bullet bank",
+            "Interview story notes"
           ],
           "tasks": [
             {
               "id": "w50t1",
-              "title": "Implement the primary control set in your real workflow and capture baseline vs. current metrics.",
-              "why": "Production lane: consolidate proven controls into a stable operating baseline for next year.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Build the core artifact for year review and Year 2 launch plan using real eval/chat/governance data",
+              "why": "Real data and real constraints produce artifacts that stand up in interviews.",
+              "outcome": "A substantive artifact draft with evidence and design rationale.",
+              "done": false
             },
             {
               "id": "w50t2",
-              "title": "Deepen one technical skill required by this implementation and document what changed in your approach.",
-              "why": "Learning lane: strategic planning, prioritization under constraints, and sequencing.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w50t3",
-              "title": "Create the first publishable draft of this month's governance artifact with concrete examples.",
-              "why": "Career-proof lane: publish Year-2 roadmap aligned to governance committee contribution.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w50t4",
-              "title": "Execute adversarial tests against the implementation and document failures plus fixes.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Capture before/after metrics and implementation notes from the workflow",
+              "why": "Quantified impact is required for resume strength and hiring conversion.",
+              "outcome": "A metrics-backed evidence pack for portfolio and resume use.",
+              "done": false
             }
           ]
         },
         {
           "week": 51,
-          "title": "Year-end consolidation and Year-2 governance roadmap / Week C / Evaluate and harden",
-          "objective": "Stress-test controls, tighten weak points, and validate that outcomes hold under realistic failure pressure. Focus: consolidate proven controls into a stable operating baseline for next year, strategic planning, prioritization under constraints, and sequencing, and publish Year-2 roadmap aligned to governance committee contribution.",
-          "whyThisWeek": "Without hardening, apparent progress collapses under edge cases and adversarial behavior. This month centers on year-end consolidation and year-2 governance roadmap.",
-          "developmentOutcome": "You have improved control reliability, known residual risks, and clear escalation conditions. Monthly artifact target: Year-2 AI Governance Strategy and Operating Plan.",
+          "title": "Year-end transition / Week 51",
+          "objective": "Set Year 2 priorities with sustainable workload constraints.",
+          "whyThisWeek": "A sustainable plan is required to avoid burnout and keep momentum.",
+          "developmentOutcome": "You have a realistic Year 2 trajectory tied to role gaps and capacity.",
           "deliverables": [
-            "Production lane output for year-end consolidation and year-2 governance roadmap",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Year-2 AI Governance Strategy and Operating Plan",
-            "Verification log with cross-model or adversarial findings"
+            "Gap matrix",
+            "Priority roadmap",
+            "Workload guardrails"
           ],
           "tasks": [
             {
               "id": "w51t1",
-              "title": "Run structured evals/red-team scenarios and prioritize remediations by impact and likelihood.",
-              "why": "Production lane: consolidate proven controls into a stable operating baseline for next year.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Run adversarial review (Gemini + checklist + stakeholder lens) on the artifact",
+              "why": "Cross-model and stakeholder challenge reduces blind spots and weak assumptions.",
+              "outcome": "A reviewed artifact with explicit risk findings and remediation actions.",
+              "done": false
             },
             {
               "id": "w51t2",
-              "title": "Compare at least two governance frameworks/standards and map relevant controls to your implementation.",
-              "why": "Learning lane: strategic planning, prioritization under constraints, and sequencing.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w51t3",
-              "title": "Revise the artifact with evidence, tradeoffs, residual risks, and decision rationale.",
-              "why": "Career-proof lane: publish Year-2 roadmap aligned to governance committee contribution.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w51t4",
-              "title": "Facilitate one external review pass (peer/checklist/second model) and reconcile conflicts.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Revise artifact and log governance decisions, tradeoffs, and remaining risks",
+              "why": "Decision logs demonstrate governance maturity beyond surface-level output.",
+              "outcome": "A stronger artifact plus decision trail suitable for interviews.",
+              "done": false
             }
           ]
         },
         {
           "week": 52,
-          "title": "Year-end consolidation and Year-2 governance roadmap / Week D / Package and committee brief",
-          "objective": "Package the month's work into reusable assets and a committee-ready briefing with next-cycle priorities. Focus: consolidate proven controls into a stable operating baseline for next year, strategic planning, prioritization under constraints, and sequencing, and publish Year-2 roadmap aligned to governance committee contribution.",
-          "whyThisWeek": "Career proof and committee influence require concise, reusable, decision-grade outputs. This month centers on year-end consolidation and year-2 governance roadmap.",
-          "developmentOutcome": "You finish with a portfolio-grade package, a clear decision log, and a handoff into next month. Monthly artifact target: Year-2 AI Governance Strategy and Operating Plan.",
+          "title": "Year-end transition / Week 52",
+          "objective": "Finalize Year 2 operating plan and launch criteria.",
+          "whyThisWeek": "A transition plan ensures continuity rather than reset behavior.",
+          "developmentOutcome": "You start Year 2 with clear milestones, metrics, and ownership.",
           "deliverables": [
-            "Production lane output for year-end consolidation and year-2 governance roadmap",
-            "Learning lane note/checklist update",
-            "Career-proof artifact draft/final: Year-2 AI Governance Strategy and Operating Plan",
-            "Verification log with cross-model or adversarial findings"
+            "Quarterly roadmap",
+            "Launch criteria",
+            "First-sprint plan"
           ],
           "tasks": [
             {
               "id": "w52t1",
-              "title": "Finalize production-ready SOP/checklist/runbook updates and publish them in AI-Lab.",
-              "why": "Production lane: consolidate proven controls into a stable operating baseline for next year.",
-              "outcome": "A concrete production-facing governance improvement with evidence.",
-              "done": false,
-              "userCreated": false
+              "title": "Publish portfolio-ready package in AI-Lab (artifact, checklist, evidence, notes)",
+              "why": "Packaging creates reusable leverage and prevents knowledge loss.",
+              "outcome": "A complete, reusable portfolio package ready for sharing or adaptation.",
+              "done": false
             },
             {
               "id": "w52t2",
-              "title": "Write a short lessons-learned note with what to repeat, stop, and improve next cycle.",
-              "why": "Learning lane: strategic planning, prioritization under constraints, and sequencing.",
-              "outcome": "A reusable skill artifact (note/checklist/template) stored in AI-Lab.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w52t3",
-              "title": "Publish the final artifact and extract resume bullets plus one interview case narrative.",
-              "why": "Career-proof lane: publish Year-2 roadmap aligned to governance committee contribution.",
-              "outcome": "A portfolio-quality governance artifact suitable for committee/hiring review.",
-              "done": false,
-              "userCreated": false
-            },
-            {
-              "id": "w52t4",
-              "title": "Create a one-page governance committee brief with decisions needed, risks, and proposed actions.",
-              "why": "Anti-gullibility principle: no single model or single pass is trusted without challenge.",
-              "outcome": "A documented verification trail with decisions and residual risks.",
-              "done": false,
-              "userCreated": false
+              "title": "Write resume bullets, interview story, and next-month execution hypothesis",
+              "why": "Career transitions require translation of work into market language and forward planning.",
+              "outcome": "Hiring-ready narrative assets plus a focused transition brief.",
+              "done": false
             }
           ]
         }
@@ -2328,44 +1543,45 @@
         }
       ],
       "notes": {
-        "1": "In 12 months, I want to be someone who can do real AI governance work. I want to use what I already do well—AI evals, user-facing chat work, and cross-team engineering—to build clear proof that I can handle AI risk, quality, and accountability. I want a working personal system that helps me ship one meaningful artifact at a time, save what works, and keep improving without burning out. I want to be ready for responsible AI / AI governance roles that are stable, meaningful, and pay at least what I make now in Colorado. Most of all, I want this to be a practical transition from overwork and stress into a sustainable career with real impact."
+        "1": "In 12 months, I want to be someone who can do real AI governance work. I want to use what I already do well\u2014AI evals, user-facing chat work, and cross-team engineering\u2014to build clear proof that I can handle AI risk, quality, and accountability. I want a working personal system that helps me ship one meaningful artifact at a time, save what works, and keep improving without burning out. I want to be ready for responsible AI / AI governance roles that are stable, meaningful, and pay at least what I make now in Colorado. Most of all, I want this to be a practical transition from overwork and stress into a sustainable career with real impact."
       },
       "context": {
-        "whyThisExists": "This project exists to define and execute a practical AI governance development path rooted in real chatbot, eval, and safety work so that both humans and LLMs can clearly understand scope, decisions, and intent.",
-        "primaryGoal": "Use live engineering work to build governance competence, committee-ready artifacts, and portable evidence for long-term AI governance career transitions.",
+        "whyThisExists": "This project is a personal AI governance operating system that turns learning into visible career proof and resume-ready evidence. It exists to make weekly work repeatable, measurable, and portfolio-generating instead of scattered across chats and temporary notes.",
+        "primaryGoal": "Build a 12-month governance workbench that leverages current work strengths, produces resume artifacts, supports a lower-stress trajectory, and transitions into resilient AI governance roles.",
         "operatingSystem": [
-          "Current role: Staff AI engineer working on chatbots, evaluations, and safety behaviors.",
-          "Current opportunity: participate in Sondermind's AI governance committee.",
-          "Primary domain: AI systems used in sensitive mental-health-adjacent workflows.",
-          "Development frame: production lane, learning lane, and career-proof lane run in parallel."
+          "Production lane: directly leverage current strengths in evals, user-facing chat apps, and governance committee participation.",
+          "Learning lane: train continuously on prompting, orchestration, model evaluation, and automation.",
+          "Career-proof lane: ship one governance artifact each month for interview and resume-quality evidence.",
+          "Store reusable prompts, templates, checklists, and outputs in the AI-Lab file system."
         ],
         "toolStrategy": [
-          "Primary coding workflow: Claude Code + VS Code + Bedrock stack.",
-          "Secondary review workflow: Gemini as adversarial or second-pass check.",
-          "Knowledge storage: AI-Lab workspace with reusable templates, checklists, and artifact history.",
-          "Execution rule: every major output should leave a traceable file artifact."
+          "Use personal Claude for personal learning, planning, and governance writing.",
+          "Use Claude Code for repo-aware implementation and terminal-heavy execution.",
+          "Use Gemini as second-pass review and adversarial comparison.",
+          "Use one lightweight workflow stack first; avoid over-buying tooling."
         ],
         "weeklyRhythm": [
-          "Primary stakeholder: self (project owner and accountable reviewer).",
-          "Core collaborators: engineering peers and governance committee participants.",
-          "Secondary audience: future hiring managers evaluating governance readiness.",
-          "LLM audience: assistants that need unambiguous project context and constraints."
+          "Monday: refine one real workflow used at work.",
+          "Tuesday: learn one orchestration/tooling concept.",
+          "Wednesday: compare outputs across 2-3 models on one task.",
+          "Thursday: build or revise one governance artifact.",
+          "Friday: write portfolio note with lessons, automation wins, and risks learned."
         ],
         "guardrails": [
-          "Never treat one model output as truth; cross-check important decisions.",
-          "Avoid generic project language; tie weekly work to real production scenarios.",
-          "Keep personal practice data and work-repo data clearly separated.",
-          "Human accountability and oversight are mandatory for governance decisions."
+          "Agentic engineering over vibe coding: plan -> spec -> implement -> verify -> review.",
+          "Never trust one polished answer; cross-check against another model or source.",
+          "Keep personal practice separate from work spend and work repos.",
+          "AI is a tool, not authority; accountability and human oversight are mandatory."
         ],
         "nearTermOutcomes": [
-          "Relevant standards and references should be attached to artifacts where possible.",
-          "Each month should produce one portfolio-grade governance output with evidence.",
-          "Project context should remain readable to both humans and LLM copilots.",
-          "Update context when role scope, systems, or stakeholder landscape changes."
+          "Become AI-native with disciplined prompt/system instruction habits while leveraging real job projects.",
+          "Build reusable workflow templates and automation helpers.",
+          "Ship governance artifacts: risk register, eval rubric, incident workflow, policy memo, and resume-ready outcome summaries.",
+          "Grow role-ready evidence for governance/evals/oversight opportunities with a sustainable workload profile."
         ]
       },
       "createdAt": "2026-04-18T21:43:50.037Z",
-      "updatedAt": "2026-04-18T22:23:22.809Z"
+      "updatedAt": "2026-04-18T21:43:50.484Z"
     },
     {
       "id": "b0a6b6b1-2124-430e-bc4f-5f71c147cd09",

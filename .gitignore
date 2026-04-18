@@ -6,3 +6,7 @@ out/
 .dev-server.pid
 .dev-server.port
 .DS_Store
+data/*.db
+data/*.db-shm
+data/*.db-wal
+data/snapshots/*.db

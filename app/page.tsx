@@ -83,6 +83,7 @@ export default function Page() {
     nearTermOutcomes: []
   });
   const [settingsWeeks, setSettingsWeeks] = useState<WeekPlan[]>([]);
+  const [settingsRoadmap, setSettingsRoadmap] = useState<RoadmapPhase[]>([]);
   const [settingsStatus, setSettingsStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
   const [noteSaveStatus, setNoteSaveStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
 
@@ -96,6 +97,17 @@ export default function Page() {
     const doneCount = allTasks.filter((task) => task.done).length;
     return allTasks.length ? Math.round((doneCount / allTasks.length) * 100) : 0;
   }, [plan]);
+
+  const allProjectTasks = useMemo(
+    () =>
+      plan.flatMap((week) =>
+        week.tasks.map((task) => ({
+          ...task,
+          week: week.week
+        }))
+      ),
+    [plan]
+  );
 
   useEffect(() => {
     const boot = async () => {
@@ -157,6 +169,39 @@ export default function Page() {
     });
   }, [settingsTotalWeeks]);
 
+  useEffect(() => {
+    const totalWeeks = Math.max(1, Math.min(104, Math.floor(settingsTotalWeeks || 1)));
+    setSettingsRoadmap((prev) => {
+      if (!prev.length) {
+        return createDefaultRoadmap(totalWeeks).map((phase) => ({
+          ...phase,
+          deliverables: [...phase.deliverables]
+        }));
+      }
+
+      const next = prev
+        .map((phase, index) => {
+          const startWeek = Math.max(1, Math.min(totalWeeks, Math.floor(phase.startWeek || 1)));
+          const endWeek = Math.max(startWeek, Math.min(totalWeeks, Math.floor(phase.endWeek || startWeek)));
+          return {
+            ...phase,
+            id: phase.id || `phase-${index + 1}`,
+            startWeek,
+            endWeek,
+            deliverables: Array.isArray(phase.deliverables) ? [...phase.deliverables] : []
+          };
+        })
+        .filter((phase) => phase.startWeek <= totalWeeks)
+        .sort((a, b) => a.startWeek - b.startWeek);
+
+      if (next.length) return next;
+      return createDefaultRoadmap(totalWeeks).map((phase) => ({
+        ...phase,
+        deliverables: [...phase.deliverables]
+      }));
+    });
+  }, [settingsTotalWeeks]);
+
   const loadProject = async (projectId: string) => {
     const response = await fetch(`/api/projects/${projectId}`);
     if (!response.ok) throw new Error("project not found");
@@ -176,6 +221,10 @@ export default function Page() {
       ...week,
       deliverables: [...week.deliverables],
       tasks: week.tasks.map((task) => ({ ...task }))
+    })));
+    setSettingsRoadmap((data.project.roadmap || createDefaultRoadmap(data.project.plan.length)).map((phase) => ({
+      ...phase,
+      deliverables: [...phase.deliverables]
     })));
     setSettingsStatus("idle");
   };
@@ -241,6 +290,10 @@ export default function Page() {
       ...week,
       deliverables: [...week.deliverables],
       tasks: week.tasks.map((task) => ({ ...task }))
+    })));
+    setSettingsRoadmap((project.roadmap || createDefaultRoadmap(project.plan.length)).map((phase) => ({
+      ...phase,
+      deliverables: [...phase.deliverables]
     })));
     setSettingsStatus("idle");
   };
@@ -329,6 +382,42 @@ export default function Page() {
     setSettingsWeeks((prev) => prev.map((week) => (week.week === weekNumber ? updater(week) : week)));
   };
 
+  const updateSettingsRoadmapPhase = (phaseId: string, updater: (phase: RoadmapPhase) => RoadmapPhase) => {
+    setSettingsRoadmap((prev) =>
+      prev.map((phase) => (phase.id === phaseId ? updater(phase) : phase)).sort((a, b) => a.startWeek - b.startWeek)
+    );
+  };
+
+  const addRoadmapPhase = () => {
+    const totalWeeks = Math.max(1, Math.min(104, Math.floor(settingsTotalWeeks || 1)));
+    setSettingsRoadmap((prev) => {
+      const lastEnd = prev.reduce((max, phase) => Math.max(max, phase.endWeek), 0);
+      const startWeek = Math.min(totalWeeks, Math.max(1, lastEnd + 1));
+      const endWeek = Math.min(totalWeeks, startWeek + 3);
+      const phaseId =
+        typeof crypto !== "undefined" && typeof crypto.randomUUID === "function"
+          ? crypto.randomUUID()
+          : `phase-${Date.now()}`;
+      return [
+        ...prev,
+        {
+          id: phaseId,
+          title: `Phase ${prev.length + 1}`,
+          startWeek,
+          endWeek,
+          objective: "",
+          why: "",
+          outcome: "",
+          deliverables: []
+        }
+      ];
+    });
+  };
+
+  const removeRoadmapPhase = (phaseId: string) => {
+    setSettingsRoadmap((prev) => prev.filter((phase) => phase.id !== phaseId));
+  };
+
   const saveProjectSettings = async () => {
     if (!selectedProjectId) return;
     setSettingsStatus("saving");
@@ -338,7 +427,8 @@ export default function Page() {
       targetOutcome: settingsTargetOutcome.trim(),
       totalWeeks: Math.max(1, Math.min(104, Math.floor(settingsTotalWeeks || 1))),
       context: settingsContext,
-      plan: settingsWeeks.slice(0, Math.max(1, Math.min(104, Math.floor(settingsTotalWeeks || 1))))
+      plan: settingsWeeks.slice(0, Math.max(1, Math.min(104, Math.floor(settingsTotalWeeks || 1)))),
+      roadmap: settingsRoadmap
     };
     const response = await fetch(`/api/projects/${selectedProjectId}`, {
       method: "PUT",
@@ -516,58 +606,8 @@ export default function Page() {
                     </div>
                   </div>
                   <div style={{ background: "#eff6ff", borderRadius: 16, padding: 16, marginTop: 16 }}>
-                    <div style={{ fontSize: 12, color: "#1d4ed8", marginBottom: 8 }}>Intended development outcome</div>
+                    <div style={{ fontSize: 12, color: "#1d4ed8", marginBottom: 8 }}>Intended Outcome</div>
                     <div>{currentWeek.developmentOutcome}</div>
-                  </div>
-                  <div style={{ marginTop: 16 }}>
-                    <div style={{ fontSize: 12, color: "#64748b", marginBottom: 8 }}>Deliverables</div>
-                    <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.8 }}>
-                      {currentWeek.deliverables.map((d) => (
-                        <li key={d}>{d}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div style={{ marginTop: 16, background: "#f8fafc", borderRadius: 16, padding: 16 }}>
-                    <div style={{ fontSize: 12, color: "#64748b", marginBottom: 8 }}>Week notes</div>
-                    <textarea
-                      value={notes[currentWeek.week] || ""}
-                      onChange={(e) => updateNote(currentWeek.week, e.target.value)}
-                      placeholder="Write notes for this week..."
-                      style={{
-                        width: "100%",
-                        minHeight: 170,
-                        borderRadius: 12,
-                        border: "1px solid #cbd5e1",
-                        padding: 12,
-                        fontSize: 14,
-                        lineHeight: 1.6,
-                        background: "white"
-                      }}
-                    />
-                    <div style={{ display: "flex", gap: 12, alignItems: "center", marginTop: 10 }}>
-                      <button
-                        onClick={() => {
-                          void saveCurrentWeekNote();
-                        }}
-                        style={{
-                          border: "none",
-                          background: "#2563eb",
-                          color: "white",
-                          borderRadius: 12,
-                          padding: "8px 12px",
-                          cursor: "pointer",
-                          fontWeight: 700
-                        }}
-                      >
-                        Save note
-                      </button>
-                      {noteSaveStatus === "saving" && <div style={{ fontSize: 13, color: "#475569" }}>Saving...</div>}
-                      {noteSaveStatus === "saved" && <div style={{ fontSize: 13, color: "#166534" }}>Saved for week {currentWeek.week}.</div>}
-                      {noteSaveStatus === "error" && <div style={{ fontSize: 13, color: "#991b1b" }}>Save failed. Try again.</div>}
-                    </div>
-                    <div style={{ color: "#64748b", marginTop: 8, fontSize: 12 }}>
-                      Capture decisions, reflections, what worked, what failed, and what should become reusable.
-                    </div>
                   </div>
                 </div>
 
@@ -607,11 +647,97 @@ export default function Page() {
                     ))}
                   </div>
                 </div>
+
+                <div style={{ background: "white", borderRadius: 24, padding: 24, boxShadow: "0 1px 6px rgba(0,0,0,0.08)" }}>
+                  <div style={{ fontSize: 12, color: "#64748b", marginBottom: 8 }}>Week notes</div>
+                  <textarea
+                    value={notes[currentWeek.week] || ""}
+                    onChange={(e) => updateNote(currentWeek.week, e.target.value)}
+                    placeholder="Write notes for this week..."
+                    style={{
+                      width: "100%",
+                      minHeight: 170,
+                      borderRadius: 12,
+                      border: "1px solid #cbd5e1",
+                      padding: 12,
+                      fontSize: 14,
+                      lineHeight: 1.6,
+                      background: "white"
+                    }}
+                  />
+                  <div style={{ display: "flex", gap: 12, alignItems: "center", marginTop: 10 }}>
+                    <button
+                      onClick={() => {
+                        void saveCurrentWeekNote();
+                      }}
+                      style={{
+                        border: "none",
+                        background: "#2563eb",
+                        color: "white",
+                        borderRadius: 12,
+                        padding: "8px 12px",
+                        cursor: "pointer",
+                        fontWeight: 700
+                      }}
+                    >
+                      Save note
+                    </button>
+                    {noteSaveStatus === "saving" && <div style={{ fontSize: 13, color: "#475569" }}>Saving...</div>}
+                    {noteSaveStatus === "saved" && <div style={{ fontSize: 13, color: "#166534" }}>Saved for week {currentWeek.week}.</div>}
+                    {noteSaveStatus === "error" && <div style={{ fontSize: 13, color: "#991b1b" }}>Save failed. Try again.</div>}
+                  </div>
+                  <div style={{ color: "#64748b", marginTop: 8, fontSize: 12 }}>
+                    Capture decisions, reflections, what worked, what failed, and what should become reusable.
+                  </div>
+                </div>
               </>
             )}
 
             {tab === "tasks" && (
               <>
+                <div style={{ background: "white", borderRadius: 24, padding: 24, boxShadow: "0 1px 6px rgba(0,0,0,0.08)" }}>
+                  <h3 style={{ marginTop: 0 }}>All project tasks</h3>
+                  <p style={{ color: "#475569", lineHeight: 1.7 }}>
+                    Scroll through all tasks across every week from one fixed window.
+                  </p>
+                  <div style={{ maxHeight: 520, overflowY: "auto", paddingRight: 4 }}>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                      {allProjectTasks.map((task) => (
+                        <div key={`w${task.week}-${task.id}`} style={{ border: "1px solid #cbd5e1", borderRadius: 16, padding: 16 }}>
+                          <div style={{ fontSize: 12, color: "#64748b", marginBottom: 8 }}>Week {task.week}</div>
+                          <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+                            <input
+                              type="checkbox"
+                              checked={task.done}
+                              onChange={() => toggleTask(task.week, task.id)}
+                              style={{ marginTop: 4 }}
+                            />
+                            <div style={{ flex: 1 }}>
+                              <div style={{ fontWeight: 700, textDecoration: task.done ? "line-through" : "none" }}>{task.title}</div>
+                              <div style={{ marginTop: 8, color: "#475569" }}><strong>Why:</strong> {task.why}</div>
+                              <div style={{ marginTop: 6, color: "#475569" }}><strong>Outcome:</strong> {task.outcome}</div>
+                            </div>
+                            {task.userCreated && (
+                              <button
+                                onClick={() => removeTask(task.week, task.id)}
+                                style={{
+                                  border: "1px solid #cbd5e1",
+                                  background: "white",
+                                  borderRadius: 10,
+                                  padding: "6px 10px",
+                                  cursor: "pointer"
+                                }}
+                              >
+                                Delete
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
                 <div style={{ background: "white", borderRadius: 24, padding: 24, boxShadow: "0 1px 6px rgba(0,0,0,0.08)" }}>
                   <h3 style={{ marginTop: 0 }}>Create a task</h3>
                   <p style={{ color: "#475569", lineHeight: 1.7 }}>
@@ -676,46 +802,6 @@ export default function Page() {
                     Add task
                   </button>
                 </div>
-
-                <div style={{ background: "white", borderRadius: 24, padding: 24, boxShadow: "0 1px 6px rgba(0,0,0,0.08)" }}>
-                  <h3 style={{ marginTop: 0 }}>Tasks in selected week</h3>
-                  <p style={{ color: "#475569", lineHeight: 1.7 }}>
-                    Currently viewing tasks for week {selectedWeek}. Click a week in the sidebar to switch context.
-                  </p>
-                  <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-                    {currentWeek.tasks.map((task) => (
-                      <div key={task.id} style={{ border: "1px solid #cbd5e1", borderRadius: 16, padding: 16 }}>
-                        <div style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
-                          <input
-                            type="checkbox"
-                            checked={task.done}
-                            onChange={() => toggleTask(currentWeek.week, task.id)}
-                            style={{ marginTop: 4 }}
-                          />
-                          <div style={{ flex: 1 }}>
-                            <div style={{ fontWeight: 700, textDecoration: task.done ? "line-through" : "none" }}>{task.title}</div>
-                            <div style={{ marginTop: 8, color: "#475569" }}><strong>Why:</strong> {task.why}</div>
-                            <div style={{ marginTop: 6, color: "#475569" }}><strong>Outcome:</strong> {task.outcome}</div>
-                          </div>
-                          {task.userCreated && (
-                            <button
-                              onClick={() => removeTask(currentWeek.week, task.id)}
-                              style={{
-                                border: "1px solid #cbd5e1",
-                                background: "white",
-                                borderRadius: 10,
-                                padding: "6px 10px",
-                                cursor: "pointer"
-                              }}
-                            >
-                              Delete
-                            </button>
-                          )}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
               </>
             )}
 
@@ -732,12 +818,6 @@ export default function Page() {
                       <div style={{ marginTop: 10, color: "#475569" }}><strong>Objective:</strong> {phase.objective}</div>
                       <div style={{ marginTop: 6, color: "#475569" }}><strong>Why:</strong> {phase.why}</div>
                       <div style={{ marginTop: 6, color: "#475569" }}><strong>Outcome:</strong> {phase.outcome}</div>
-                      <div style={{ marginTop: 10 }}>
-                        <div style={{ fontSize: 12, color: "#64748b", marginBottom: 6 }}>Deliverables</div>
-                        <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.7 }}>
-                          {phase.deliverables.map((d) => <li key={d}>{d}</li>)}
-                        </ul>
-                      </div>
                     </div>
                   ))}
                 </div>
@@ -781,10 +861,10 @@ export default function Page() {
                 </div>
 
                 <div style={{ marginTop: 20 }}>
-                  <h4 style={{ marginTop: 0 }}>Context and targets for Context tab</h4>
+                  <h4 style={{ marginTop: 0 }}>Project context for humans and LLMs</h4>
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
                     <div>
-                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Why this exists</label>
+                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Why this project exists</label>
                       <textarea
                         value={settingsContext.whyThisExists}
                         onChange={(event) => setSettingsContext((prev) => ({ ...prev, whyThisExists: event.target.value }))}
@@ -792,7 +872,7 @@ export default function Page() {
                       />
                     </div>
                     <div>
-                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Primary goal</label>
+                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Primary objective</label>
                       <textarea
                         value={settingsContext.primaryGoal}
                         onChange={(event) => setSettingsContext((prev) => ({ ...prev, primaryGoal: event.target.value }))}
@@ -800,7 +880,7 @@ export default function Page() {
                       />
                     </div>
                     <div>
-                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Operating system (one per line)</label>
+                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Current role and domain context (one per line)</label>
                       <textarea
                         value={settingsContext.operatingSystem.join("\n")}
                         onChange={(event) => updateSettingsContextList("operatingSystem", event.target.value)}
@@ -808,7 +888,7 @@ export default function Page() {
                       />
                     </div>
                     <div>
-                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Tool strategy (one per line)</label>
+                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Systems, tools, and environment context (one per line)</label>
                       <textarea
                         value={settingsContext.toolStrategy.join("\n")}
                         onChange={(event) => updateSettingsContextList("toolStrategy", event.target.value)}
@@ -816,7 +896,7 @@ export default function Page() {
                       />
                     </div>
                     <div>
-                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Weekly rhythm (one per line)</label>
+                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Stakeholders and collaborators (one per line)</label>
                       <textarea
                         value={settingsContext.weeklyRhythm.join("\n")}
                         onChange={(event) => updateSettingsContextList("weeklyRhythm", event.target.value)}
@@ -824,7 +904,7 @@ export default function Page() {
                       />
                     </div>
                     <div>
-                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Guardrails (one per line)</label>
+                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Constraints and assumptions (one per line)</label>
                       <textarea
                         value={settingsContext.guardrails.join("\n")}
                         onChange={(event) => updateSettingsContextList("guardrails", event.target.value)}
@@ -832,7 +912,7 @@ export default function Page() {
                       />
                     </div>
                     <div style={{ gridColumn: "1 / span 2" }}>
-                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Targets (one per line)</label>
+                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Additional context notes for LLM/humans (one per line)</label>
                       <textarea
                         value={settingsContext.nearTermOutcomes.join("\n")}
                         onChange={(event) => updateSettingsContextList("nearTermOutcomes", event.target.value)}
@@ -845,7 +925,7 @@ export default function Page() {
                 <div style={{ marginTop: 20 }}>
                   <h4 style={{ marginTop: 0 }}>Week setup</h4>
                   <p style={{ color: "#475569", lineHeight: 1.6, marginTop: 0 }}>
-                    Edit each week's title, objective, why, outcome, and deliverables.
+                    Edit each week's title, objective, why, and intended outcome.
                   </p>
                   <div style={{ display: "flex", flexDirection: "column", gap: 12, maxHeight: 520, overflowY: "auto", paddingRight: 4 }}>
                     {settingsWeeks.map((week) => (
@@ -873,26 +953,111 @@ export default function Page() {
                           <textarea
                             value={week.developmentOutcome}
                             onChange={(event) => updateSettingsWeek(week.week, (item) => ({ ...item, developmentOutcome: event.target.value }))}
-                            placeholder="Intended development outcome"
+                            placeholder="Intended Outcome"
                             style={{ minHeight: 80, border: "1px solid #cbd5e1", borderRadius: 10, padding: 10 }}
                           />
-                          <div style={{ gridColumn: "1 / span 2" }}>
-                            <textarea
-                              value={week.deliverables.join("\n")}
-                              onChange={(event) =>
-                                updateSettingsWeek(week.week, (item) => ({
-                                  ...item,
-                                  deliverables: parseLines(event.target.value)
-                                }))
-                              }
-                              placeholder="Deliverables (one per line)"
-                              style={{ width: "100%", minHeight: 90, border: "1px solid #cbd5e1", borderRadius: 10, padding: 10 }}
-                            />
-                          </div>
                         </div>
                       </div>
                     ))}
                   </div>
+                </div>
+
+                <div style={{ marginTop: 20 }}>
+                  <h4 style={{ marginTop: 0 }}>Roadmap phases</h4>
+                  <p style={{ color: "#475569", lineHeight: 1.6, marginTop: 0 }}>
+                    Create and configure roadmap phases for this project. These phases power the Roadmap tab.
+                  </p>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 12, maxHeight: 420, overflowY: "auto", paddingRight: 4 }}>
+                    {settingsRoadmap.map((phase) => (
+                      <div key={phase.id} style={{ border: "1px solid #cbd5e1", borderRadius: 12, padding: 12 }}>
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+                          <div style={{ fontWeight: 700 }}>{phase.title || "Untitled phase"}</div>
+                          <button
+                            onClick={() => removeRoadmapPhase(phase.id)}
+                            style={{ border: "1px solid #cbd5e1", background: "white", borderRadius: 10, padding: "6px 10px", cursor: "pointer" }}
+                          >
+                            Remove
+                          </button>
+                        </div>
+                        <div style={{ display: "grid", gridTemplateColumns: "1fr 120px 120px", gap: 10 }}>
+                          <input
+                            value={phase.title}
+                            onChange={(event) =>
+                              updateSettingsRoadmapPhase(phase.id, (item) => ({ ...item, title: event.target.value }))
+                            }
+                            placeholder="Phase title"
+                            style={{ border: "1px solid #cbd5e1", borderRadius: 10, padding: 10 }}
+                          />
+                          <input
+                            type="number"
+                            min={1}
+                            max={settingsTotalWeeks}
+                            value={phase.startWeek}
+                            onChange={(event) =>
+                              updateSettingsRoadmapPhase(phase.id, (item) => ({
+                                ...item,
+                                startWeek: Number(event.target.value)
+                              }))
+                            }
+                            placeholder="Start week"
+                            style={{ border: "1px solid #cbd5e1", borderRadius: 10, padding: 10 }}
+                          />
+                          <input
+                            type="number"
+                            min={1}
+                            max={settingsTotalWeeks}
+                            value={phase.endWeek}
+                            onChange={(event) =>
+                              updateSettingsRoadmapPhase(phase.id, (item) => ({
+                                ...item,
+                                endWeek: Number(event.target.value)
+                              }))
+                            }
+                            placeholder="End week"
+                            style={{ border: "1px solid #cbd5e1", borderRadius: 10, padding: 10 }}
+                          />
+                          <textarea
+                            value={phase.objective}
+                            onChange={(event) =>
+                              updateSettingsRoadmapPhase(phase.id, (item) => ({ ...item, objective: event.target.value }))
+                            }
+                            placeholder="Objective"
+                            style={{ gridColumn: "1 / span 3", minHeight: 70, border: "1px solid #cbd5e1", borderRadius: 10, padding: 10 }}
+                          />
+                          <textarea
+                            value={phase.why}
+                            onChange={(event) =>
+                              updateSettingsRoadmapPhase(phase.id, (item) => ({ ...item, why: event.target.value }))
+                            }
+                            placeholder="Why"
+                            style={{ gridColumn: "1 / span 3", minHeight: 70, border: "1px solid #cbd5e1", borderRadius: 10, padding: 10 }}
+                          />
+                          <textarea
+                            value={phase.outcome}
+                            onChange={(event) =>
+                              updateSettingsRoadmapPhase(phase.id, (item) => ({ ...item, outcome: event.target.value }))
+                            }
+                            placeholder="Outcome"
+                            style={{ gridColumn: "1 / span 3", minHeight: 70, border: "1px solid #cbd5e1", borderRadius: 10, padding: 10 }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <button
+                    onClick={addRoadmapPhase}
+                    style={{
+                      marginTop: 12,
+                      border: "1px solid #cbd5e1",
+                      background: "white",
+                      borderRadius: 12,
+                      padding: "10px 12px",
+                      cursor: "pointer",
+                      fontWeight: 600
+                    }}
+                  >
+                    Add roadmap phase
+                  </button>
                 </div>
 
                 <div style={{ display: "flex", gap: 12, alignItems: "center", marginTop: 16 }}>
@@ -917,15 +1082,15 @@ export default function Page() {
                   <h3 style={{ marginTop: 0 }}>Project context</h3>
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
                     <div style={{ background: "#f8fafc", borderRadius: 16, padding: 16 }}>
-                      <div style={{ fontSize: 12, color: "#64748b", marginBottom: 8 }}>Why this exists</div>
+                      <div style={{ fontSize: 12, color: "#64748b", marginBottom: 8 }}>Why this project exists</div>
                       <div style={{ lineHeight: 1.6 }}>{projectContext.whyThisExists}</div>
                     </div>
                     <div style={{ background: "#eff6ff", borderRadius: 16, padding: 16 }}>
-                      <div style={{ fontSize: 12, color: "#1d4ed8", marginBottom: 8 }}>Primary goal</div>
+                      <div style={{ fontSize: 12, color: "#1d4ed8", marginBottom: 8 }}>Primary objective</div>
                       <div style={{ lineHeight: 1.6 }}>{projectContext.primaryGoal}</div>
                     </div>
                     <div style={{ border: "1px solid #cbd5e1", borderRadius: 16, padding: 16 }}>
-                      <div style={{ fontSize: 12, color: "#64748b", marginBottom: 8 }}>Operating system</div>
+                      <div style={{ fontSize: 12, color: "#64748b", marginBottom: 8 }}>Current role and domain context</div>
                       <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.8 }}>
                         {projectContext.operatingSystem.map((item) => (
                           <li key={item}>{item}</li>
@@ -933,7 +1098,7 @@ export default function Page() {
                       </ul>
                     </div>
                     <div style={{ border: "1px solid #cbd5e1", borderRadius: 16, padding: 16 }}>
-                      <div style={{ fontSize: 12, color: "#64748b", marginBottom: 8 }}>Tool strategy</div>
+                      <div style={{ fontSize: 12, color: "#64748b", marginBottom: 8 }}>Systems, tools, and environment context</div>
                       <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.8 }}>
                         {projectContext.toolStrategy.map((item) => (
                           <li key={item}>{item}</li>
@@ -941,7 +1106,7 @@ export default function Page() {
                       </ul>
                     </div>
                     <div style={{ border: "1px solid #cbd5e1", borderRadius: 16, padding: 16 }}>
-                      <div style={{ fontSize: 12, color: "#64748b", marginBottom: 8 }}>Weekly rhythm</div>
+                      <div style={{ fontSize: 12, color: "#64748b", marginBottom: 8 }}>Stakeholders and collaborators</div>
                       <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.8 }}>
                         {projectContext.weeklyRhythm.map((item) => (
                           <li key={item}>{item}</li>
@@ -949,7 +1114,7 @@ export default function Page() {
                       </ul>
                     </div>
                     <div style={{ border: "1px solid #cbd5e1", borderRadius: 16, padding: 16 }}>
-                      <div style={{ fontSize: 12, color: "#64748b", marginBottom: 8 }}>Guardrails</div>
+                      <div style={{ fontSize: 12, color: "#64748b", marginBottom: 8 }}>Constraints and assumptions</div>
                       <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.8 }}>
                         {projectContext.guardrails.map((item) => (
                           <li key={item}>{item}</li>
@@ -959,7 +1124,7 @@ export default function Page() {
                   </div>
                 </div>
                 <div style={{ background: "white", borderRadius: 24, padding: 24, boxShadow: "0 1px 6px rgba(0,0,0,0.08)" }}>
-                  <h3 style={{ marginTop: 0 }}>Targets</h3>
+                  <h3 style={{ marginTop: 0 }}>Additional context notes</h3>
                   <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.8 }}>
                     {projectContext.nearTermOutcomes.map((item) => (
                       <li key={item}>{item}</li>
