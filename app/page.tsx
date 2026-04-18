@@ -73,6 +73,16 @@ export default function Page() {
   const [settingsProjectName, setSettingsProjectName] = useState("");
   const [settingsTargetOutcome, setSettingsTargetOutcome] = useState("");
   const [settingsTotalWeeks, setSettingsTotalWeeks] = useState<number>(12);
+  const [settingsContext, setSettingsContext] = useState<ProjectData["context"]>({
+    whyThisExists: "",
+    primaryGoal: "",
+    operatingSystem: [],
+    toolStrategy: [],
+    weeklyRhythm: [],
+    guardrails: [],
+    nearTermOutcomes: []
+  });
+  const [settingsWeeks, setSettingsWeeks] = useState<WeekPlan[]>([]);
   const [settingsStatus, setSettingsStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
   const [noteSaveStatus, setNoteSaveStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
 
@@ -135,6 +145,18 @@ export default function Page() {
     setAssignWeek(selectedWeek);
   }, [selectedWeek]);
 
+  useEffect(() => {
+    setSettingsWeeks((prev) => {
+      if (!prev.length) return prev;
+      const totalWeeks = Math.max(1, Math.min(104, Math.floor(settingsTotalWeeks || 1)));
+      const defaults = createDefaultPlan(totalWeeks);
+      if (totalWeeks <= prev.length) {
+        return prev.slice(0, totalWeeks);
+      }
+      return [...prev, ...defaults.slice(prev.length)];
+    });
+  }, [settingsTotalWeeks]);
+
   const loadProject = async (projectId: string) => {
     const response = await fetch(`/api/projects/${projectId}`);
     if (!response.ok) throw new Error("project not found");
@@ -149,6 +171,12 @@ export default function Page() {
     setSettingsProjectName(data.project.name);
     setSettingsTargetOutcome(data.project.targetOutcome || "");
     setSettingsTotalWeeks(data.project.plan.length);
+    setSettingsContext(data.project.context);
+    setSettingsWeeks(data.project.plan.map((week) => ({
+      ...week,
+      deliverables: [...week.deliverables],
+      tasks: week.tasks.map((task) => ({ ...task }))
+    })));
     setSettingsStatus("idle");
   };
 
@@ -208,6 +236,12 @@ export default function Page() {
     setSettingsProjectName(project.name);
     setSettingsTargetOutcome(project.targetOutcome || "");
     setSettingsTotalWeeks(project.plan.length);
+    setSettingsContext(project.context);
+    setSettingsWeeks(project.plan.map((week) => ({
+      ...week,
+      deliverables: [...week.deliverables],
+      tasks: week.tasks.map((task) => ({ ...task }))
+    })));
     setSettingsStatus("idle");
   };
 
@@ -275,6 +309,26 @@ export default function Page() {
     await persistNote(currentWeek.week, notes[currentWeek.week] || "");
   };
 
+  const parseLines = (value: string) =>
+    value
+      .split("\n")
+      .map((line) => line.trim())
+      .filter(Boolean);
+
+  const updateSettingsContextList = (
+    key: "operatingSystem" | "toolStrategy" | "weeklyRhythm" | "guardrails" | "nearTermOutcomes",
+    value: string
+  ) => {
+    setSettingsContext((prev) => ({
+      ...prev,
+      [key]: parseLines(value)
+    }));
+  };
+
+  const updateSettingsWeek = (weekNumber: number, updater: (week: WeekPlan) => WeekPlan) => {
+    setSettingsWeeks((prev) => prev.map((week) => (week.week === weekNumber ? updater(week) : week)));
+  };
+
   const saveProjectSettings = async () => {
     if (!selectedProjectId) return;
     setSettingsStatus("saving");
@@ -282,7 +336,9 @@ export default function Page() {
       action: "settings",
       name: settingsProjectName.trim() || selectedProjectName,
       targetOutcome: settingsTargetOutcome.trim(),
-      totalWeeks: Math.max(1, Math.min(104, Math.floor(settingsTotalWeeks || 1)))
+      totalWeeks: Math.max(1, Math.min(104, Math.floor(settingsTotalWeeks || 1))),
+      context: settingsContext,
+      plan: settingsWeeks.slice(0, Math.max(1, Math.min(104, Math.floor(settingsTotalWeeks || 1))))
     };
     const response = await fetch(`/api/projects/${selectedProjectId}`, {
       method: "PUT",
@@ -692,7 +748,7 @@ export default function Page() {
               <div style={{ background: "white", borderRadius: 24, padding: 24, boxShadow: "0 1px 6px rgba(0,0,0,0.08)" }}>
                 <h3 style={{ marginTop: 0 }}>Project settings</h3>
                 <p style={{ color: "#475569", lineHeight: 1.7 }}>
-                  Configure the project scope. Changes apply only to the selected project.
+                  Configure project scope, context, targets, and weekly setup. Changes apply only to the selected project.
                 </p>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
                   <div>
@@ -721,6 +777,121 @@ export default function Page() {
                       onChange={(event) => setSettingsTargetOutcome(event.target.value)}
                       style={{ width: "100%", minHeight: 90, border: "1px solid #cbd5e1", borderRadius: 12, padding: 12 }}
                     />
+                  </div>
+                </div>
+
+                <div style={{ marginTop: 20 }}>
+                  <h4 style={{ marginTop: 0 }}>Context and targets for Context tab</h4>
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+                    <div>
+                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Why this exists</label>
+                      <textarea
+                        value={settingsContext.whyThisExists}
+                        onChange={(event) => setSettingsContext((prev) => ({ ...prev, whyThisExists: event.target.value }))}
+                        style={{ width: "100%", minHeight: 100, border: "1px solid #cbd5e1", borderRadius: 12, padding: 12 }}
+                      />
+                    </div>
+                    <div>
+                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Primary goal</label>
+                      <textarea
+                        value={settingsContext.primaryGoal}
+                        onChange={(event) => setSettingsContext((prev) => ({ ...prev, primaryGoal: event.target.value }))}
+                        style={{ width: "100%", minHeight: 100, border: "1px solid #cbd5e1", borderRadius: 12, padding: 12 }}
+                      />
+                    </div>
+                    <div>
+                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Operating system (one per line)</label>
+                      <textarea
+                        value={settingsContext.operatingSystem.join("\n")}
+                        onChange={(event) => updateSettingsContextList("operatingSystem", event.target.value)}
+                        style={{ width: "100%", minHeight: 120, border: "1px solid #cbd5e1", borderRadius: 12, padding: 12 }}
+                      />
+                    </div>
+                    <div>
+                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Tool strategy (one per line)</label>
+                      <textarea
+                        value={settingsContext.toolStrategy.join("\n")}
+                        onChange={(event) => updateSettingsContextList("toolStrategy", event.target.value)}
+                        style={{ width: "100%", minHeight: 120, border: "1px solid #cbd5e1", borderRadius: 12, padding: 12 }}
+                      />
+                    </div>
+                    <div>
+                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Weekly rhythm (one per line)</label>
+                      <textarea
+                        value={settingsContext.weeklyRhythm.join("\n")}
+                        onChange={(event) => updateSettingsContextList("weeklyRhythm", event.target.value)}
+                        style={{ width: "100%", minHeight: 120, border: "1px solid #cbd5e1", borderRadius: 12, padding: 12 }}
+                      />
+                    </div>
+                    <div>
+                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Guardrails (one per line)</label>
+                      <textarea
+                        value={settingsContext.guardrails.join("\n")}
+                        onChange={(event) => updateSettingsContextList("guardrails", event.target.value)}
+                        style={{ width: "100%", minHeight: 120, border: "1px solid #cbd5e1", borderRadius: 12, padding: 12 }}
+                      />
+                    </div>
+                    <div style={{ gridColumn: "1 / span 2" }}>
+                      <label style={{ display: "block", fontSize: 13, color: "#64748b", marginBottom: 6 }}>Targets (one per line)</label>
+                      <textarea
+                        value={settingsContext.nearTermOutcomes.join("\n")}
+                        onChange={(event) => updateSettingsContextList("nearTermOutcomes", event.target.value)}
+                        style={{ width: "100%", minHeight: 120, border: "1px solid #cbd5e1", borderRadius: 12, padding: 12 }}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div style={{ marginTop: 20 }}>
+                  <h4 style={{ marginTop: 0 }}>Week setup</h4>
+                  <p style={{ color: "#475569", lineHeight: 1.6, marginTop: 0 }}>
+                    Edit each week's title, objective, why, outcome, and deliverables.
+                  </p>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 12, maxHeight: 520, overflowY: "auto", paddingRight: 4 }}>
+                    {settingsWeeks.map((week) => (
+                      <div key={week.week} style={{ border: "1px solid #cbd5e1", borderRadius: 12, padding: 12 }}>
+                        <div style={{ fontWeight: 700, marginBottom: 10 }}>Week {week.week}</div>
+                        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+                          <input
+                            value={week.title}
+                            onChange={(event) => updateSettingsWeek(week.week, (item) => ({ ...item, title: event.target.value }))}
+                            placeholder="Week title"
+                            style={{ border: "1px solid #cbd5e1", borderRadius: 10, padding: 10 }}
+                          />
+                          <input
+                            value={week.objective}
+                            onChange={(event) => updateSettingsWeek(week.week, (item) => ({ ...item, objective: event.target.value }))}
+                            placeholder="Objective"
+                            style={{ border: "1px solid #cbd5e1", borderRadius: 10, padding: 10 }}
+                          />
+                          <textarea
+                            value={week.whyThisWeek}
+                            onChange={(event) => updateSettingsWeek(week.week, (item) => ({ ...item, whyThisWeek: event.target.value }))}
+                            placeholder="Why this week exists"
+                            style={{ minHeight: 80, border: "1px solid #cbd5e1", borderRadius: 10, padding: 10 }}
+                          />
+                          <textarea
+                            value={week.developmentOutcome}
+                            onChange={(event) => updateSettingsWeek(week.week, (item) => ({ ...item, developmentOutcome: event.target.value }))}
+                            placeholder="Intended development outcome"
+                            style={{ minHeight: 80, border: "1px solid #cbd5e1", borderRadius: 10, padding: 10 }}
+                          />
+                          <div style={{ gridColumn: "1 / span 2" }}>
+                            <textarea
+                              value={week.deliverables.join("\n")}
+                              onChange={(event) =>
+                                updateSettingsWeek(week.week, (item) => ({
+                                  ...item,
+                                  deliverables: parseLines(event.target.value)
+                                }))
+                              }
+                              placeholder="Deliverables (one per line)"
+                              style={{ width: "100%", minHeight: 90, border: "1px solid #cbd5e1", borderRadius: 10, padding: 10 }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
@@ -788,7 +959,7 @@ export default function Page() {
                   </div>
                 </div>
                 <div style={{ background: "white", borderRadius: 24, padding: 24, boxShadow: "0 1px 6px rgba(0,0,0,0.08)" }}>
-                  <h3 style={{ marginTop: 0 }}>Near-term outcomes</h3>
+                  <h3 style={{ marginTop: 0 }}>Targets</h3>
                   <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.8 }}>
                     {projectContext.nearTermOutcomes.map((item) => (
                       <li key={item}>{item}</li>
