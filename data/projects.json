@@ -1,0 +1,431 @@
+{
+  "projects": [
+    {
+      "id": "demo-career-transition",
+      "name": "Demo: Career Transition Planning",
+      "targetOutcome": "By the end of this project, you have a clear transition plan, measurable weekly progress, and reusable artifacts for applications and interviews.",
+      "plan": [
+        {
+          "week": 1,
+          "title": "Set direction",
+          "objective": "Define target role families and scope the first month.",
+          "whyThisWeek": "Clear direction prevents scattered effort and improves decision quality.",
+          "developmentOutcome": "You can explain where you are aiming and why.",
+          "deliverables": [
+            "Role family shortlist",
+            "Priority criteria",
+            "Week-by-week starter plan"
+          ],
+          "tasks": [
+            {
+              "id": "w1t1",
+              "title": "Define 3 target role families",
+              "why": "Role focus guides what skills and artifacts matter most.",
+              "outcome": "A role shortlist with priorities.",
+              "done": false
+            },
+            {
+              "id": "w1t2",
+              "title": "Write selection criteria for opportunities",
+              "why": "Criteria reduce noise and improve consistency.",
+              "outcome": "A reusable opportunity filter.",
+              "done": false
+            }
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Create evidence",
+          "objective": "Build one concrete artifact tied to target roles.",
+          "whyThisWeek": "Evidence-based progress is more credible than activity-only progress.",
+          "developmentOutcome": "You can show concrete output, not just plans.",
+          "deliverables": [
+            "One role-relevant artifact",
+            "Verification checklist",
+            "Reflection note"
+          ],
+          "tasks": [
+            {
+              "id": "w2t1",
+              "title": "Build one portfolio artifact",
+              "why": "Artifacts convert learning into visible value.",
+              "outcome": "A reusable evidence asset.",
+              "done": false
+            },
+            {
+              "id": "w2t2",
+              "title": "Run quality review and revise",
+              "why": "Review ensures quality before reuse.",
+              "outcome": "A stronger artifact ready for sharing.",
+              "done": false
+            }
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Refine execution",
+          "objective": "Improve workflows for repeatable weekly delivery.",
+          "whyThisWeek": "Repeatable systems sustain progress better than one-off effort.",
+          "developmentOutcome": "Your process is easier to run each week.",
+          "deliverables": [
+            "Workflow checklist",
+            "Updated templates",
+            "Execution metrics snapshot"
+          ],
+          "tasks": [
+            {
+              "id": "w3t1",
+              "title": "Document weekly workflow checklist",
+              "why": "Checklists improve consistency and reduce context switching.",
+              "outcome": "A repeatable weekly operating pattern.",
+              "done": false
+            },
+            {
+              "id": "w3t2",
+              "title": "Track completion and quality signals",
+              "why": "Measurement reveals where to improve.",
+              "outcome": "A baseline for future optimization.",
+              "done": false
+            }
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Review and reset",
+          "objective": "Review outcomes, identify gaps, and set the next cycle.",
+          "whyThisWeek": "Review closes the loop and prevents drift.",
+          "developmentOutcome": "You have an evidence-backed plan for the next month.",
+          "deliverables": [
+            "Progress review",
+            "Gap list",
+            "Next-cycle plan"
+          ],
+          "tasks": [
+            {
+              "id": "w4t1",
+              "title": "Write monthly progress summary",
+              "why": "Summaries make growth visible and reusable.",
+              "outcome": "A clear report of what improved and what did not.",
+              "done": false
+            },
+            {
+              "id": "w4t2",
+              "title": "Define next 4-week priorities",
+              "why": "Focused priorities keep momentum high.",
+              "outcome": "A practical next-cycle roadmap.",
+              "done": false
+            }
+          ]
+        }
+      ],
+      "roadmap": [
+        {
+          "id": "phase-1",
+          "title": "Direction and setup",
+          "startWeek": 1,
+          "endWeek": 1,
+          "objective": "Set clear direction and constraints.",
+          "why": "A clear target improves every downstream choice.",
+          "outcome": "You start with focus and alignment.",
+          "deliverables": [
+            "Role shortlist",
+            "Selection criteria",
+            "Starter plan"
+          ]
+        },
+        {
+          "id": "phase-2",
+          "title": "Execution and evidence",
+          "startWeek": 2,
+          "endWeek": 3,
+          "objective": "Deliver artifacts and improve quality signals.",
+          "why": "Evidence and process quality drive practical outcomes.",
+          "outcome": "You build proof and improve reliability.",
+          "deliverables": [
+            "Portfolio artifact",
+            "Review output",
+            "Workflow checklist"
+          ]
+        },
+        {
+          "id": "phase-3",
+          "title": "Review and next cycle",
+          "startWeek": 4,
+          "endWeek": 4,
+          "objective": "Review results and set a stronger next cycle.",
+          "why": "Structured review makes progress compounding.",
+          "outcome": "You have an evidence-based next plan.",
+          "deliverables": [
+            "Monthly review",
+            "Gap list",
+            "Next-cycle roadmap"
+          ]
+        }
+      ],
+      "scorecardMetrics": [
+        {
+          "id": "completion-rate",
+          "label": "Planned work completion",
+          "help": "Percent of planned tasks completed.",
+          "kind": "completionRate",
+          "target": 65
+        },
+        {
+          "id": "artifact-signals",
+          "label": "Artifact signals",
+          "help": "Completed tasks that create concrete artifacts or summaries.",
+          "kind": "keywordSignals",
+          "target": 2,
+          "keywords": [
+            "artifact",
+            "summary",
+            "report",
+            "checklist",
+            "plan"
+          ],
+          "matchFields": [
+            "title",
+            "why",
+            "outcome"
+          ]
+        },
+        {
+          "id": "quality-signals",
+          "label": "Quality signals",
+          "help": "Completed tasks tied to review, testing, or verification.",
+          "kind": "keywordSignals",
+          "target": 2,
+          "keywords": [
+            "review",
+            "verify",
+            "test",
+            "quality"
+          ],
+          "matchFields": [
+            "title",
+            "why",
+            "outcome"
+          ]
+        }
+      ],
+      "notes": {},
+      "createdAt": "2026-04-18T21:35:00.000Z",
+      "updatedAt": "2026-04-18T21:35:00.000Z",
+      "context": {
+        "whyThisExists": "This demo project shows how to structure a focused transition plan with weekly outcomes and reusable artifacts.",
+        "primaryGoal": "Turn weekly effort into visible progress and portable evidence.",
+        "operatingSystem": [
+          "Plan with explicit outcomes.",
+          "Execute with quality checks.",
+          "Review weekly and adjust quickly."
+        ],
+        "toolStrategy": [
+          "Use AI for drafting and synthesis.",
+          "Use human review for decisions and quality gates.",
+          "Use templates to reduce repeated setup work."
+        ],
+        "weeklyRhythm": [
+          "Plan Monday",
+          "Execute Tuesday-Thursday",
+          "Review and reset Friday"
+        ],
+        "guardrails": [
+          "Do not treat fluent output as verified output.",
+          "Keep work bounded and test assumptions.",
+          "Prioritize maintainable progress over rapid churn."
+        ],
+        "nearTermOutcomes": [
+          "One clear weekly deliverable",
+          "Visible progress metrics",
+          "A repeatable monthly loop"
+        ]
+      }
+    },
+    {
+      "id": "demo-learning-sprint",
+      "name": "Demo: Agentic Engineering Sprint (4 Weeks)",
+      "targetOutcome": "By week 4, you can reliably run a plan-spec-implement-verify-review workflow with clear quality gates and measurable outcomes.",
+      "plan": [
+        {
+          "week": 1,
+          "title": "Mental model upgrade",
+          "objective": "Understand where AI coding is strong and where it needs strict safeguards.",
+          "whyThisWeek": "Correct mental models reduce avoidable mistakes.",
+          "developmentOutcome": "You can explain conditional trust and verification requirements.",
+          "deliverables": [
+            "One-page mental model",
+            "Claim audit notes"
+          ],
+          "tasks": [
+            {
+              "id": "w1t1",
+              "title": "Write one-page trust model",
+              "why": "A clear doctrine improves decisions under time pressure.",
+              "outcome": "A reusable decision framework.",
+              "done": false
+            }
+          ]
+        },
+        {
+          "week": 2,
+          "title": "Process installation",
+          "objective": "Install plan-spec-implement-verify-review as a weekly loop.",
+          "whyThisWeek": "Process quality drives output quality.",
+          "developmentOutcome": "You can run a repeatable execution loop.",
+          "deliverables": [
+            "Spec template",
+            "Verification checklist"
+          ],
+          "tasks": [
+            {
+              "id": "w2t1",
+              "title": "Create spec and verification templates",
+              "why": "Templates reduce setup cost and increase consistency.",
+              "outcome": "A reusable implementation scaffold.",
+              "done": false
+            }
+          ]
+        },
+        {
+          "week": 3,
+          "title": "Real-task execution",
+          "objective": "Apply the loop on real implementation slices.",
+          "whyThisWeek": "Execution under real constraints validates the process.",
+          "developmentOutcome": "You can deliver with fewer regressions and clearer review trails.",
+          "deliverables": [
+            "One completed task with evidence",
+            "Failure-pattern notes"
+          ],
+          "tasks": [
+            {
+              "id": "w3t1",
+              "title": "Run one real task end-to-end",
+              "why": "Practical testing reveals process gaps.",
+              "outcome": "A validated execution example.",
+              "done": false
+            }
+          ]
+        },
+        {
+          "week": 4,
+          "title": "Consolidate and scale",
+          "objective": "Package the method and define next-cycle improvements.",
+          "whyThisWeek": "Codifying lessons makes gains durable.",
+          "developmentOutcome": "You have a playbook for ongoing use.",
+          "deliverables": [
+            "Playbook v1",
+            "Next-cycle roadmap"
+          ],
+          "tasks": [
+            {
+              "id": "w4t1",
+              "title": "Write playbook and next-cycle plan",
+              "why": "Captured process knowledge compounds over time.",
+              "outcome": "A durable operating guide.",
+              "done": false
+            }
+          ]
+        }
+      ],
+      "roadmap": [
+        {
+          "id": "phase-1",
+          "title": "Understand",
+          "startWeek": 1,
+          "endWeek": 1,
+          "objective": "Understand capability and risk boundaries.",
+          "why": "Clarity drives better execution choices.",
+          "outcome": "A strong mental model.",
+          "deliverables": [
+            "Mental model notes"
+          ]
+        },
+        {
+          "id": "phase-2",
+          "title": "Implement process",
+          "startWeek": 2,
+          "endWeek": 3,
+          "objective": "Install and validate repeatable workflow.",
+          "why": "Repeatability improves quality and speed.",
+          "outcome": "A proven execution loop.",
+          "deliverables": [
+            "Templates",
+            "Validated task run"
+          ]
+        },
+        {
+          "id": "phase-3",
+          "title": "Scale",
+          "startWeek": 4,
+          "endWeek": 4,
+          "objective": "Package and scale the method.",
+          "why": "Codification prevents regression to ad hoc work.",
+          "outcome": "A durable playbook.",
+          "deliverables": [
+            "Playbook",
+            "Next-cycle plan"
+          ]
+        }
+      ],
+      "scorecardMetrics": [
+        {
+          "id": "completion-rate",
+          "label": "Planned work completion",
+          "help": "Percent of planned tasks completed.",
+          "kind": "completionRate",
+          "target": 70
+        },
+        {
+          "id": "verification-signals",
+          "label": "Verification signals",
+          "help": "Completed tasks that include review, verification, or testing.",
+          "kind": "keywordSignals",
+          "target": 2,
+          "keywords": [
+            "review",
+            "verify",
+            "test",
+            "evidence"
+          ],
+          "matchFields": [
+            "title",
+            "why",
+            "outcome"
+          ]
+        }
+      ],
+      "notes": {},
+      "createdAt": "2026-04-18T21:35:00.000Z",
+      "updatedAt": "2026-04-18T21:35:00.000Z",
+      "context": {
+        "whyThisExists": "This demo sprint teaches disciplined AI-assisted implementation and verification.",
+        "primaryGoal": "Ship with quality while using AI effectively.",
+        "operatingSystem": [
+          "Plan and scope",
+          "Implement with guardrails",
+          "Verify and review"
+        ],
+        "toolStrategy": [
+          "Use one model for implementation and one for review.",
+          "Use tests and checklists as hard gates."
+        ],
+        "weeklyRhythm": [
+          "Understand",
+          "Build",
+          "Verify",
+          "Review"
+        ],
+        "guardrails": [
+          "No blind merges.",
+          "No skipping verification.",
+          "Document assumptions and decisions."
+        ],
+        "nearTermOutcomes": [
+          "Reliable loop execution",
+          "Reduced rework",
+          "Improved confidence"
+        ]
+      }
+    }
+  ]
+}

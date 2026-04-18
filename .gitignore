@@ -1,0 +1,8 @@
+node_modules/
+.next/
+.next-dev/
+out/
+.dev-server.log
+.dev-server.pid
+.dev-server.port
+.DS_Store
