@@ -39,16 +39,6 @@ export type RoadmapPhase = {
   deliverables: string[];
 };
 
-export type ScorecardMetricConfig = {
-  id: string;
-  label: string;
-  help: string;
-  kind: "completionRate" | "keywordSignals";
-  target: number;
-  keywords?: string[];
-  matchFields?: Array<"title" | "why" | "outcome">;
-};
-
 function makeWeek(
   week: number,
   title: string,
@@ -291,34 +281,3 @@ export function createDefaultRoadmap(totalWeeks: number): RoadmapPhase[] {
   return phases;
 }
 
-export function createDefaultScorecardMetrics(totalWeeks: number): ScorecardMetricConfig[] {
-  const effortTarget = Math.max(2, Math.round(totalWeeks / 8));
-  const executionTarget = Math.max(2, Math.round(totalWeeks / 10));
-  return [
-    {
-      id: "completion-rate",
-      label: "Planned work completion",
-      help: "Percent of all planned tasks completed across the project.",
-      kind: "completionRate",
-      target: 65
-    },
-    {
-      id: "evidence-signals",
-      label: "Evidence and artifact signals",
-      help: "Completed tasks that produce reusable artifacts such as specs, memos, checklists, reports, or playbooks.",
-      kind: "keywordSignals",
-      target: effortTarget,
-      keywords: ["artifact", "memo", "checklist", "rubric", "spec", "report", "playbook", "roadmap"],
-      matchFields: ["title", "why", "outcome"]
-    },
-    {
-      id: "execution-signals",
-      label: "Execution quality signals",
-      help: "Completed tasks tied to implementation quality: testing, verification, review, and refactoring.",
-      kind: "keywordSignals",
-      target: executionTarget,
-      keywords: ["implement", "test", "verify", "review", "refactor", "fix", "ship", "deploy", "automation"],
-      matchFields: ["title", "why", "outcome"]
-    }
-  ];
-}

@@ -162,53 +162,9 @@
           ]
         }
       ],
-      "scorecardMetrics": [
-        {
-          "id": "completion-rate",
-          "label": "Planned work completion",
-          "help": "Percent of planned tasks completed.",
-          "kind": "completionRate",
-          "target": 65
-        },
-        {
-          "id": "artifact-signals",
-          "label": "Artifact signals",
-          "help": "Completed tasks that create concrete artifacts or summaries.",
-          "kind": "keywordSignals",
-          "target": 2,
-          "keywords": [
-            "artifact",
-            "summary",
-            "report",
-            "checklist",
-            "plan"
-          ],
-          "matchFields": [
-            "title",
-            "why",
-            "outcome"
-          ]
-        },
-        {
-          "id": "quality-signals",
-          "label": "Quality signals",
-          "help": "Completed tasks tied to review, testing, or verification.",
-          "kind": "keywordSignals",
-          "target": 2,
-          "keywords": [
-            "review",
-            "verify",
-            "test",
-            "quality"
-          ],
-          "matchFields": [
-            "title",
-            "why",
-            "outcome"
-          ]
-        }
-      ],
-      "notes": {},
+      "notes": {
+        "1": "Write your 12-month target outcome in one paragraph\nWhy: Tasks make more sense when tied to an explicit target state.\nOutcome: A clear north star for the whole system."
+      },
       "createdAt": "2026-04-18T21:35:00.000Z",
       "updatedAt": "2026-04-18T21:35:00.000Z",
       "context": {
@@ -364,33 +320,6 @@
           "deliverables": [
             "Playbook",
             "Next-cycle plan"
-          ]
-        }
-      ],
-      "scorecardMetrics": [
-        {
-          "id": "completion-rate",
-          "label": "Planned work completion",
-          "help": "Percent of planned tasks completed.",
-          "kind": "completionRate",
-          "target": 70
-        },
-        {
-          "id": "verification-signals",
-          "label": "Verification signals",
-          "help": "Completed tasks that include review, verification, or testing.",
-          "kind": "keywordSignals",
-          "target": 2,
-          "keywords": [
-            "review",
-            "verify",
-            "test",
-            "evidence"
-          ],
-          "matchFields": [
-            "title",
-            "why",
-            "outcome"
           ]
         }
       ],

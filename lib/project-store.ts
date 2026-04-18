@@ -5,11 +5,9 @@ import path from "path";
 import {
   createDefaultPlan,
   createDefaultRoadmap,
-  createDefaultScorecardMetrics,
   createEmptyNotes,
   NotesMap,
   RoadmapPhase,
-  ScorecardMetricConfig,
   WeekPlan
 } from "./plan-template";
 
@@ -29,7 +27,6 @@ export type ProjectData = {
   targetOutcome: string;
   plan: WeekPlan[];
   roadmap: RoadmapPhase[];
-  scorecardMetrics: ScorecardMetricConfig[];
   notes: NotesMap;
   context: ProjectContext;
   createdAt: string;
@@ -179,7 +176,6 @@ function createProjectWithWeeks(name: string, weeks: number): ProjectData {
     targetOutcome: createDefaultTargetOutcome(name, totalWeeks),
     plan,
     roadmap: createDefaultRoadmap(totalWeeks),
-    scorecardMetrics: createDefaultScorecardMetrics(totalWeeks),
     notes: createEmptyNotes(),
     context: createDefaultContext(name),
     createdAt: now,
@@ -204,10 +200,6 @@ function normalizeProject(project: ProjectData): ProjectData {
     targetOutcome: project.targetOutcome || createDefaultTargetOutcome(project.name, inferredWeeks),
     plan: normalizedPlan,
     roadmap: Array.isArray(project.roadmap) && project.roadmap.length ? project.roadmap : createDefaultRoadmap(inferredWeeks),
-    scorecardMetrics:
-      Array.isArray(project.scorecardMetrics) && project.scorecardMetrics.length
-        ? project.scorecardMetrics
-        : createDefaultScorecardMetrics(inferredWeeks),
     notes: project.notes || createEmptyNotes(),
     context: project.context || createDefaultContext(project.name),
     createdAt: project.createdAt || new Date().toISOString(),

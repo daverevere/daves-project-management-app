@@ -5,10 +5,8 @@ import React, { useEffect, useMemo, useState } from "react";
 import {
   createDefaultPlan,
   createDefaultRoadmap,
-  createDefaultScorecardMetrics,
   NotesMap,
   RoadmapPhase,
-  ScorecardMetricConfig,
   WeekPlan
 } from "../lib/plan-template";
 
@@ -27,7 +25,6 @@ type ProjectData = {
   targetOutcome: string;
   plan: WeekPlan[];
   roadmap: RoadmapPhase[];
-  scorecardMetrics: ScorecardMetricConfig[];
   notes: NotesMap;
   context: {
     whyThisExists: string;
@@ -40,14 +37,6 @@ type ProjectData = {
   };
 };
 
-type EditableMetric = {
-  id: string;
-  label: string;
-  help: string;
-  kind: "completionRate" | "keywordSignals";
-  target: number;
-  keywords: string[];
-};
 
 const TAB_KEY = "daves-pm-tab-v1";
 const WEEK_KEY = "daves-pm-selected-week-v1";
@@ -56,7 +45,6 @@ const AVAILABLE_TABS: TabName[] = ["week", "tasks", "roadmap", "context", "setti
 
 export default function Page() {
   const [projects, setProjects] = useState<ProjectSummary[]>([]);
-  const [projectSnapshots, setProjectSnapshots] = useState<ProjectData[]>([]);
   const [selectedProjectId, setSelectedProjectId] = useState<string>("");
   const [selectedProjectName, setSelectedProjectName] = useState<string>("Dave's Project Management");
   const [selectedProjectTargetOutcome, setSelectedProjectTargetOutcome] = useState<string>("");
@@ -85,7 +73,6 @@ export default function Page() {
   const [settingsProjectName, setSettingsProjectName] = useState("");
   const [settingsTargetOutcome, setSettingsTargetOutcome] = useState("");
   const [settingsTotalWeeks, setSettingsTotalWeeks] = useState<number>(12);
-  const [settingsMetrics, setSettingsMetrics] = useState<EditableMetric[]>([]);
   const [settingsStatus, setSettingsStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
   const [noteSaveStatus, setNoteSaveStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
 
@@ -99,86 +86,6 @@ export default function Page() {
     const doneCount = allTasks.filter((task) => task.done).length;
     return allTasks.length ? Math.round((doneCount / allTasks.length) * 100) : 0;
   }, [plan]);
-
-  const earlyPhaseProgress = useMemo(() => {
-    const cutoffWeek = Math.max(1, Math.ceil(plan.length / 4));
-    const earlyTasks = plan.filter((week) => week.week <= cutoffWeek).flatMap((week) => week.tasks);
-    const doneCount = earlyTasks.filter((task) => task.done).length;
-    return earlyTasks.length ? Math.round((doneCount / earlyTasks.length) * 100) : 0;
-  }, [plan]);
-
-  const projectScorecards = useMemo(() => {
-    return projectSnapshots.map((project) => {
-      const allTasks = project.plan.flatMap((week) => week.tasks);
-      const doneTasks = allTasks.filter((task) => task.done);
-      const completed = doneTasks.length;
-      const total = allTasks.length;
-      const completionPercent = total ? Math.round((completed / total) * 100) : 0;
-      const metrics = (project.scorecardMetrics && project.scorecardMetrics.length)
-        ? project.scorecardMetrics
-        : createDefaultScorecardMetrics(project.plan.length);
-
-      const metricResults = metrics.map((metric) => {
-        if (metric.kind === "completionRate") {
-          return {
-            id: metric.id,
-            label: metric.label,
-            help: metric.help,
-            target: metric.target,
-            unit: "%",
-            value: completionPercent,
-            achieved: completionPercent >= metric.target,
-            matchedTasks: [] as string[]
-          };
-        }
-
-        const fields = metric.matchFields && metric.matchFields.length
-          ? metric.matchFields
-          : (["title"] as Array<"title" | "why" | "outcome">);
-        const keywords = (metric.keywords || []).map((word) => word.toLowerCase());
-        const matchingTasks = doneTasks.filter((task) => {
-          const haystack = fields.map((field) => task[field]).join(" ").toLowerCase();
-          return keywords.some((keyword) => haystack.includes(keyword));
-        });
-        return {
-          id: metric.id,
-          label: metric.label,
-          help: metric.help,
-          target: metric.target,
-          unit: "signals",
-          value: matchingTasks.length,
-          achieved: matchingTasks.length >= metric.target,
-          matchedTasks: matchingTasks.map((task) => task.title)
-        };
-      });
-
-      const targetsMet = metricResults.filter((metric) => metric.achieved).length;
-
-      let status: "green" | "yellow" | "red" = "red";
-      if ((metricResults.length && targetsMet === metricResults.length && completionPercent >= 60) || completionPercent >= 75) {
-        status = "green";
-      } else if (completionPercent >= 30 || targetsMet > 0) {
-        status = "yellow";
-      }
-
-      return {
-        projectId: project.id,
-        name: project.name,
-        completed,
-        total,
-        completionPercent,
-        targetsMet,
-        totalTargets: metricResults.length,
-        metrics: metricResults,
-        status,
-        guidance:
-          "Use these metrics as directional signals. If they stay flat across multiple weeks, adjust upcoming tasks so they produce visible evidence."
-      };
-    });
-  }, [projectSnapshots]);
-
-  const activeProjectScorecard =
-    projectScorecards.find((scorecard) => scorecard.projectId === selectedProjectId) ?? projectScorecards[0];
 
   useEffect(() => {
     const boot = async () => {
@@ -199,7 +106,6 @@ export default function Page() {
         const projectsData = (await projectsResponse.json()) as { projects: ProjectSummary[] };
         setProjects(projectsData.projects);
         if (!projectsData.projects.length) return;
-        await fetchProjectSnapshots(projectsData.projects);
 
         const chosenProjectId =
           savedProjectId && projectsData.projects.some((project) => project.id === savedProjectId)
@@ -229,18 +135,6 @@ export default function Page() {
     setAssignWeek(selectedWeek);
   }, [selectedWeek]);
 
-  const fetchProjectSnapshots = async (projectList: ProjectSummary[]) => {
-    const snapshots = await Promise.all(
-      projectList.map(async (project) => {
-        const response = await fetch(`/api/projects/${project.id}`);
-        const data = (await response.json()) as { project: ProjectData };
-        return data.project;
-      })
-    );
-    setProjectSnapshots(snapshots);
-    return snapshots;
-  };
-
   const loadProject = async (projectId: string) => {
     const response = await fetch(`/api/projects/${projectId}`);
     if (!response.ok) throw new Error("project not found");
@@ -255,16 +149,6 @@ export default function Page() {
     setSettingsProjectName(data.project.name);
     setSettingsTargetOutcome(data.project.targetOutcome || "");
     setSettingsTotalWeeks(data.project.plan.length);
-    setSettingsMetrics(
-      (data.project.scorecardMetrics || createDefaultScorecardMetrics(data.project.plan.length)).map((metric) => ({
-        id: metric.id,
-        label: metric.label,
-        help: metric.help,
-        kind: metric.kind,
-        target: metric.target,
-        keywords: metric.keywords || []
-      }))
-    );
     setSettingsStatus("idle");
   };
 
@@ -272,7 +156,6 @@ export default function Page() {
     const projectsResponse = await fetch("/api/projects");
     const projectsData = (await projectsResponse.json()) as { projects: ProjectSummary[] };
     setProjects(projectsData.projects);
-    await fetchProjectSnapshots(projectsData.projects);
     return projectsData.projects;
   };
 
@@ -325,24 +208,7 @@ export default function Page() {
     setSettingsProjectName(project.name);
     setSettingsTargetOutcome(project.targetOutcome || "");
     setSettingsTotalWeeks(project.plan.length);
-    setSettingsMetrics(
-      (project.scorecardMetrics || createDefaultScorecardMetrics(project.plan.length)).map((metric) => ({
-        id: metric.id,
-        label: metric.label,
-        help: metric.help,
-        kind: metric.kind,
-        target: metric.target,
-        keywords: metric.keywords || []
-      }))
-    );
     setSettingsStatus("idle");
-    setProjectSnapshots((prev) => {
-      const existingIndex = prev.findIndex((item) => item.id === project.id);
-      if (existingIndex === -1) return [...prev, project];
-      const next = [...prev];
-      next[existingIndex] = project;
-      return next;
-    });
   };
 
   const updateTask = async (payload: Record<string, unknown>) => {
@@ -409,28 +275,6 @@ export default function Page() {
     await persistNote(currentWeek.week, notes[currentWeek.week] || "");
   };
 
-  const addMetric = () => {
-    setSettingsMetrics((prev) => [
-      ...prev,
-      {
-        id: `custom-metric-${Date.now()}`,
-        label: "New target",
-        help: "Describe what this target should represent for this project.",
-        kind: "keywordSignals",
-        target: 1,
-        keywords: []
-      }
-    ]);
-  };
-
-  const removeMetric = (metricId: string) => {
-    setSettingsMetrics((prev) => prev.filter((metric) => metric.id !== metricId));
-  };
-
-  const updateMetric = (metricId: string, updater: (metric: EditableMetric) => EditableMetric) => {
-    setSettingsMetrics((prev) => prev.map((metric) => (metric.id === metricId ? updater(metric) : metric)));
-  };
-
   const saveProjectSettings = async () => {
     if (!selectedProjectId) return;
     setSettingsStatus("saving");
@@ -438,16 +282,7 @@ export default function Page() {
       action: "settings",
       name: settingsProjectName.trim() || selectedProjectName,
       targetOutcome: settingsTargetOutcome.trim(),
-      totalWeeks: Math.max(1, Math.min(104, Math.floor(settingsTotalWeeks || 1))),
-      scorecardMetrics: settingsMetrics.map((metric) => ({
-        id: metric.id,
-        label: metric.label.trim(),
-        help: metric.help.trim(),
-        kind: metric.kind,
-        target: Math.max(0, Math.floor(metric.target || 0)),
-        keywords: metric.keywords,
-        matchFields: metric.kind === "keywordSignals" ? ["title", "why", "outcome"] : ["title"]
-      }))
+      totalWeeks: Math.max(1, Math.min(104, Math.floor(settingsTotalWeeks || 1)))
     };
     const response = await fetch(`/api/projects/${selectedProjectId}`, {
       method: "PUT",
@@ -556,7 +391,7 @@ export default function Page() {
               </button>
             </div>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16, marginTop: 20 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 20 }}>
             <div style={{ background: "#f8fafc", borderRadius: 16, padding: 16 }}>
               <div style={{ fontSize: 12, color: "#64748b", marginBottom: 8 }}>Target outcome</div>
               <div style={{ lineHeight: 1.6 }}>{selectedProjectTargetOutcome}</div>
@@ -568,13 +403,6 @@ export default function Page() {
                 <div style={{ width: `${overallProgress}%`, background: "#2563eb", height: "100%" }} />
               </div>
             </div>
-            <div style={{ background: "#f8fafc", borderRadius: 16, padding: 16 }}>
-              <div style={{ fontSize: 12, color: "#64748b", marginBottom: 8 }}>Early-phase progress</div>
-              <div style={{ fontSize: 28, fontWeight: 700 }}>{earlyPhaseProgress}%</div>
-              <div style={{ height: 10, background: "#e2e8f0", borderRadius: 999, marginTop: 10, overflow: "hidden" }}>
-                <div style={{ width: `${earlyPhaseProgress}%`, background: "#0f766e", height: "100%" }} />
-              </div>
-            </div>
           </div>
           <div style={{ display: "flex", gap: 10, marginTop: 18, flexWrap: "wrap" }}>
             {tabButton("week", "Week View")}
@@ -584,54 +412,6 @@ export default function Page() {
             {tabButton("settings", "Settings")}
           </div>
         </div>
-
-        {activeProjectScorecard && (
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: 20 }}>
-            <div style={{ background: "white", borderRadius: 24, padding: 24, boxShadow: "0 1px 6px rgba(0,0,0,0.08)" }}>
-              <h3 style={{ marginTop: 0, marginBottom: 10 }}>Targets</h3>
-              <p style={{ color: "#475569", marginTop: 0, lineHeight: 1.6 }}>
-                Targets are fully project-configurable from the Settings tab.
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {activeProjectScorecard.metrics.map((metric) => (
-                  <div key={metric.id} style={{ border: "1px solid #cbd5e1", borderRadius: 14, padding: 12 }}>
-                    <div style={{ display: "flex", justifyContent: "space-between", gap: 12, alignItems: "center" }}>
-                      <div style={{ fontWeight: 700 }}>{metric.label}</div>
-                      <div style={{ fontSize: 12, fontWeight: 700, color: metric.achieved ? "#166534" : "#854d0e" }}>
-                        {metric.achieved ? "Met" : "In progress"}
-                      </div>
-                    </div>
-                    <div style={{ color: "#475569", lineHeight: 1.6, marginTop: 6 }}>{metric.help}</div>
-                    <div style={{ marginTop: 8, fontSize: 13, color: "#334155" }}>
-                      <strong>Progress:</strong> {metric.value}
-                      {metric.unit === "%" ? "%" : ` ${metric.unit}`} / {metric.target}
-                      {metric.unit === "%" ? "%" : ""}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div style={{ background: "white", borderRadius: 24, padding: 24, boxShadow: "0 1px 6px rgba(0,0,0,0.08)" }}>
-              <h3 style={{ marginTop: 0, marginBottom: 10 }}>Project scorecard</h3>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 14 }}>
-                <div style={{ background: "#f8fafc", borderRadius: 12, padding: 12 }}>
-                  <div style={{ fontSize: 12, color: "#64748b", marginBottom: 6 }}>Completion</div>
-                  <div style={{ fontWeight: 700, fontSize: 24 }}>
-                    {activeProjectScorecard.completionPercent}% ({activeProjectScorecard.completed}/{activeProjectScorecard.total})
-                  </div>
-                </div>
-                <div style={{ background: "#f8fafc", borderRadius: 12, padding: 12 }}>
-                  <div style={{ fontSize: 12, color: "#64748b", marginBottom: 6 }}>Targets met</div>
-                  <div style={{ fontWeight: 700, fontSize: 24 }}>
-                    {activeProjectScorecard.targetsMet}/{activeProjectScorecard.totalTargets}
-                  </div>
-                </div>
-              </div>
-              <div style={{ color: "#475569", lineHeight: 1.6 }}>{activeProjectScorecard.guidance}</div>
-            </div>
-          </div>
-        )}
 
         <div style={{ display: "grid", gridTemplateColumns: "300px 1fr", gap: 20, alignItems: "stretch" }}>
           <aside
@@ -912,7 +692,7 @@ export default function Page() {
               <div style={{ background: "white", borderRadius: 24, padding: 24, boxShadow: "0 1px 6px rgba(0,0,0,0.08)" }}>
                 <h3 style={{ marginTop: 0 }}>Project settings</h3>
                 <p style={{ color: "#475569", lineHeight: 1.7 }}>
-                  Configure the project scope and scorecard targets. Changes apply only to the selected project.
+                  Configure the project scope. Changes apply only to the selected project.
                 </p>
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
                   <div>
@@ -941,80 +721,6 @@ export default function Page() {
                       onChange={(event) => setSettingsTargetOutcome(event.target.value)}
                       style={{ width: "100%", minHeight: 90, border: "1px solid #cbd5e1", borderRadius: 12, padding: 12 }}
                     />
-                  </div>
-                </div>
-
-                <div style={{ marginTop: 20 }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-                    <h4 style={{ margin: 0 }}>Scorecard targets</h4>
-                    <button
-                      onClick={addMetric}
-                      style={{ border: "1px solid #cbd5e1", background: "white", borderRadius: 10, padding: "8px 10px", cursor: "pointer", fontWeight: 600 }}
-                    >
-                      Add target
-                    </button>
-                  </div>
-                  <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                    {settingsMetrics.map((metric, index) => (
-                      <div key={metric.id} style={{ border: "1px solid #cbd5e1", borderRadius: 14, padding: 14 }}>
-                        <div style={{ display: "grid", gridTemplateColumns: "1fr 180px 100px auto", gap: 10, alignItems: "center" }}>
-                          <input
-                            value={metric.label}
-                            onChange={(event) => updateMetric(metric.id, (item) => ({ ...item, label: event.target.value }))}
-                            placeholder={`Target ${index + 1} label`}
-                            style={{ border: "1px solid #cbd5e1", borderRadius: 10, padding: 10 }}
-                          />
-                          <select
-                            value={metric.kind}
-                            onChange={(event) =>
-                              updateMetric(metric.id, (item) => ({
-                                ...item,
-                                kind: event.target.value as EditableMetric["kind"]
-                              }))
-                            }
-                            style={{ border: "1px solid #cbd5e1", borderRadius: 10, padding: 10, background: "white" }}
-                          >
-                            <option value="completionRate">Completion rate (%)</option>
-                            <option value="keywordSignals">Keyword signals</option>
-                          </select>
-                          <input
-                            type="number"
-                            min={0}
-                            value={metric.target}
-                            onChange={(event) => updateMetric(metric.id, (item) => ({ ...item, target: Number(event.target.value) }))}
-                            style={{ border: "1px solid #cbd5e1", borderRadius: 10, padding: 10 }}
-                          />
-                          <button
-                            onClick={() => removeMetric(metric.id)}
-                            style={{ border: "1px solid #cbd5e1", background: "white", borderRadius: 10, padding: "8px 10px", cursor: "pointer" }}
-                          >
-                            Remove
-                          </button>
-                        </div>
-                        <textarea
-                          value={metric.help}
-                          onChange={(event) => updateMetric(metric.id, (item) => ({ ...item, help: event.target.value }))}
-                          placeholder="Explain how to interpret this target."
-                          style={{ width: "100%", minHeight: 70, border: "1px solid #cbd5e1", borderRadius: 10, padding: 10, marginTop: 10 }}
-                        />
-                        {metric.kind === "keywordSignals" && (
-                          <input
-                            value={metric.keywords.join(", ")}
-                            onChange={(event) =>
-                              updateMetric(metric.id, (item) => ({
-                                ...item,
-                                keywords: event.target.value
-                                  .split(",")
-                                  .map((value) => value.trim())
-                                  .filter(Boolean)
-                              }))
-                            }
-                            placeholder="Comma-separated keywords (e.g. test, verify, artifact)"
-                            style={{ width: "100%", border: "1px solid #cbd5e1", borderRadius: 10, padding: 10, marginTop: 10 }}
-                          />
-                        )}
-                      </div>
-                    ))}
                   </div>
                 </div>
 

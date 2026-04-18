@@ -3,9 +3,7 @@ import { NextResponse } from "next/server";
 import {
   createDefaultPlan,
   createDefaultRoadmap,
-  createDefaultScorecardMetrics,
-  createEmptyNotes,
-  ScorecardMetricConfig
+  createEmptyNotes
 } from "../../../../lib/plan-template";
 import { deleteProject, getProject, updateProject } from "../../../../lib/project-store";
 
@@ -30,7 +28,6 @@ export async function PUT(request: Request, { params }: Params) {
     name?: string;
     targetOutcome?: string;
     totalWeeks?: number;
-    scorecardMetrics?: ScorecardMetricConfig[];
   };
   if (!body.action) {
     return NextResponse.json({ error: "unsupported action" }, { status: 400 });
@@ -40,24 +37,6 @@ export async function PUT(request: Request, { params }: Params) {
   }
 
   const project = await updateProject(params.projectId, (current) => {
-    const sanitizeMetrics = (
-      metrics: ScorecardMetricConfig[] | undefined,
-      weekCount: number
-    ): ScorecardMetricConfig[] => {
-      if (!metrics || !metrics.length) {
-        return createDefaultScorecardMetrics(weekCount);
-      }
-      return metrics.map((metric, index) => ({
-        id: metric.id || `metric-${index + 1}`,
-        label: metric.label || `Metric ${index + 1}`,
-        help: metric.help || "Project-defined scorecard signal.",
-        kind: metric.kind === "completionRate" ? "completionRate" : "keywordSignals",
-        target: Math.max(0, Math.floor(metric.target || 0)),
-        keywords: metric.keywords || [],
-        matchFields: metric.matchFields || ["title", "why", "outcome"]
-      }));
-    };
-
     if (body.action === "rename") {
       return {
         ...current,
@@ -71,7 +50,6 @@ export async function PUT(request: Request, { params }: Params) {
         ...current,
         plan: createDefaultPlan(totalWeeks),
         roadmap: createDefaultRoadmap(totalWeeks),
-        scorecardMetrics: createDefaultScorecardMetrics(totalWeeks),
         notes: createEmptyNotes()
       };
     }
@@ -99,8 +77,7 @@ export async function PUT(request: Request, { params }: Params) {
         targetOutcome: body.targetOutcome?.trim() || current.targetOutcome,
         plan: nextPlan,
         notes: nextNotes,
-        roadmap: createDefaultRoadmap(totalWeeks),
-        scorecardMetrics: sanitizeMetrics(body.scorecardMetrics, totalWeeks)
+        roadmap: createDefaultRoadmap(totalWeeks)
       };
     }
 
